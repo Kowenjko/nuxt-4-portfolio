@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { NavigationLink } from '#shared/types'
+import { ChevronRight, Moon, Sun } from 'lucide-vue-next'
 
 const navLinks: NavigationLink[] = [
   { name: 'Home', url: '/#home' },
@@ -12,6 +13,9 @@ const navLinks: NavigationLink[] = [
 const { y: scrollY } = useWindowScroll()
 
 const scrolled = computed(() => scrollY.value > 10)
+
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 </script>
 
 <template>
@@ -29,11 +33,12 @@ const scrolled = computed(() => scrollY.value > 10)
           </li>
         </ul>
       </nav>
-      <a href="#contact" class="contact-btn group">
-        <div class="inner">
-          <span>Contact me</span>
-        </div>
-      </a>
+      <div>
+        <Button class="flex px-2 py-1 rounded-md" @click="toggleDark()" variant="outline" size="icon">
+          <Sun v-if="isDark" class="w-4 h-4" />
+          <Moon v-else class="w-4 h-4" />
+        </Button>
+      </div>
     </div>
   </header>
 </template>
