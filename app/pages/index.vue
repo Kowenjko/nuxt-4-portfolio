@@ -1,3 +1,7 @@
 <script lang="ts" setup></script>
 
-<template>Index</template>
+<template>
+  <main class="h-[2500px] flex-center bg-gray-700">
+    <p class="text-center">Index</p>
+  </main>
+</template>

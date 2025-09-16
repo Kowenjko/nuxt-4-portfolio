@@ -1,4 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - Kovenko` : 'Kovenko'
+  },
+})
+</script>
 
 <template>
   <Suspense>
