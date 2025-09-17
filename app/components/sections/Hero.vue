@@ -1,4 +1,12 @@
 <script lang="ts" setup>
+const words = [
+  { text: 'Nuxt 4', imgPath: '/images/ideas.svg' },
+  { text: 'Vue 3', imgPath: '/images/concepts.svg' },
+  { text: 'React', imgPath: '/images/designs.svg' },
+  { text: 'Next', imgPath: '/images/code.svg' },
+  { text: 'Python', imgPath: '/images/ideas.svg' },
+]
+
 const { months, years } = getYearsAtWork()
 </script>
 
@@ -9,7 +17,9 @@ const { months, years } = getYearsAtWork()
   >
     <div class="grid-2-cols container px-10">
       <div class="content-center">
-        <h1 class="text-left text-5xl">Vasya <span class="text-ring">Kovenko</span></h1>
+        <h1 class="md:text-5xl text-3xl font-semibold relative z-10 pointer-events-none space-x-24">
+          Vasya <span class="text-ring">Kovenko</span>
+        </h1>
         <p class="pt-10">
           <span class="text-zinc-900 dark:text-zinc-500 m-0 font-bold">Frontend Developer</span> with {{ years }} years
           {{ months }} months of commercial experience. Specializing in Vue 3 / Nuxt 3, I build modern web applications
@@ -19,7 +29,15 @@ const { months, years } = getYearsAtWork()
       </div>
       <div class="justify-items-center">
         <div class="avatar rounded-3xl">
-          <NuxtImg src="/images/hero.png" format="webp" alt="hero" class="rounded-3xl" />
+          <NuxtImg
+            src="/images/hero.png"
+            format="webp"
+            alt="hero"
+            class="rounded-3xl aspect-retro object-cover"
+            width="396px"
+            loading="lazy"
+            placeholder
+          />
         </div>
       </div>
     </div>
@@ -53,7 +71,6 @@ p {
     position: absolute;
     height: 101%;
     width: 101%;
-    background: red;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -65,6 +82,9 @@ p {
   &::before {
     filter: blur(1rem);
     opacity: 0.5;
+  }
+  img {
+    filter: sepia(100%) saturate(10%) hue-rotate(0deg);
   }
 }
 

@@ -24,10 +24,7 @@ export default defineNuxtConfig({
   imports: { dirs: ['composables/**'] },
   pinia: { storesDirs: ['./app/store/**'] },
   fonts: {
-    families: [
-      { name: 'Inter', provider: 'google' },
-      { name: 'Geist', provider: 'google' },
-    ],
+    families: [{ name: 'Inter', provider: 'google' }],
   },
   vite: {
     plugins: [tailwindcss()],

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { NavigationLink } from '#shared/types'
-import { ChevronRight, Moon, Sun } from 'lucide-vue-next'
+import { Moon, Sun } from 'lucide-vue-next'
 
 const navLinks: NavigationLink[] = [
   { name: 'Home', url: '/#home' },
