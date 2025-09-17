@@ -6,26 +6,10 @@
 html,
 body {
   width: 100dvw;
-  /* overflow-x: hidden; */
-  /* background-color: #1c1c21; */
-  /* color: white; */
+
   scroll-behavior: smooth;
-  font-family: 'Geist', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
-
-section {
-  width: 100dvw;
-}
-
-/* @theme {
-  --font-sans: 'Geist', sans-serif;
-  --color-white-50: #d9ecff;
-  --color-black-50: #1c1c21;
-  --color-black-100: #0e0e10;
-  --color-black-200: #282732;
-  --color-blue-50: #839cb5;
-  --color-blue-100: #2d2d38;
-} */
 
 @layer utilities {
   .flex-center {
@@ -36,43 +20,70 @@ section {
   }
 }
 
-.navbar {
-  @apply fixed w-full left-1/2 py-5 px-5 md:px-20 -translate-x-1/2 z-[100] transition-all duration-300 ease-in-out;
+@layer components {
+  .navbar {
+    @apply fixed w-full left-1/2 py-5 px-5 md:px-20 -translate-x-1/2 z-[100] transition-all duration-300 ease-in-out;
 
-  &.scrolled {
-    @apply top-0 bg-border/40 dark:bg-border/10 backdrop-blur-xs;
-  }
+    &.scrolled {
+      @apply top-0 bg-border/20 dark:bg-border/40 backdrop-blur-xs;
+    }
 
-  &.not-scrolled {
-    @apply md:top-10 top-0 bg-transparent;
-  }
+    &.not-scrolled {
+      @apply md:top-10 top-0 bg-transparent;
+    }
 
-  .inner {
-    @apply mx-auto flex items-center justify-between;
-  }
+    .inner {
+      @apply mx-auto flex items-center justify-between;
+    }
 
-  .logo {
-    @apply text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
-  }
+    .logo {
+      @apply text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
+    }
 
-  nav.desktop {
-    @apply hidden lg:flex items-center;
+    nav.desktop {
+      @apply hidden lg:flex items-center;
 
-    ul {
-      @apply flex space-x-8;
+      ul {
+        @apply flex space-x-8;
 
-      li {
-        @apply relative;
+        li {
+          @apply relative;
 
-        span {
-          @apply transition-colors duration-300  hover:text-secondary-foreground;
-        }
+          span {
+            @apply transition-colors duration-300  hover:text-secondary-foreground;
+          }
 
-        .underline {
-          @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary-foreground transition-all duration-300 group-hover:w-full;
+          .underline {
+            @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary-foreground transition-all duration-300 group-hover:w-full;
+          }
         }
       }
     }
+  }
+
+  /* General Grids */
+  .grid-base {
+    @apply grid grid-cols-1;
+  }
+
+  .grid-2-cols {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+  }
+
+  .grid-3-cols {
+    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6;
+  }
+
+  .grid-3-cols-md-tight {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0;
+  }
+
+  .grid-4-cols {
+    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7;
+  }
+
+  .grid-12-cols {
+    @apply grid grid-cols-1 xl:grid-cols-12 gap-10;
   }
 }
 
@@ -166,6 +177,7 @@ section {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --aspect-retro: 3 / 4;
 }
 
 .dark {
