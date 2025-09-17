@@ -3,7 +3,7 @@ import type { NavigationLink } from '#shared/types'
 import { Moon, Sun } from 'lucide-vue-next'
 
 const navLinks: NavigationLink[] = [
-  { name: 'Home', url: '/#home' },
+  { name: 'Home', url: '/#hero' },
   { name: 'Services', url: '/#services' },
   { name: 'Skills', url: '/#skills' },
   { name: 'Portfolios', url: '/#portfolios' },

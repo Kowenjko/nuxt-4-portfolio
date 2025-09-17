@@ -14,6 +14,8 @@ export default defineNuxtConfig({
     'nuxt-typed-router',
     '@pinia/nuxt',
     'shadcn-nuxt',
+    'v-gsap-nuxt',
+    '@nuxt/icon',
   ],
   components: [
     {
@@ -32,5 +34,11 @@ export default defineNuxtConfig({
   shadcn: {
     prefix: '',
     componentDir: './app/components/ui',
+  },
+  icon: {
+    provider: 'iconify',
+    customCollections: [{ prefix: 'my-icon', dir: 'assets/icons' }],
+    mode: 'svg',
+    size: '1.5rem',
   },
 })
