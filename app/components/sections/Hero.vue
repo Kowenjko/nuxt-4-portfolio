@@ -11,6 +11,23 @@ onMounted(() => {
     { y: 0, opacity: 1, stagger: 0.3, duration: 1, ease: 'power2.inOut' }
   )
 
+  gsapFromTo(
+    '.social-links',
+    {
+      x: -100,
+      opacity: 0,
+    },
+    { x: 0, opacity: 1, stagger: 1, duration: 1.5, ease: 'power2.inOut' }
+  )
+  gsapFromTo(
+    '.button-resume',
+    {
+      x: 100,
+      opacity: 0,
+    },
+    { x: 0, opacity: 1, stagger: 0.3, duration: 1, ease: 'power2.inOut' }
+  )
+
   gsapTimeline({
     scrollTrigger: {
       trigger: '#hero',
@@ -43,8 +60,8 @@ onMounted(() => {
           clients. Responsible, collaborative, and motivated to continuously improve skills and learn new technologies.
         </p>
         <div class="flex items-center justify-between mt-16">
-          <SocialLinks />
-          <ButtonResume />
+          <SocialLinks class="social-links" />
+          <ButtonResume class="button-resume" />
         </div>
       </div>
       <div class="wrapper-avatar justify-items-center h-full">
