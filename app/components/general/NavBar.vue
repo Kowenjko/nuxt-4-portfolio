@@ -7,9 +7,9 @@ const { scrollToId } = useScrollNav()
 <template>
   <nav class="desktop">
     <ul>
-      <li class="group" v-for="{ url, name } in navLinks" :key="name">
+      <li class="group" v-for="{ url, title } in navLinks" :key="title">
         <a @click="scrollToId(url)" class="cursor-pointer">
-          <span>{{ name }}</span>
+          <span>{{ title }}</span>
           <span class="underline" />
         </a>
       </li>

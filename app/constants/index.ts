@@ -1,9 +1,29 @@
-export const navLinks: NavigationLink[] = [
-  { name: 'Home', url: 'hero' },
-  { name: 'Services', url: 'services' },
-  { name: 'Skills', url: 'skills' },
-  { name: 'Portfolios', url: 'portfolios' },
-  { name: 'Contact', url: 'contact' },
+export const navLinks = [
+  { title: 'Home', url: 'hero' },
+  { title: 'Services', url: 'services' },
+  { title: 'Skills', url: 'skills' },
+  { title: 'Portfolios', url: 'portfolios' },
+  { title: 'Contact', url: 'contact' },
+]
+
+export const technologies = [
+  { title: 'Nuxt 4', icon: 'cib:nuxt-js' },
+  { title: 'Vue 3', icon: 'cib:vue-js' },
+  { title: 'React', icon: 'cib:react' },
+  { title: 'Next', icon: 'cib:next-js' },
+  { title: 'Python', icon: 'cib:python' },
+  { title: 'Django', icon: 'cib:django' },
+  { title: 'JavaScript', icon: 'cib:javascript' },
+  { title: 'TypeScript', icon: 'cib:typescript' },
+  { title: 'Tailwind', icon: 'mdi:tailwind' },
+  { title: 'Sass', icon: 'cib:sass' },
+  { title: 'HTML5', icon: 'cib:html5' },
+  { title: 'CSS3', icon: 'cib:css3' },
+]
+
+export const socialLinks = [
+  { icon: 'uil:linkedin-alt', url: 'https://www.linkedin.com/in/kovenko' },
+  { icon: 'uil:github-alt', url: 'https://github.com/kowenjko' },
 ]
 
 export const services = [
@@ -21,13 +41,13 @@ export const services = [
   },
   {
     title: 'UI/UX Implementation',
-    icon: 'gg:ui-kit',
+    icon: 'vaadin:palete',
     description:
       'Translating design mockups (Figma → Vue/React) into clean code, creating intuitive user interfaces with Tailwind, Vuetify, Material UI.',
   },
   {
     title: 'Project Collaboration & Support',
-    icon: 'uil-servers',
+    icon: 'fa7-regular:handshake-simple',
     description:
       'Contributing to team projects with Git, Jira, Trello, Docker. Providing ongoing support and improving existing solutions.',
   },
