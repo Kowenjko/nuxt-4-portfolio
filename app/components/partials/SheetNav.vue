@@ -13,7 +13,9 @@ const { scrollToId } = useScrollNav()
     </SheetTrigger>
     <SheetContent class="z-100">
       <SheetHeader>
-        <SheetTitle> <ButtonTheme /></SheetTitle>
+        <SheetTitle>
+          <ButtonTheme />
+        </SheetTitle>
         <SheetDescription> </SheetDescription>
       </SheetHeader>
       <nav class="p-4">
@@ -28,7 +30,7 @@ const { scrollToId } = useScrollNav()
       </nav>
       <SheetFooter>
         <SheetClose as-child>
-          <Button type="submit"> Close </Button>
+          <Button type="submit">Close</Button>
         </SheetClose>
       </SheetFooter>
     </SheetContent>
