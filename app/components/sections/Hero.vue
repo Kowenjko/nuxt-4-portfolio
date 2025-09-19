@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 const { months, years } = getYearsAtWork()
 
+const endValueY = computed(() => (isMobile.value ? 50 : 180))
+
 onMounted(() => {
   gsapFromTo(
     'h1, p',
@@ -31,11 +33,22 @@ onMounted(() => {
   gsapTimeline({
     scrollTrigger: {
       trigger: '#hero',
-      start: 'top 60%',
+      start: 'center 60%',
       end: 'bottom top',
       scrub: true,
     },
-  }).fromTo('.avatar', { y: 0 }, { y: 180, ease: 'power2.inOut' })
+  }).fromTo('.avatar', { y: 0 }, { y: endValueY.value, ease: 'power2.inOut' })
+})
+
+watch(endValueY, (value) => {
+  gsapTimeline({
+    scrollTrigger: {
+      trigger: '#hero',
+      start: 'center 60%',
+      end: 'bottom top',
+      scrub: true,
+    },
+  }).fromTo('.avatar', { y: 0 }, { y: value, ease: 'power2.inOut' })
 })
 </script>
 
@@ -65,13 +78,13 @@ onMounted(() => {
         </div>
       </div>
       <div class="wrapper-avatar justify-items-center h-full">
-        <div class="avatar rounded-3xl">
+        <div class="avatar rounded-3xl w-60 sm:w-72 md:w-80 lg:w-96">
           <NuxtImg
             src="/images/hero.png"
             format="webp"
             alt="hero"
-            class="rounded-3xl aspect-retro object-cover"
-            width="396px"
+            width="384px"
+            class="rounded-3xl aspect-retro object-cover w-96"
             loading="lazy"
             placeholder
           />
@@ -98,7 +111,6 @@ p {
 }
 
 .avatar {
-  max-width: 396px;
   aspect-ratio: 3/4;
   position: relative;
 

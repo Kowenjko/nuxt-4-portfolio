@@ -5,20 +5,18 @@ onMounted(() => {
   gsapFromTo(
     '.tech-card',
     {
-      // Initial values
-      y: 50, // Move the cards down by 50px
-      opacity: 0, // Set the opacity to 0
+      y: 50,
+      opacity: 0,
     },
     {
-      // Final values
-      y: 0, // Move the cards back to the top
-      opacity: 1, // Set the opacity to 1
-      duration: 1, // Duration of the animation
-      ease: 'power2.inOut', // Ease of the animation
-      stagger: 0.2, // Stagger the animation by 0.2 seconds
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.inOut',
+      stagger: 0.2,
       scrollTrigger: {
-        trigger: '#services', // Trigger the animation when the user scrolls to the #skills wrapper
-        start: 'top center', // Start the animation when the top of the wrapper is at the center of the screen
+        trigger: '#services',
+        start: 'top center',
       },
     }
   )
@@ -26,10 +24,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="container mx-auto px-10 pt-24" id="services">
-    <TitleCategory title="I specialize in" category="Services" />
-    <div class="grid-4-cols py-24">
-      <GlowCard class="tech-card" v-for="(service, index) in services" :key="index" :card="service" />
+  <section class="pt-44 sm:py-24" id="services">
+    <div class="container mx-auto px-10">
+      <TitleCategory title="I specialize in" category="Services" />
+      <div class="grid-4-cols pt-24 pb-10">
+        <GlowCard class="tech-card" v-for="(service, index) in services" :key="index" :card="service" />
+      </div>
     </div>
+
+    <MarqueeElement class="pb-24" />
   </section>
 </template>

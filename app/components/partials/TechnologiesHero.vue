@@ -19,10 +19,10 @@ import { technologies } from '@/constants'
     >
       <swiper-slide
         class="text-2xl flex justify-end items-center gap-2"
-        v-for="(word, index) in technologies"
+        v-for="(technologY, index) in technologies"
         :key="index"
       >
-        <Icon :name="word.icon" class="w-7 h-7" /> <span> {{ word.title }} </span>
+        <Icon :name="technologY.icon" class="w-7 h-7" /> <span> {{ technologY.title }} </span>
       </swiper-slide>
     </swiper-container>
   </ClientOnly>

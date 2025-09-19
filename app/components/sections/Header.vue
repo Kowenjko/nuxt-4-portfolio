@@ -11,8 +11,9 @@ const scrolled = computed(() => scrollY.value > 10)
       <a @click="scrollToId('hero')" class="logo cursor-pointer"> Kovenko.</a>
 
       <NavBar />
-      <div>
-        <ButtonTheme />
+      <div class="flex items-center gap-4">
+        <ButtonTheme class="hidden lg:block" />
+        <SheetNav />
       </div>
     </div>
   </header>
