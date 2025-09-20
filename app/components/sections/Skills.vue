@@ -21,13 +21,52 @@ const progressBackends = {
     { title: 'PostgresSQL', progress: 75 },
   ],
 }
+
+onMounted(() => {
+  gsapFromTo(
+    '.skills-left',
+    {
+      x: -100,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 1,
+      duration: 1.5,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: '#skills',
+        start: 'top 60%',
+      },
+    }
+  )
+  gsapFromTo(
+    '.skills-right',
+    {
+      x: 100,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      duration: 1,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: '#skills',
+        start: 'top 60%',
+      },
+    }
+  )
+})
 </script>
 
 <template>
   <section class="container mx-auto p-10 pt-24" id="skills">
     <TitleCategory title="My technical level" category="Skills" />
     <div class="grid-2-cols gap-20">
-      <Accordion type="single" collapsible :default-value="progressFrontend.value">
+      <Accordion class="skills-left" type="single" collapsible :default-value="progressFrontend.value">
         <AccordionItem :value="progressFrontend.value">
           <AccordionTrigger>
             <div class="flex items-center gap-4 text-3xl font-bold">
@@ -46,7 +85,7 @@ const progressBackends = {
         </AccordionItem>
       </Accordion>
 
-      <Accordion type="single" collapsible>
+      <Accordion class="skills-right" type="single" collapsible>
         <AccordionItem :value="progressBackends.value">
           <AccordionTrigger>
             <div class="flex items-center gap-4 text-3xl font-bold">

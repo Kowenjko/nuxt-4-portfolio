@@ -22,7 +22,7 @@ import { technologies } from '@/constants'
         v-for="(technologY, index) in technologies"
         :key="index"
       >
-        <Icon :name="technologY.icon" class="w-7 h-7" /> <span> {{ technologY.title }} </span>
+        <Icon :name="technologY.icon" class="w-7 h-7" /> <span class="text-2xl"> {{ technologY.title }} </span>
       </swiper-slide>
     </swiper-container>
   </ClientOnly>

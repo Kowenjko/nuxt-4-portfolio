@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const works = [
+const experiences = [
   {
     title: 'Frontend Developer',
     name: 'ABVV.Group',
@@ -23,9 +23,9 @@ const works = [
     icon: '/svg/nexoft.svg',
     responsibilities: [
       'Built e-commerce solutions on Shopify and Shopware',
-      'Worked on Vue 3 / Nuxt 3 projects with Pinia, Tailwind, Vuetify',
+      'experienceed on Vue 3 / Nuxt 3 projects with Pinia, Tailwind, Vuetify',
       'Integrated APIs, Firebase, JWT, and openAPI services',
-      'Participated in agile teamwork using Git, Jira, Slack, ClickUp',
+      'Participated in agile teamexperience using Git, Jira, Slack, ClickUp',
     ],
     description:
       'Nexoft UG is an international software development company delivering custom web applications, e-commerce solutions, and scalable SaaS platforms for clients worldwide.',
@@ -37,7 +37,7 @@ const works = [
     date: '2021',
     icon: '/svg/softserve.svg',
     description:
-      'An intensive 2-month training program focused on Python and Django development, including teamwork and practical exercises.',
+      'An intensive 2-month training program focused on Python and Django development, including teamexperience and practical exercises.',
     responsibilities: [
       'Completed theoretical and practical tasks assigned by mentors',
       'Built a web project using Django',
@@ -117,15 +117,15 @@ onMounted(() => {
       <div class="relative z-50 xl:space-y-32 space-y-10">
         <div
           class="flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between"
-          v-for="(work, index) in works"
+          v-for="(experience, index) in experiences"
           :key="index"
         >
           <div class="w-3/4 xl:w-[45%]">
-            <GlowCard :card="{ description: work.description, title: work.name }" class="timeline-card" />
+            <GlowCard :card="{ description: experience.description, title: experience.name }" class="timeline-card" />
           </div>
           <div class="w-[10%] relative hidden xl:flex justify-center">
             <div class="absolute z-10 md:size-20 size-10 rounded-full flex justify-center items-center border bg-ring">
-              <img :src="work.icon" alt="logo" class="rounded p-2" />
+              <img :src="experience.icon" alt="logo" class="rounded p-2" />
             </div>
           </div>
           <div class="w-full xl:w-[45%]">
@@ -136,14 +136,14 @@ onMounted(() => {
               </div>
               <div class="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                 <div class="md:size-20 size-10 rounded-full flex xl:hidden justify-center items-center border bg-ring">
-                  <img :src="work.icon" alt="logo" class="rounded p-2" />
+                  <img :src="experience.icon" alt="logo" class="rounded p-2" />
                 </div>
                 <div>
-                  <h1 class="font-semibold text-3xl">{{ work.title }}</h1>
-                  <p class="my-5 flex gap-4"><Icon name="mdi:calendar-month-outline" /> {{ work.date }}</p>
+                  <h1 class="font-semibold text-3xl">{{ experience.title }}</h1>
+                  <p class="my-5 flex gap-4"><Icon name="mdi:calendar-month-outline" /> {{ experience.date }}</p>
                   <p class="text-ring italic">Responsibilities</p>
                   <ul class="list-disc ms-5 mt-5 flex flex-col gap-4">
-                    <li class="text-lg" v-for="(responsibility, i) in work.responsibilities" :key="i">
+                    <li class="text-lg" v-for="(responsibility, i) in experience.responsibilities" :key="i">
                       {{ responsibility }}
                     </li>
                   </ul>
