@@ -23,10 +23,10 @@ const handleMouseMove = (event: MouseEvent) => {
 <template>
   <Card class="card-wrapper" ref="cardRef" @mousemove="handleMouseMove">
     <div class="glow"></div>
-    <CardHeader>
+    <CardHeader v-if="card.title || card.icon">
       <CardTitle class="flex flex-col justify-center items-center text-lg gap-4">
         <Icon v-if="card.icon" :name="card.icon" class="w-10 h-10 mr-2 inline-block" />
-        <span>{{ card?.title }}</span>
+        <span v-if="card.title">{{ card?.title }}</span>
       </CardTitle>
       <CardDescription v-if="card.subtitle">{{ card?.subtitle }}.</CardDescription>
     </CardHeader>

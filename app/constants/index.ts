@@ -2,6 +2,7 @@ export const navLinks = [
   { title: 'Home', url: 'hero' },
   { title: 'Services', url: 'services' },
   { title: 'Skills', url: 'skills' },
+  { title: 'Experience', url: 'experience' },
   { title: 'Portfolios', url: 'portfolios' },
   { title: 'Contact', url: 'contact' },
 ]

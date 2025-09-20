@@ -77,6 +77,18 @@
   .grid-12-cols {
     @apply grid grid-cols-1 xl:grid-cols-12 gap-10;
   }
+
+  .timeline-wrapper {
+    @apply absolute top-0 left-1/2 h-full flex justify-center;
+  }
+
+  .timeline {
+    @apply absolute z-20 h-[105%] -top-10 -left-5 md:-left-[45px]  w-14 md:w-28 bg-background;
+  }
+
+  .timeline-logo {
+    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -138,19 +150,19 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
   @keyframes accordion-down {
-  from {
-    height: 0;
+    from {
+      height: 0;
     }
-  to {
-    height: var(--reka-accordion-content-height);
+    to {
+      height: var(--reka-accordion-content-height);
     }
   }
   @keyframes accordion-up {
-  from {
-    height: var(--reka-accordion-content-height);
+    from {
+      height: var(--reka-accordion-content-height);
     }
-  to {
-    height: 0;
+    to {
+      height: 0;
     }
   }
 }
@@ -224,15 +236,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground scroll-smooth font-inter;
-  }
 }
 
 @layer base {
