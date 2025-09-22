@@ -28,6 +28,21 @@ export default defineNuxtConfig({
   fonts: {
     families: [{ name: 'Inter', provider: 'google' }],
   },
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport:
+        'width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0',
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/my-logo-light.png',
+          sizes: '16x16',
+        },
+      ],
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

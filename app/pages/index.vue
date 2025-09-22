@@ -7,5 +7,6 @@
     <Skills />
     <Experience />
     <Works />
+    <Contacts />
   </main>
 </template>
