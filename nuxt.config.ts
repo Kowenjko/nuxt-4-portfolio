@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     'v-gsap-nuxt',
     '@nuxt/icon',
+    '@nuxtjs/i18n',
   ],
   components: [
     {
@@ -49,6 +50,45 @@ export default defineNuxtConfig({
   shadcn: {
     prefix: '',
     componentDir: './app/components/ui',
+  },
+  i18n: {
+    baseUrl: process.env.NUXT_CLIENT_URL,
+    langDir: 'locales',
+    strategy: 'prefix_except_default',
+    customRoutes: 'config',
+    compilation: { strictMessage: false, escapeHtml: false },
+    defaultLocale: 'en',
+    vueI18n: './i18n.config.ts',
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        iso: 'en-EN',
+        language: 'en-EN',
+        file: 'en.json',
+      },
+      {
+        code: 'uk',
+        name: 'Українська',
+        iso: 'uk-UA',
+        language: 'uk-UA',
+        file: 'uk.json',
+      },
+      {
+        code: 'ru',
+        name: 'Русская',
+        iso: 'ru-RU',
+        language: 'ru-RU',
+        file: 'ru.json',
+      },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: false,
+      fallbackLocale: 'en',
+    },
   },
   icon: {
     provider: 'iconify',

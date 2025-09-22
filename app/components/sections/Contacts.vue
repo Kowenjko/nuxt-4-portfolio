@@ -11,17 +11,17 @@ const contacts = [
 
 onMounted(() => {
   gsapFromTo(
-    '.contact',
+    '.contact-me',
     {
-      y: 50,
+      y: 200,
       opacity: 0,
     },
     {
       y: 0,
       opacity: 1,
-      duration: 1,
+      duration: 1.5,
       ease: 'power2.inOut',
-      stagger: 0.2,
+      stagger: 0.5,
       scrollTrigger: {
         trigger: '#contact',
         start: 'top center',
@@ -33,11 +33,11 @@ onMounted(() => {
 
 <template>
   <section class="py-10" id="contact">
-    <div class="container mx-auto">
+    <div class="container mx-auto px-10">
       <TitleCategory title="Contact me" category="Get in Touch" />
       <div class="grid-2-cols gap-20">
-        <FormContact class="contact" />
-        <ul class="flex flex-col gap-5 justify-center contact">
+        <FormContact class="contact-me" />
+        <ul class="flex flex-col gap-5 justify-center contact-me">
           <li v-for="contact in contacts" class="flex items-center gap-10" :key="contact.name">
             <div class="w-14 h-14 rounded-2xl flex justify-center items-center border border-ring p-2">
               <Icon class="" :name="contact.icon" />

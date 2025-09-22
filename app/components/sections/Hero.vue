@@ -53,10 +53,7 @@ watch(endValueY, (value) => {
 </script>
 
 <template>
-  <section
-    id="hero"
-    class="relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center"
-  >
+  <section id="hero" class="relative z-10 xl:mt-20 md:h-dvh h-[80vh] flex xl:items-center items-center justify-center">
     <div class="grid-2-cols container px-10">
       <div class="content-center hero-text">
         <h1
