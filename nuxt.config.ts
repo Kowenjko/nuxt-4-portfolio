@@ -56,4 +56,12 @@ export default defineNuxtConfig({
     mode: 'svg',
     size: '1.5rem',
   },
+  runtimeConfig: {
+    mailtrapToken: process.env.NUXT_MAILTRAP_TOKEN,
+    mailtrapEndpoint: process.env.NUXT_MAILTRAP_ENDPOINT,
+    mailtrapTemplate: process.env.NUXT_MAILTRAP_TEMPLATE,
+    mailtrapRecipient: process.env.NUXT_MAILTRAP_RECIPIENT,
+    resendApiKey: process.env.NUXT_RESEND_API_KEY,
+    clientUrl: process.env.NUXT_CLIENT_URL,
+  },
 })

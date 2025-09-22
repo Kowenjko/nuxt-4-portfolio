@@ -3,7 +3,7 @@ import { useForm } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import { z } from 'zod'
 import { toast } from 'vue-sonner'
-import { MailIcon } from 'lucide-vue-next'
+import { MailIcon, Loader2 } from 'lucide-vue-next'
 
 const formSchema = z.object({
   name: z.string().min(1, 'Required'),
@@ -22,10 +22,23 @@ const form = useForm({
   },
 })
 
+const loading = ref(false)
+
 const onSubmit = form.handleSubmit(async (values) => {
-  console.log(values)
-  toast.success('Message sent successfully!')
-  form.resetForm()
+  loading.value = true
+  try {
+    const response = await $fetch('/api/message', {
+      method: 'POST',
+      body: values,
+    })
+
+    toast.success('Message sent successfully!')
+    form.resetForm()
+  } catch (error) {
+    toast.error('Something went wrong. Please try again later.')
+  } finally {
+    loading.value = false
+  }
 })
 </script>
 
@@ -59,7 +72,11 @@ const onSubmit = form.handleSubmit(async (values) => {
       </FormItem>
     </FormField>
     <div class="flex justify-end">
-      <Button type="submit"> <MailIcon class="w-4 h-4 mr-2" /> Send Message </Button>
+      <Button type="submit" :disabled="loading">
+        <Loader2 v-if="loading" class="w-4 h-4 mr-2 animate-spin" />
+        <MailIcon v-else class="w-4 h-4 mr-2" />
+        Send Message
+      </Button>
     </div>
   </form>
 </template>

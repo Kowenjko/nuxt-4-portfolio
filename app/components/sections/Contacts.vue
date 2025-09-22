@@ -34,7 +34,7 @@ onMounted(() => {
 <template>
   <section class="py-10" id="contact">
     <div class="container mx-auto">
-      <TitleCategory title="Contacts" category="Get in Touch" />
+      <TitleCategory title="Contact me" category="Get in Touch" />
       <div class="grid-2-cols gap-20">
         <FormContact class="contact" />
         <ul class="flex flex-col gap-5 justify-center contact">

@@ -4,7 +4,7 @@ export const navLinks = [
   { title: 'Skills', url: 'skills' },
   { title: 'Experience', url: 'experience' },
   { title: 'Portfolios', url: 'portfolios' },
-  { title: 'Contact', url: 'contact' },
+  { title: 'Contact me', url: 'contact' },
 ]
 
 export const technologies = [
