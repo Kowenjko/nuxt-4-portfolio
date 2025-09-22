@@ -61,6 +61,7 @@ export default defineNuxtConfig({
     mailtrapEndpoint: process.env.NUXT_MAILTRAP_ENDPOINT,
     mailtrapTemplate: process.env.NUXT_MAILTRAP_TEMPLATE,
     mailtrapRecipient: process.env.NUXT_MAILTRAP_RECIPIENT,
+    telegramUrl: process.env.NUXT_TELEGRAM_URL,
     resendApiKey: process.env.NUXT_RESEND_API_KEY,
     clientUrl: process.env.NUXT_CLIENT_URL,
   },

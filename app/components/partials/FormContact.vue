@@ -24,10 +24,10 @@ const form = useForm({
 
 const loading = ref(false)
 
-const onSubmit = form.handleSubmit(async (values) => {
+const sendMessage = async (values: SendMessage, type: 'email' | 'telegram') => {
   loading.value = true
   try {
-    const response = await $fetch('/api/message', {
+    await $fetch(`/api/${type}`, {
       method: 'POST',
       body: values,
     })
@@ -39,11 +39,14 @@ const onSubmit = form.handleSubmit(async (values) => {
   } finally {
     loading.value = false
   }
-})
+}
+
+const onSubmitEmail = form.handleSubmit(async (values) => await sendMessage(values, 'email'))
+const onSubmitTelegram = form.handleSubmit(async (values) => await sendMessage(values, 'telegram'))
 </script>
 
 <template>
-  <form @submit="onSubmit" class="space-y-6">
+  <form class="space-y-6">
     <FormField v-slot="{ componentField }" name="name">
       <FormItem>
         <FormLabel>Name</FormLabel>
@@ -71,11 +74,16 @@ const onSubmit = form.handleSubmit(async (values) => {
         <FormMessage />
       </FormItem>
     </FormField>
-    <div class="flex justify-end">
-      <Button type="submit" :disabled="loading">
+    <div class="flex gap-4 justify-end">
+      <Button :disabled="loading" @click="onSubmitEmail">
         <Loader2 v-if="loading" class="w-4 h-4 mr-2 animate-spin" />
         <MailIcon v-else class="w-4 h-4 mr-2" />
         Send Message
+      </Button>
+      <Button :disabled="loading" @click="onSubmitTelegram">
+        <Loader2 v-if="loading" class="w-4 h-4 mr-2 animate-spin" />
+        <Icon v-else class="w-5 h-5 mr-2" name="mdi:telegram" />
+        Send message in Telegram
       </Button>
     </div>
   </form>
