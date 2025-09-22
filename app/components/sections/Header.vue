@@ -8,7 +8,9 @@ const scrolled = computed(() => scrollY.value > 10)
 <template>
   <header class="navbar" :class="[scrolled ? 'scrolled' : 'not-scrolled']">
     <div class="inner">
-      <a @click="scrollToId('hero')" class="logo cursor-pointer"> Kovenko.</a>
+      <a @click="scrollToId('hero')" class="logo cursor-pointer flex-center">
+        <NuxtImg src="/my-logo-light.png" width="50px" class="w-9" alt="logo" /> Kovenko
+      </a>
 
       <NavBar />
       <div class="flex items-center gap-4">

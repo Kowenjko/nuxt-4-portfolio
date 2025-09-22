@@ -5,7 +5,7 @@ import { socialLinks } from '@/constants'
 <template>
   <ul class="flex gap-4">
     <li v-for="(link, index) in socialLinks" :key="index">
-      <Button as-child size="icon" variant="ghost">
+      <Button as-child size="icon" variant="outline">
         <a :href="link.url" target="_blank" class="text-2xl">
           <Icon :name="link.icon" class="text-2xl" />
         </a>
