@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { experiences } from '@/constants'
+const { experiences } = useConstants()
 
 onMounted(() => {
   gsapUtils.toArray('.timeline-card').forEach((card: any) => {
@@ -95,7 +95,7 @@ onMounted(() => {
                 <div>
                   <h1 class="font-semibold text-3xl">{{ experience.title }}</h1>
                   <p class="my-5 flex gap-4"><Icon name="mdi:calendar-month-outline" /> {{ experience.date }}</p>
-                  <p class="text-ring italic">Responsibilities</p>
+                  <p class="text-ring italic">{{ $t('title.responsibilities') }}</p>
                   <ul class="list-disc ms-5 mt-5 flex flex-col gap-4">
                     <li class="text-lg" v-for="(responsibility, i) in experience.responsibilities" :key="i">
                       {{ responsibility }}

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { services } from '@/constants'
+const { services } = useConstants()
 
 onMounted(() => {
   gsapFromTo(

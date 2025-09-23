@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { Menu } from 'lucide-vue-next'
 
-import { navLinks } from '@/constants'
-
+const { navLinks } = useConstants()
 const { scrollToId } = useScrollNav()
 </script>
 

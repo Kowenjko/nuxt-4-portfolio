@@ -5,25 +5,255 @@
     "send_telegram": "Отправить сообщение в Telegram",
     "close": "Закрыть"
   },
-  "form": { "label": { "name": "Имя", "message": "Сообщение", "email": "Email" } },
-  "hero": {
-    "info": "с { years } годами и { months } месяцами коммерческого опыта. Специализируюсь на Vue 3 / Nuxt 3, создаю современные веб-приложения с интеграцией API и настраиваемыми функциями. Имею опыт работы как с украинскими, так и с международными клиентами. Ответственный, умею работать в команде, мотивирован на постоянное совершенствование навыков и изучение новых технологий."
+  "form": {
+    "label": {
+      "name": "Имя",
+      "message": "Сообщение",
+      "email": "Email"
+    }
   },
+  "title": { "responsibilities": "Обязанности" },
   "nav": {
     "category": {
       "services": "Услуги",
       "skills": "Навыки",
       "experience": "Опыт",
       "portfolios": "Портфолио",
-      "contact": "Контакты"
+      "contact": "Связаться со мной"
     },
     "title": {
-      "services": "Я специализируюсь на",
+      "services": "Мои специализации",
       "skills": "Мой технический уровень",
-      "experience": "Обзор моей карьеры",
+      "experience": "Обзор карьеры",
       "portfolios": "Мои работы",
       "portfolios_test": "Мои тестовые работы",
-      "contact": "Свяжитесь со мной"
+      "contact": "Связаться"
     }
+  },
+  "hero": {
+    "info": "с { years } годами и { months } месяцами коммерческого опыта. Специализируюсь на Vue 3 / Nuxt 3, создаю современные веб-приложения с интеграцией API и кастомной функциональностью. Опыт работы с украинскими и международными клиентами. Ответственный, командный игрок и мотивирован постоянно улучшать навыки и изучать новые технологии."
+  },
+  "services": {
+    "title": {
+      "frontend": "Разработка Frontend",
+      "e_commerce": "Разработка E-commerce",
+      "ui_ux": "Реализация UI/UX",
+      "support": "Сотрудничество и поддержка проектов"
+    },
+    "description": {
+      "frontend": "Создание современных веб-приложений на Vue 3 / Nuxt 3, интеграция API, оптимизация производительности и адаптивный дизайн.",
+      "e_commerce": "Разработка и поддержка интернет-магазинов на Shopify и Shopware, кастомизация функционала и интеграция платежных систем.",
+      "ui_ux": "Перевод макетов дизайна (Figma → Vue/React) в чистый код, создание интуитивно понятных интерфейсов с использованием Tailwind, Vuetify, Material UI.",
+      "support": "Участие в командных проектах с Git, Jira, Trello, Docker. Обеспечение постоянной поддержки и улучшение существующих решений."
+    }
+  },
+  "experiences": {
+    "abvv": {
+      "title": "Frontend-разработчик",
+      "date": "2023 - Настоящее время",
+      "description": "ABVV.Group — украинское цифровое агентство, специализирующееся на веб-разработке и решениях для e-commerce. Компания создает и поддерживает интернет-магазины, корпоративные сайты и лендинги, интегрируя CRM-системы и предоставляя постоянную поддержку.",
+      "responsibilities": [
+        "Разработка и поддержка проектов на Nuxt 3 / Vue 3",
+        "Интеграция API и сторонних сервисов",
+        "Реализация UI/UX функций согласно требованиям клиента",
+        "Сотрудничество с командой с использованием Git, Jira, Trello"
+      ]
+    },
+    "nexoft": {
+      "title": "Frontend-разработчик",
+      "date": "2021 - 2023",
+      "description": "Nexoft UG — международная компания по разработке программного обеспечения, предоставляющая кастомные веб-приложения, решения для e-commerce и масштабируемые SaaS-платформы для клиентов по всему миру.",
+      "responsibilities": [
+        "Создание e-commerce решений на Shopify и Shopware",
+        "Опыт работы с проектами на Vue 3 / Nuxt 3 с Pinia, Tailwind, Vuetify",
+        "Интеграция API, Firebase, JWT и openAPI сервисов",
+        "Участие в командной работе по методологии Agile с Git, Jira, Slack, ClickUp"
+      ]
+    },
+    "softServe": {
+      "title": "Full Stack-разработчик",
+      "date": "2021",
+      "description": "Интенсивная 2-месячная обучающая программа, сосредоточенная на разработке на Python и Django, включая командную работу и практические задания.",
+      "responsibilities": [
+        "Выполнение теоретических и практических заданий, поставленных менторами",
+        "Создание веб-проекта с использованием Django",
+        "Сотрудничество в небольших командах разработчиков (2–3 человека)",
+        "Практика контроля версий с Git и методологии Scrum"
+      ]
+    }
+  },
+  "works": {
+    "storeInUa": {
+      "title": "Интернет-магазин StoreInUa",
+      "category": "Онлайн-магазин",
+      "description": "StoreInUa — украинский онлайн-магазин электроники и бытовой техники (включая продукцию Apple, смартфоны и ноутбуки), предлагает низкие цены, официальную гарантию и быструю доставку по Киеву и Украине."
+    },
+    "pm_tehko": {
+      "title": "Автоматическая обработка прайс-листов",
+      "category": "Онлайн-сервис",
+      "description": "PM-Tehko — сервис для автоматического обновления цен и остатков. Объединяет прайс-листы поставщиков, данные конкурентов и базы контента в единый Master Price List. Через API сервис интегрируется с бухгалтерскими системами и интернет-магазинами, упрощая управление ценами и повышая конкурентоспособность товаров."
+    },
+    "poor_club": {
+      "title": "Клуб путешествий Poor Thing",
+      "category": "Туристическое агентство",
+      "description": "Путешествия по Украине и за границей с возможностью онлайн-бронирования транспорта и отелей."
+    },
+    "jounce_chat": {
+      "title": "Jounce",
+      "category": "AI маркетинг хаб",
+      "description": "AI-копирайтинг, графика и чат для маркетинговых команд."
+    },
+    "jounce_email": {
+      "title": "Jounce",
+      "category": "Система E-Mail",
+      "description": "Система рассылки с Email и Flow builder."
+    },
+    "newPet": {
+      "title": "NewPet",
+      "category": "Сервис приюта для животных",
+      "description": "Разработка фронтенда на основе дизайна, подключение к бэкенду CRUD, JWT авторизация."
+    },
+    "bitburger": {
+      "title": "Bitburger",
+      "category": "Онлайн-магазин",
+      "description": "Внесение изменений в дизайн и разработка функционала."
+    },
+    "mylo": {
+      "title": "Mylo",
+      "category": "Онлайн-магазин",
+      "description": "Создание индивидуальных разделов по дизайну."
+    },
+    "planted": {
+      "title": "Planted",
+      "category": "Онлайн-магазин",
+      "description": "Внесение изменений в дизайн фронтенда."
+    },
+    "purenature": {
+      "title": "Purenature",
+      "category": "Онлайн-магазин",
+      "description": "Внесение изменений в дизайн фронтенда."
+    }
+  },
+  "test_works": {
+    "nuxt_4_calendar": {
+      "title": "Nuxt 4 Календарь",
+      "category": "Календарь",
+      "description": "Тестовая программа для Nuxt 4 для создания событий."
+    },
+    "nuxt_4_auth": {
+      "title": "Nuxt 4 Auth",
+      "category": "Авторизация",
+      "description": "Авторизация с использованием Nuxt 3 и Drizzle."
+    },
+    "nuxt_whatsapp": {
+      "title": "Nuxt Whatsapp Clone",
+      "category": "Чат",
+      "description": "Клон мессенджера с использованием: Convex, ZegoCloud, Clerk, OpenAI, Emoji, Shadcn."
+    },
+    "nuxt_auth_mongoDB": {
+      "title": "Nuxt Auth MongoDB",
+      "category": "Авторизация",
+      "description": "Авторизация через Nuxt 3 и MongoDB с подтверждением по email путем ввода кода."
+    },
+    "zoom_clone": {
+      "title": "Zoom Клон",
+      "category": "Чат",
+      "description": "Примитивная копия встречи в Zoom с видео и чатом."
+    },
+    "mongoDB_trello": {
+      "title": "Nuxt MongoDB Trello",
+      "category": "Информация",
+      "description": "Минимальная копия Trello с использованием MongoDB."
+    },
+    "nuxt_trello": {
+      "title": "Nuxt Trello",
+      "category": "Информация",
+      "description": "Минимальная копия Trello с использованием localStorage."
+    },
+    "jotion": {
+      "title": "Jotion",
+      "category": "Документы",
+      "description": "Ваши идеи, документы и планы объединены в одном месте."
+    },
+    "chat_appwrite": {
+      "title": "Chat Appwrite",
+      "category": "Чат",
+      "description": "Реальный чат в режиме реального времени с Vue 3 и Appwrite."
+    },
+    "genius_ai": {
+      "title": "Genius AI",
+      "category": "AI",
+      "description": "AI-чат и генерация изображений, видео, музыки и кода, регистрация подписки через Stripe."
+    },
+    "estate": {
+      "title": "Estate",
+      "category": "Информация",
+      "description": "Современный рынок недвижимости с нуля с JWT авторизацией и toolkit."
+    },
+    "insove": {
+      "title": "Insove",
+      "category": "Информация",
+      "description": "Одностраничный сервис для врача."
+    },
+    "vue_todo": {
+      "title": "Vue 3 Todo",
+      "category": "Информация",
+      "description": "Демонстрационный сайт возможностей Vue 3 composition."
+    },
+    "game_battle": {
+      "title": "Игра Морской бой",
+      "category": "Игра",
+      "description": "Игра на JS, размещение кораблей автоматически или вручную. Правила стандартные. Побеждает тот, кто найдет все корабли."
+    },
+    "movie_viewing": {
+      "title": "Просмотр фильмов",
+      "category": "Видео",
+      "description": "Демонстрационный сайт на чистом JS без библиотек, минимум HTML. Присутствует анимация. Источник: News API."
+    },
+    "electro_shop": {
+      "title": "Electro Shop",
+      "category": "Магазин",
+      "description": "Демонстрационный сайт магазина на Django с использованием базы PostgreSQL."
+    },
+    "world_news": {
+      "title": "Мировые новости",
+      "category": "Новости",
+      "description": "Демонстрационный сайт на чистом JS без библиотек, минимум HTML. Присутствует анимация. Источник: News API."
+    },
+    "react_bootstrap": {
+      "title": "React-Bootstrap",
+      "category": "Информация",
+      "description": "В проекте использованы основные компоненты REACT-BOOTSTRAP для демонстрации темы 'История Windows'."
+    },
+    "contact_list": {
+      "title": "Список контактов",
+      "category": "Контакты",
+      "description": "Демонстрационный сайт со списком контактов на REACT - Redux + React - Bootstrap + React - Fontawesome. Данные хранятся и читаются из Firebase."
+    },
+    "material": {
+      "title": "Material-UI",
+      "category": "Информация",
+      "description": "Демонстрационный сайт на React с использованием Material-UI."
+    },
+    "yourcar": {
+      "title": "Yourcar",
+      "category": "Информация",
+      "description": "Демонстрационный сайт на React с использованием Styled-Components и Tailwind CSS."
+    },
+    "internet_shop": {
+      "title": "Интернет-магазин",
+      "category": "Магазин",
+      "description": "Демонстрационный сайт онлайн-магазина компьютерной техники с возможностью добавления и удаления товаров из корзины. Написан на React, Redux, Middleware."
+    },
+    "movie_react": {
+      "title": "Movie React",
+      "category": "Видео",
+      "description": "Демонстрационный сайт на React + Hooks + Styled-Components. Выводит информацию о фильмах. Источник: TMDB API."
+    }
+  },
+  "contacts": {
+    "address": { "title": "Адрес", "info": "Ровно" },
+    "telegram": { "title": "Telegram" },
+    "email": { "title": "Email" }
   }
 }

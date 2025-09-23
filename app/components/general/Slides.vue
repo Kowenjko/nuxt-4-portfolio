@@ -22,7 +22,7 @@ const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }
         :speed="800"
         :autoplay="{
           delay,
-          disableOnInteraction: true,
+          disableOnInteraction: false,
         }"
         :spaceBetween="50"
         :slides-per-view="1"

@@ -54,7 +54,7 @@ export default defineNuxtConfig({
   i18n: {
     baseUrl: process.env.NUXT_CLIENT_URL,
     langDir: 'locales',
-    strategy: 'prefix_except_default',
+    strategy: 'no_prefix', //no_prefix prefix_except_default
     customRoutes: 'config',
     compilation: { strictMessage: false, escapeHtml: false },
     defaultLocale: 'en',

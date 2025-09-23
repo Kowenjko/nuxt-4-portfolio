@@ -1,10 +1,10 @@
-export const navLinks = [
-  { title: 'Services', url: 'services' },
-  { title: 'Skills', url: 'skills' },
-  { title: 'Experience', url: 'experience' },
-  { title: 'Portfolios', url: 'portfolios' },
-  { title: 'Contact me', url: 'contact' },
-]
+// export const navLinks = [
+//   { title: 'Services', url: 'services' },
+//   { title: 'Skills', url: 'skills' },
+//   { title: 'Experience', url: 'experience' },
+//   { title: 'Portfolios', url: 'portfolios' },
+//   { title: 'Contact me', url: 'contact' },
+// ]
 
 // export const navLinks = [
 //   { title: t('nav.category.services'), url: 'services' },
@@ -34,32 +34,32 @@ export const socialLinks = [
   { icon: 'uil:github-alt', url: 'https://github.com/kowenjko' },
 ]
 
-export const services = [
-  {
-    title: 'Frontend Web Development',
-    icon: 'uil-layer-group',
-    description:
-      'Building modern web applications with Vue 3 / Nuxt 3, API integration, performance optimization, and responsive design.',
-  },
-  {
-    title: 'E-commerce Development',
-    icon: 'streamline-ultimate:e-commerce-shopping-bag',
-    description:
-      'Developing and maintaining online stores on Shopify and Shopware, customizing functionality, and integrating payment systems.',
-  },
-  {
-    title: 'UI/UX Implementation',
-    icon: 'vaadin:palete',
-    description:
-      'Translating design mockups (Figma → Vue/React) into clean code, creating intuitive user interfaces with Tailwind, Vuetify, Material UI.',
-  },
-  {
-    title: 'Project Collaboration & Support',
-    icon: 'fa7-regular:handshake-simple',
-    description:
-      'Contributing to team projects with Git, Jira, Trello, Docker. Providing ongoing support and improving existing solutions.',
-  },
-]
+// export const services = [
+//   {
+//     title: 'Frontend Web Development',
+//     icon: 'uil-layer-group',
+//     description:
+//       'Building modern web applications with Vue 3 / Nuxt 3, API integration, performance optimization, and responsive design.',
+//   },
+//   {
+//     title: 'E-commerce Development',
+//     icon: 'streamline-ultimate:e-commerce-shopping-bag',
+//     description:
+//       'Developing and maintaining online stores on Shopify and Shopware, customizing functionality, and integrating payment systems.',
+//   },
+//   {
+//     title: 'UI/UX Implementation',
+//     icon: 'vaadin:palete',
+//     description:
+//       'Translating design mockups (Figma → Vue/React) into clean code, creating intuitive user interfaces with Tailwind, Vuetify, Material UI.',
+//   },
+//   {
+//     title: 'Project Collaboration & Support',
+//     icon: 'fa7-regular:handshake-simple',
+//     description:
+//       'Contributing to team projects with Git, Jira, Trello, Docker. Providing ongoing support and improving existing solutions.',
+//   },
+// ]
 
 export const experiences = [
   {
@@ -129,101 +129,6 @@ export const progressBackends = {
     { title: 'PostgresSQL', progress: 75 },
   ],
 }
-
-export const workProjects = [
-  {
-    title: 'StoreInUa online store',
-    urlGit: null,
-    url: 'https://storeinua.com',
-    keywords: ['Nuxt-3', 'I18n', 'Pinia', 'Vuelidate'],
-    category: 'Online Shop',
-    description:
-      'StoreInUa is a Ukrainian online store selling electronics and household appliances (including Apple products, smartphones, and laptops), offering low prices, official warranties, and fast delivery in Kyiv and throughout Ukraine.',
-    imageUrl: '/webp/tehko.webp',
-  },
-  {
-    title: 'Automatic processing of price lists',
-    urlGit: null,
-    url: null,
-    keywords: ['Vue', 'Vuetify', 'I18n', 'Pinia', 'Axios'],
-    category: 'Online service',
-    description:
-      'PM-Tehko is a service for automatic price and stock updates. It combines supplier price lists, competitor data, and content databases into a single Master Price List. Through its API, the service integrates with accounting systems and online stores, simplifying price management and increasing product competitiveness.',
-    imageUrl: '/webp/pm-tehko.webp',
-  },
-  {
-    title: 'Бідняжка Тур-клуб',
-    urlGit: null,
-    url: null,
-    keywords: ['Nuxt-3', 'Sass', 'I18n', 'Pinia'],
-    category: 'Travel agency',
-    description: 'Travel - within Ukraine and abroad, with the option of online booking of transport and hotels.',
-    imageUrl: '/webp/bidnyagka.webp',
-  },
-  {
-    title: 'Jounce',
-    urlGit: null,
-    url: 'https://app.jounce.ai/',
-    keywords: ['Vue', 'OpenAI', 'Tailwind', 'Firebase'],
-    category: 'AI marketing hub',
-    description: 'AI copywriting, artwork, and chat for marketing teams',
-    imageUrl: '/webp/jounce-2.webp',
-  },
-  {
-    title: 'Jounce',
-    urlGit: null,
-    url: null,
-    keywords: ['Vue', 'Vite', 'Tailwind', 'Firebase'],
-    category: 'E-Mail System',
-    description: 'Newsletter System with Email and Flow builder.',
-    imageUrl: '/webp/jounce.webp',
-  },
-  {
-    title: 'NewPet',
-    urlGit: null,
-    url: 'https://pfotenkompass.fressnapf.de/',
-    keywords: ['Nuxt', 'Vuetify'],
-    category: 'Pet shelter service',
-    description: 'Developed the frontend based on the design, connecting to the backend CRUD, JWT authorization.',
-    imageUrl: '/webp/newpet.webp',
-  },
-  {
-    title: 'Bitburger',
-    urlGit: null,
-    url: null,
-    keywords: ['Shopware', 'Vue'],
-    category: 'Online-Shop',
-    description: 'Made design changes, developed functionality.',
-    imageUrl: '/webp/pitburger.webp',
-  },
-  {
-    title: 'Mylo',
-    urlGit: null,
-    url: 'https://mylo.de/pages/suewag-ebike-abo',
-    keywords: ['Shopify'],
-    category: 'Online-Shop',
-    description: 'Creation of individual sections by design',
-    imageUrl: '/webp/mylo.webp',
-  },
-  {
-    title: 'Planted',
-    urlGit: null,
-    url: 'https://uk.shop.eatplanted.com/',
-    keywords: ['Shopify'],
-    category: 'Online-Shop',
-    description: 'Made changes to the frontend design.',
-    imageUrl: '/webp/planted.webp',
-  },
-  {
-    title: 'Purenature',
-    urlGit: null,
-    url: 'https://www.purenature-shop.de/',
-    keywords: ['Shopify'],
-    category: 'Online-Shop',
-    description: 'Made changes to the frontend design.',
-    imageUrl: '/webp/purenature.webp',
-  },
-]
 
 export const testProjects = [
   {

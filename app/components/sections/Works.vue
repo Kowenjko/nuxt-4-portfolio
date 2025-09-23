@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { workProjects, testProjects } from '@/constants'
+const { workProjects, testProjects } = useConstants()
 </script>
 
 <template>
