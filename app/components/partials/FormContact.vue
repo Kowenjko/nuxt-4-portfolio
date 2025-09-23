@@ -49,27 +49,27 @@ const onSubmitTelegram = form.handleSubmit(async (values) => await sendMessage(v
   <form class="space-y-6">
     <FormField v-slot="{ componentField }" name="name">
       <FormItem>
-        <FormLabel>Name</FormLabel>
+        <FormLabel>{{ $t('form.label.name') }}</FormLabel>
         <FormControl>
-          <Input v-bind="componentField" placeholder="Name" />
+          <Input v-bind="componentField" :placeholder="$t('form.label.name')" />
         </FormControl>
         <FormMessage />
       </FormItem>
     </FormField>
     <FormField v-slot="{ componentField }" name="email">
       <FormItem>
-        <FormLabel>Email</FormLabel>
+        <FormLabel>{{ $t('form.label.email') }}</FormLabel>
         <FormControl>
-          <Input v-bind="componentField" placeholder="Email" />
+          <Input v-bind="componentField" :placeholder="$t('form.label.email')" />
         </FormControl>
         <FormMessage />
       </FormItem>
     </FormField>
     <FormField v-slot="{ componentField }" name="message">
       <FormItem>
-        <FormLabel>Message</FormLabel>
+        <FormLabel>{{ $t('form.label.message') }}</FormLabel>
         <FormControl>
-          <Textarea v-bind="componentField" class="min-h-40" placeholder="Message" />
+          <Textarea v-bind="componentField" class="min-h-40" :placeholder="$t('form.label.message')" />
         </FormControl>
         <FormMessage />
       </FormItem>
@@ -78,12 +78,12 @@ const onSubmitTelegram = form.handleSubmit(async (values) => await sendMessage(v
       <Button :disabled="loading" @click="onSubmitEmail">
         <Loader2 v-if="loading" class="w-4 h-4 mr-2 animate-spin" />
         <MailIcon v-else class="w-4 h-4 mr-2" />
-        Send Message
+        {{ $t('button.send_message') }}
       </Button>
       <Button :disabled="loading" @click="onSubmitTelegram">
         <Loader2 v-if="loading" class="w-4 h-4 mr-2 animate-spin" />
         <Icon v-else class="w-5 h-5 mr-2" name="mdi:telegram" />
-        Send message in Telegram
+        {{ $t('button.send_telegram') }}
       </Button>
     </div>
   </form>

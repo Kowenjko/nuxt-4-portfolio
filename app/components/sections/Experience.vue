@@ -66,7 +66,7 @@ onMounted(() => {
 
 <template>
   <section class="container mx-auto p-10 pt-24" id="experience">
-    <TitleCategory title="My Career Overview" category="Experience" />
+    <TitleCategory :title="$t('nav.title.experience')" :category="$t('nav.category.experience')" />
     <div class="mt-32 relative">
       <div class="relative z-50 xl:space-y-32 space-y-10">
         <div

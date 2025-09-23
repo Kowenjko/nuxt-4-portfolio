@@ -14,7 +14,7 @@ const { scrollToId } = useScrollNav()
     <SheetContent class="z-100">
       <SheetHeader>
         <SheetTitle class="flex gap-2">
-          <ButtonLang />
+          <ButtonLang is-mobile />
           <ButtonTheme />
         </SheetTitle>
         <SheetDescription> </SheetDescription>
@@ -31,7 +31,7 @@ const { scrollToId } = useScrollNav()
       </nav>
       <SheetFooter>
         <SheetClose as-child>
-          <Button type="submit">Close</Button>
+          <Button type="submit">{{ $t('button.close') }}</Button>
         </SheetClose>
       </SheetFooter>
     </SheetContent>

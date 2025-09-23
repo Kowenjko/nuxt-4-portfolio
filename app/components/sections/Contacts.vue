@@ -34,7 +34,7 @@ onMounted(() => {
 <template>
   <section class="py-10" id="contact">
     <div class="container mx-auto px-10">
-      <TitleCategory title="Contact me" category="Get in Touch" />
+      <TitleCategory :title="$t('nav.title.contact')" :category="$t('nav.category.contact')" />
       <div class="grid-2-cols gap-20">
         <FormContact class="contact-me" />
         <ul class="flex flex-col gap-5 justify-center contact-me">

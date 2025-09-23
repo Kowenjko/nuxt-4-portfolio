@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import { navLinks } from '@/constants'
-
 const { scrollToId } = useScrollNav()
+const { navLinks } = useConstants()
 </script>
 
 <template>

@@ -1,11 +1,18 @@
 export const navLinks = [
-  { title: 'Home', url: 'hero' },
   { title: 'Services', url: 'services' },
   { title: 'Skills', url: 'skills' },
   { title: 'Experience', url: 'experience' },
   { title: 'Portfolios', url: 'portfolios' },
   { title: 'Contact me', url: 'contact' },
 ]
+
+// export const navLinks = [
+//   { title: t('nav.category.services'), url: 'services' },
+//   { title: t('nav.category.skills'), url: 'skills' },
+//   { title: t('nav.category.experience'), url: 'experience' },
+//   { title: t('nav.category.portfolios'), url: 'portfolios' },
+//   { title: t('nav.category.contact'), url: 'contact' },
+// ]
 
 export const technologies = [
   { title: 'Nuxt 4', icon: 'cib:nuxt-js' },

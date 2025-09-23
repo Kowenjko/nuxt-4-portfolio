@@ -1,1 +1,29 @@
-{}
+{
+  "button": {
+    "resume": "Resume",
+    "send_message": "Send Message",
+    "send_telegram": "Send message in Telegram",
+    "close": "Close"
+  },
+  "form": { "label": { "name": "Name", "message": "Message", "email": "Email" } },
+  "hero": {
+    "info": "with { years } years { months } months of commercial experience. Specializing in Vue 3 / Nuxt 3, I build modern web applications with API integration and custom functionality. Experienced in working with both Ukrainian and international clients. Responsible, collaborative, and motivated to continuously improve skills and learn new technologies."
+  },
+  "nav": {
+    "category": {
+      "services": "Services",
+      "skills": "Skills",
+      "experience": "Experience",
+      "portfolios": "Portfolios",
+      "contact": "Contact me"
+    },
+    "title": {
+      "services": "I specialize in",
+      "skills": "My technical level",
+      "experience": "My Career Overview",
+      "portfolios": "My Works",
+      "portfolios_test": "My Test Works",
+      "contact": "Get in Touch"
+    }
+  }
+}

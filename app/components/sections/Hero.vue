@@ -64,10 +64,8 @@ watch(endValueY, (value) => {
           <TechnologiesHero />
         </h1>
         <p class="pt-10">
-          <span class="text-zinc-900 dark:text-zinc-500 m-0 font-bold">Frontend Developer</span> with {{ years }} years
-          {{ months }} months of commercial experience. Specializing in Vue 3 / Nuxt 3, I build modern web applications
-          with API integration and custom functionality. Experienced in working with both Ukrainian and international
-          clients. Responsible, collaborative, and motivated to continuously improve skills and learn new technologies.
+          <span class="text-zinc-900 dark:text-zinc-500 m-0 font-bold">Frontend Developer</span>
+          {{ $t('hero.info', { years, months }) }}
         </p>
         <div class="flex items-center justify-between mt-16">
           <SocialLinks class="social-links" />
@@ -82,8 +80,6 @@ watch(endValueY, (value) => {
             alt="hero"
             width="384px"
             class="rounded-3xl aspect-retro object-cover w-96"
-            loading="lazy"
-            placeholder
           />
         </div>
       </div>
