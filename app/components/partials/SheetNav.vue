@@ -13,7 +13,8 @@ const { scrollToId } = useScrollNav()
     </SheetTrigger>
     <SheetContent class="z-100">
       <SheetHeader>
-        <SheetTitle>
+        <SheetTitle class="flex gap-2">
+          <ButtonLang />
           <ButtonTheme />
         </SheetTitle>
         <SheetDescription> </SheetDescription>

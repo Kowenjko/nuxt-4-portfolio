@@ -68,7 +68,7 @@ export default defineNuxtConfig({
         file: 'en.json',
       },
       {
-        code: 'uk',
+        code: 'ua',
         name: 'Українська',
         iso: 'uk-UA',
         language: 'uk-UA',

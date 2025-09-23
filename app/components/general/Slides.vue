@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Autoplay, Navigation } from 'swiper/modules'
+import { Autoplay } from 'swiper/modules'
 
 const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }>()
 </script>
@@ -7,7 +7,6 @@ const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }
 <template>
   <ClientOnly>
     <div class="relative">
-      <!-- кастомні кнопки -->
       <div class="absolute w-full top-0 right-20 flex justify-end gap-2 px-4 z-10">
         <Button class="swiper-button-prev-custom cursor-pointer" variant="outline"
           ><Icon name="mdi:chevron-left"
@@ -59,7 +58,7 @@ const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }
           <Dialog>
             <DialogTrigger>
               <Card
-                class="w-full sm:w-sm md:w-lg hover:scale-105 transition-all duration-300 h-[460px] pt-0 overflow-hidden cursor-pointer"
+                class="w-full sm:w-sm md:w-lg hover:scale-105 transition-all duration-300 h-[460px] pt-0 overflow-hidden cursor-pointer z-100"
               >
                 <div>
                   <nuxt-img :src="work.imageUrl" format="webp" class="object-cover h-[300px] w-full" />

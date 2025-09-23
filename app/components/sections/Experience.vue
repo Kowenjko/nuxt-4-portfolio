@@ -1,51 +1,5 @@
 <script lang="ts" setup>
-const experiences = [
-  {
-    title: 'Frontend Developer',
-    name: 'ABVV.Group',
-
-    date: '2023 - Present',
-    icon: '/svg/abvv.svg',
-    responsibilities: [
-      'Developed and maintained projects with Nuxt 3 / Vue 3',
-      'Integrated APIs and third-party services',
-      'Implemented UI/UX features based on client requirements',
-      'Collaborated with team members using Git, Jira, Trello',
-    ],
-    description:
-      'ABVV.Group is a Ukrainian digital agency specializing in web development and e-commerce solutions. The company builds and maintains online stores, corporate websites, and landing pages, integrating CRM systems and delivering ongoing support.',
-  },
-  {
-    title: 'Frontend Development',
-    name: 'Nexoft UG',
-
-    date: '2021 - 2023',
-    icon: '/svg/nexoft.svg',
-    responsibilities: [
-      'Built e-commerce solutions on Shopify and Shopware',
-      'experienceed on Vue 3 / Nuxt 3 projects with Pinia, Tailwind, Vuetify',
-      'Integrated APIs, Firebase, JWT, and openAPI services',
-      'Participated in agile teamexperience using Git, Jira, Slack, ClickUp',
-    ],
-    description:
-      'Nexoft UG is an international software development company delivering custom web applications, e-commerce solutions, and scalable SaaS platforms for clients worldwide.',
-  },
-  {
-    title: 'Full Stack Developer',
-    name: 'Python Online Marathon — SoftServe IT Academy',
-
-    date: '2021',
-    icon: '/svg/softserve.svg',
-    description:
-      'An intensive 2-month training program focused on Python and Django development, including teamexperience and practical exercises.',
-    responsibilities: [
-      'Completed theoretical and practical tasks assigned by mentors',
-      'Built a web project using Django',
-      'Collaborated in small development teams (2–3 people)',
-      'Practiced version control with Git and agile methodology with Scrum',
-    ],
-  },
-]
+import { experiences } from '@/constants'
 
 onMounted(() => {
   gsapUtils.toArray('.timeline-card').forEach((card: any) => {
