@@ -2,12 +2,19 @@
 import { Autoplay } from 'swiper/modules'
 
 const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }>()
+
+const searchByName = ref('')
+
+const searchProjects = computed(() =>
+  projects.filter((project) => project.title.toLowerCase().includes(searchByName.value.toLowerCase()))
+)
 </script>
 
 <template>
   <ClientOnly>
     <div class="relative">
-      <div class="absolute w-full top-0 right-20 flex justify-end gap-2 px-4 z-10">
+      <FilterWorks v-model:search="searchByName" />
+      <div class="absolute w-full top-14 right-17 flex justify-end gap-2 px-4 z-10" v-if="searchProjects.length > 0">
         <Button class="swiper-button-prev-custom cursor-pointer" variant="outline"
           ><Icon name="mdi:chevron-left"
         /></Button>
@@ -16,7 +23,7 @@ const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }
         /></Button>
       </div>
       <swiper-container
-        v-if="projects.length > 0"
+        v-if="searchProjects.length > 0"
         :modules="{ Autoplay }"
         class="py-16"
         :speed="800"
@@ -54,7 +61,7 @@ const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }
           prevEl: '.swiper-button-prev-custom',
         }"
       >
-        <swiper-slide v-for="(work, index) in projects" :key="index" class="my-4 px-2 flex-center">
+        <swiper-slide v-for="(work, index) in searchProjects" :key="index" class="my-4 px-2 flex-center">
           <Dialog>
             <DialogTrigger>
               <Card
@@ -107,6 +114,9 @@ const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }
           </Dialog>
         </swiper-slide>
       </swiper-container>
+      <div v-else class="flex-center">
+        <NuxtImg src="/images/no-results.png" alt="no-results" format="webp" width="700px" />
+      </div>
     </div>
   </ClientOnly>
 </template>

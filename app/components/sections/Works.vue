@@ -12,9 +12,9 @@ const { workProjects, testProjects } = useConstants()
         type="work"
       />
     </div>
-    <div>
-      <Slides :projects="workProjects" :delay="3000" />
-    </div>
+
+    <Slides :projects="workProjects" :delay="3000" />
+
     <div class="container mx-auto p-10">
       <TitleCategory :category="$t('nav.title.portfolios_test')" :counter="testProjects.length" type="test-work" />
     </div>
