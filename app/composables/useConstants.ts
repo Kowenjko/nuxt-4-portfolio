@@ -34,8 +34,8 @@ export const useConstants = () => {
 
   const parseResponsibilities = (type: string) =>
     // @ts-ignore
-    // messages.value[locale.value]?.experiences?.[type]?.responsibilities?.map((item: any) => item?.loc?.source)
-    messages.value[locale.value]?.experiences?.[type]?.responsibilities
+    messages.value[locale.value]?.experiences?.[type]?.responsibilities?.map((item: any) => item?.loc?.source)
+  // messages.value[locale.value]?.experiences?.[type]?.responsibilities
 
   const experiences = computed(() => [
     {

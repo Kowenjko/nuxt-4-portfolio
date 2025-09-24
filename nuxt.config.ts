@@ -38,8 +38,8 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/png',
-          href: '/my-logo-light.png',
-          sizes: '16x16',
+          href: '/images/kv-logo-black.png',
+          sizes: '32x32',
         },
       ],
     },
@@ -104,5 +104,8 @@ export default defineNuxtConfig({
     telegramUrl: process.env.NUXT_TELEGRAM_URL,
     resendApiKey: process.env.NUXT_RESEND_API_KEY,
     clientUrl: process.env.NUXT_CLIENT_URL,
+    public: {
+      crispWebsiteId: process.env.NUXT_CRISP_WEBSITE_ID,
+    },
   },
 })
