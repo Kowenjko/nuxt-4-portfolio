@@ -1,75 +1,89 @@
-# Nuxt Minimal Starter
+# Vasyl Kovenko
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**Frontend Developer**
 
-## Setup
+📧 **Email:** [ortoswt@gmail.com](mailto:ortoswt@gmail.com)  
+💻 **GitHub:** [github.com/Kowenjko](https://github.com/Kowenjko)  
+🌐 **Portfolio:** [nuxt-4-portfolio.vercel.app](https://nuxt-4-portfolio.vercel.app)
 
-Make sure to install dependencies:
+---
 
-```bash
-# npm
-npm install
+## 👤 About Me
 
-# pnpm
-pnpm install
+Frontend Developer with 4+ years of commercial experience.  
+Specializing in **Vue 3 / Nuxt 3**, I build modern web applications with API integration and custom functionality.  
+Experienced in working with both Ukrainian and international clients.  
+Responsible, collaborative, and motivated to continuously improve skills and learn new technologies.
 
-# yarn
-yarn install
+---
 
-# bun
-bun install
-```
+## 💼 Work Experience
 
-## Development Server
+### Frontend Developer
 
-Start the development server on `http://localhost:3000`:
+**ABVV.Group** | _2023 – 2025_ | _Ukraine_
 
-```bash
-# npm
-npm run dev
+**Projects:**
 
-# pnpm
-pnpm dev
+- **StoreInUA** — online electronics store
+- **PM-Tehko** — automated price list processing
+- **Bidnyazhka** — travel club platform
 
-# yarn
-yarn dev
+**Responsibilities:**
 
-# bun
-bun run dev
-```
+- Frontend development using Nuxt 3, Vue 3
+- API integration and custom functionality implementation
+- UI/UX optimization
+- Collaboration with the team using Git, Jira, Trello
 
-## Production
+---
 
-Build the application for production:
+### Frontend Developer
 
-```bash
-# npm
-npm run build
+**Nexoft UG** | _2021 – 2023_ | _Germany_
 
-# pnpm
-pnpm build
+**Projects:**
 
-# yarn
-yarn build
+- E-commerce stores on Shopify, Shopware
+- Web services with Vue 3 / Nuxt 3
+- Email marketing systems
+- Chatbot development
 
-# bun
-bun run build
-```
+**Responsibilities & Achievements:**
 
-Locally preview production build:
+- Built and customized e-commerce solutions
+- Integrated Firebase, JWT, openAPI
+- Developed UIs with Tailwind, Vuetify, Pinia
+- Communicated with clients and team via Jira, Slack, ClickUp
 
-```bash
-# npm
-npm run preview
+---
 
-# pnpm
-pnpm preview
+## 🎓 Educational & Volunteer Projects
 
-# yarn
-yarn preview
+- **Python Online Marathon** | SoftServe IT Academy | _2021_
+  - Django project development, team collaboration, Git, Scrum
 
-# bun
-bun run preview
-```
+- **“Kids Police” Chatbot** | Rivne Police Department | _2021_
+  - Website parsing, PostgreSQL database, teamwork on chatbot functionality
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+
+## 🛠 Technical Skills
+
+**Frontend:** Vue 3, Nuxt 3, React/Redux, Pinia, Tailwind, Vuetify, Bootstrap, Material UI  
+**Backend:** Django, Python (basic)  
+**E-commerce:** Shopify, Shopware  
+**Tools:** Git, Docker, VS Code, Jira, Trello, ClickUp, Figma, Photoshop, Miro  
+**Databases:** PostgreSQL, SQL  
+**OS:** Windows, Ubuntu
+
+---
+
+## 🎓 Education
+
+- **IT STEP Academy** (2020 – 2021) — Web Application Development with Python
+- **National University of Water and Environmental Engineering** (2001 – 2006) — Specialist in Automation and Computer-Integrated Systems
+
+---
+
+📌 **Open to new challenges and opportunities in frontend development.**
