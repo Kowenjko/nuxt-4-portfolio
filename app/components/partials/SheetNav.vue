@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { Menu } from 'lucide-vue-next'
 
-import { navLinks } from '@/constants'
-
+const { navLinks } = useConstants()
 const { scrollToId } = useScrollNav()
 </script>
 
@@ -13,7 +12,8 @@ const { scrollToId } = useScrollNav()
     </SheetTrigger>
     <SheetContent class="z-100">
       <SheetHeader>
-        <SheetTitle>
+        <SheetTitle class="flex gap-2">
+          <ButtonLang is-mobile />
           <ButtonTheme />
         </SheetTitle>
         <SheetDescription> </SheetDescription>
@@ -30,7 +30,7 @@ const { scrollToId } = useScrollNav()
       </nav>
       <SheetFooter>
         <SheetClose as-child>
-          <Button type="submit">Close</Button>
+          <Button type="submit">{{ $t('button.close') }}</Button>
         </SheetClose>
       </SheetFooter>
     </SheetContent>

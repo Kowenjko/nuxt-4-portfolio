@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { services } from '@/constants'
+const { services } = useConstants()
 
 onMounted(() => {
   gsapFromTo(
@@ -26,7 +26,7 @@ onMounted(() => {
 <template>
   <section class="pt-44 sm:py-24" id="services">
     <div class="container mx-auto px-10">
-      <TitleCategory title="I specialize in" category="Services" />
+      <TitleCategory :title="$t('nav.title.services')" :category="$t('nav.category.services')" />
       <div class="grid-4-cols pt-24 pb-10">
         <GlowCard class="tech-card" v-for="(service, index) in services" :key="index" :card="service" />
       </div>

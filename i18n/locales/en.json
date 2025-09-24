@@ -1,0 +1,253 @@
+{
+  "button": {
+    "resume": "Resume",
+    "send_message": "Send Message",
+    "send_telegram": "Send message in Telegram",
+    "close": "Close"
+  },
+  "form": { "label": { "name": "Name", "message": "Message", "email": "Email" } },
+  "title": { "responsibilities": "Responsibilities" },
+  "nav": {
+    "category": {
+      "services": "Services",
+      "skills": "Skills",
+      "experience": "Experience",
+      "portfolios": "Portfolios",
+      "contact": "Contact me"
+    },
+    "title": {
+      "services": "I specialize in",
+      "skills": "My technical level",
+      "experience": "My Career Overview",
+      "portfolios": "My Works",
+      "portfolios_test": "My Test Works",
+      "contact": "Get in Touch"
+    }
+  },
+  "hero": {
+    "info": "with { years } years { months } months of commercial experience. Specializing in Vue 3 / Nuxt 3, I build modern web applications with API integration and custom functionality. Experienced in working with both Ukrainian and international clients. Responsible, collaborative, and motivated to continuously improve skills and learn new technologies."
+  },
+  "services": {
+    "title": {
+      "frontend": "Frontend Web Development",
+      "e_commerce": "E-commerce Development",
+      "ui_ux": "UI/UX Implementation",
+      "support": "Project Collaboration & Support"
+    },
+    "description": {
+      "frontend": "Building modern web applications with Vue 3 / Nuxt 3, API integration, performance optimization, and responsive design.",
+      "e_commerce": "Developing and maintaining online stores on Shopify and Shopware, customizing functionality, and integrating payment systems.",
+      "ui_ux": "Translating design mockups (Figma → Vue/React) into clean code, creating intuitive user interfaces with Tailwind, Vuetify, Material UI.",
+      "support": "Contributing to team projects with Git, Jira, Trello, Docker. Providing ongoing support and improving existing solutions."
+    }
+  },
+  "experiences": {
+    "abvv": {
+      "title": "Frontend Developer",
+      "date": "2023 - Present",
+      "description": "ABVV.Group is a Ukrainian digital agency specializing in web development and e-commerce solutions. The company builds and maintains online stores, corporate websites, and landing pages, integrating CRM systems and delivering ongoing support.",
+      "responsibilities": [
+        "Developed and maintained projects with Nuxt 3 / Vue 3",
+        "Integrated APIs and third-party services",
+        "Implemented UI/UX features based on client requirements",
+        "Collaborated with team members using Git, Jira, Trello"
+      ]
+    },
+    "nexoft": {
+      "title": "Frontend Developer",
+      "date": "2021 - 2023",
+      "description": "Nexoft UG is an international software development company delivering custom web applications, e-commerce solutions, and scalable SaaS platforms for clients worldwide.",
+      "responsibilities": [
+        "Built e-commerce solutions on Shopify and Shopware",
+        "experienceed on Vue 3 / Nuxt 3 projects with Pinia, Tailwind, Vuetify",
+        "Integrated APIs, Firebase, JWT, and openAPI services",
+        "Participated in agile teamexperience using Git, Jira, Slack, ClickUp"
+      ]
+    },
+    "softServe": {
+      "title": "Full Stack Developer",
+      "date": "2021",
+      "description": "An intensive 2-month training program focused on Python and Django development, including teamexperience and practical exercises.",
+      "responsibilities": [
+        "Completed theoretical and practical tasks assigned by mentors",
+        "Built a web project using Django",
+        "Collaborated in small development teams (2–3 people)",
+        "Practiced version control with Git and agile methodology with Scrum"
+      ]
+    }
+  },
+  "works": {
+    "storeInUa": {
+      "title": "StoreInUa online store",
+      "category": "Online Shop",
+      "description": "StoreInUa is a Ukrainian online store selling electronics and household appliances (including Apple products, smartphones, and laptops), offering low prices, official warranties, and fast delivery in Kyiv and throughout Ukraine."
+    },
+    "pm_tehko": {
+      "title": "Automatic processing of price lists",
+      "category": "Online service",
+      "description": "PM-Tehko is a service for automatic price and stock updates. It combines supplier price lists, competitor data, and content databases into a single Master Price List. Through its API, the service integrates with accounting systems and online stores, simplifying price management and increasing product competitiveness."
+    },
+    "poor_club": {
+      "title": "Poor thing Tour club",
+      "category": "Travel agency",
+      "description": "Travel - within Ukraine and abroad, with the option of online booking of transport and hotels."
+    },
+    "jounce_chat": {
+      "title": "Jounce",
+      "category": "AI marketing hub",
+      "description": "AI copywriting, artwork, and chat for marketing teams"
+    },
+    "jounce_email": {
+      "title": "Jounce",
+      "category": "E-Mail System",
+      "description": "Newsletter System with Email and Flow builder."
+    },
+    "newPet": {
+      "title": "NewPet",
+      "category": "Pet shelter service",
+      "description": "Developed the frontend based on the design, connecting to the backend CRUD, JWT authorization."
+    },
+    "bitburger": {
+      "title": "Bitburger",
+      "category": "Online-Shop",
+      "description": "Made design changes, developed functionality."
+    },
+    "mylo": {
+      "title": "Mylo",
+      "category": "Online-Shop",
+      "description": "Creation of individual sections by design"
+    },
+    "planted": {
+      "title": "Planted",
+      "category": "Online-Shop",
+      "description": "Made changes to the frontend design."
+    },
+    "purenature": {
+      "title": "Purenature",
+      "category": "Online-Shop",
+      "description": "Made changes to the frontend design."
+    }
+  },
+  "test_works": {
+    "nuxt_4_calendar": {
+      "title": "Nuxt 4 Calendar",
+      "category": "Calendar",
+      "description": "Test program for Nuxt 4 for creating events."
+    },
+    "nuxt_4_auth": {
+      "title": "Nuxt 4 Auth",
+      "category": "Auth",
+      "description": "Authorization using Nuxt 3 and drizzle."
+    },
+    "nuxt_whatsapp": {
+      "title": "Nuxt Whatsapp Clone",
+      "category": "Chat",
+      "description": "The messenger clone uses the following tools: convex, zegocloud, clerk, openai, emoji, shadcn."
+    },
+    "nuxt_auth_mongoDB": {
+      "title": "Nuxt Auth MongoDB",
+      "category": "Auth",
+      "description": "Authorization using Nuxt 3 and mongoDB with the option of confirmation via email by entering a code."
+    },
+    "zoom_clone": {
+      "title": "Zoom Clone",
+      "category": "Chat",
+      "description": "A primitive copy of a meeting on Zoom with video and chat functionality."
+    },
+    "mongoDB_trello": {
+      "title": "Nuxt MongoDB Trello",
+      "category": "Info",
+      "description": "Minimal copy of Trello is used MongoDB."
+    },
+    "nuxt_trello": {
+      "title": "Nuxt Trello",
+      "category": "Info",
+      "description": "Minimal copy of Trello is used localeStorage."
+    },
+    "jotion": {
+      "title": "Jotion",
+      "category": "Documents",
+      "description": "Your Ideas, Documents, & Plans. Unified."
+    },
+    "chat_appwrite": {
+      "title": "Chat Appwrite",
+      "category": "Chat",
+      "description": "Real-time chat made with Vue 3 composition and Appwrite"
+    },
+    "genius_ai": {
+      "title": "Genius AI",
+      "category": "AI",
+      "description": "AI chat and generation of images, videos, music, and code, as well as subscription registration via Stripe."
+    },
+    "estate": {
+      "title": "Estate",
+      "category": "Info",
+      "description": "Modern real estate marketplace from scratch with jwt authentication and toolkit"
+    },
+    "insove": {
+      "title": "Insove",
+      "category": "Info",
+      "description": "One-page doctor service page."
+    },
+    "vue_todo": {
+      "title": "Vue 3 Todo",
+      "category": "Info",
+      "description": "Demonstration site of the capabilities of Vue 3 composition."
+    },
+    "game_battle": {
+      "title": "Game Marine Battle",
+      "category": "Game",
+      "description": "The game is written on JS, the placement of ships can be automatic or manually. Rules are standard. Wins someone who will find all ships."
+    },
+    "movie_viewing": {
+      "title": "Movie Viewing",
+      "category": "Video",
+      "description": "The demonstration site is written on a clean JS without libraries, a minimum of HTML. An animation is present. Source News API."
+    },
+    "electro_shop": {
+      "title": "Electro Shop",
+      "category": "Shop",
+      "description": "The demo site of the store is written in Django, the PostgeSQL database is used."
+    },
+    "world_news": {
+      "title": "World News",
+      "category": "News",
+      "description": "The demonstration site is written on a clean JS without libraries, a minimum of HTML. An animation is present. Source News API."
+    },
+    "react_bootstrap": {
+      "title": "React-Bootstrap",
+      "category": "Info",
+      "description": "In this project, the main components of REACT-BOOTSTRAP are used. To demonstrate the theme `History of Windows`."
+    },
+    "contact_list": {
+      "title": "Contact List",
+      "category": "Contact",
+      "description": "Demonstration site with contacts written on REACT - Redux + React - Bootstrap + React - Fontawesome. The list is written and read from FireBase."
+    },
+    "material": {
+      "title": "Material-UI",
+      "category": "Info",
+      "description": "The demonstration site on React where Material-UI is used."
+    },
+    "yourcar": {
+      "title": "Yourcar",
+      "category": "Info",
+      "description": "The demonstration site is written on React where Styled-Components are used, Tailwind CSS."
+    },
+    "internet_shop": {
+      "title": "Internet-shop",
+      "category": "Shop",
+      "description": "The demonstration site of the online store of computer technology with the ability to add or remove goods from the basket. Written on React, Redux, Middleware."
+    },
+    "movie_react": {
+      "title": "Movie React",
+      "category": "Video",
+      "description": "Demonstration site on React + Hooks + Styled-Components. Outputs information about movies. TMDB API source."
+    }
+  },
+  "contacts": {
+    "address": { "title": "Address", "info": "Rivne" },
+    "telegram": { "title": "Telegram" },
+    "email": { "title": "Email" }
+  }
+}

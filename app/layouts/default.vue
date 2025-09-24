@@ -4,4 +4,5 @@
   <Header />
   <slot />
   <Footer />
+  <ButtonScrollTop />
 </template>

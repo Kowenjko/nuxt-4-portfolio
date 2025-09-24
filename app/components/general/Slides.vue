@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Autoplay, Navigation } from 'swiper/modules'
+import { Autoplay } from 'swiper/modules'
 
 const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }>()
 </script>
@@ -7,7 +7,6 @@ const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }
 <template>
   <ClientOnly>
     <div class="relative">
-      <!-- кастомні кнопки -->
       <div class="absolute w-full top-0 right-20 flex justify-end gap-2 px-4 z-10">
         <Button class="swiper-button-prev-custom cursor-pointer" variant="outline"
           ><Icon name="mdi:chevron-left"
@@ -23,7 +22,7 @@ const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }
         :speed="800"
         :autoplay="{
           delay,
-          disableOnInteraction: true,
+          disableOnInteraction: false,
         }"
         :spaceBetween="50"
         :slides-per-view="1"
@@ -55,11 +54,11 @@ const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }
           prevEl: '.swiper-button-prev-custom',
         }"
       >
-        <swiper-slide v-for="(work, index) in projects" :key="index" class="my-4 flex-center">
+        <swiper-slide v-for="(work, index) in projects" :key="index" class="my-4 px-2 flex-center">
           <Dialog>
             <DialogTrigger>
               <Card
-                class="w-full md:w-lg hover:scale-105 transition-all duration-300 h-[460px] pt-0 overflow-hidden cursor-pointer"
+                class="w-full sm:w-sm md:w-lg hover:scale-105 transition-all duration-300 h-[460px] pt-0 overflow-hidden cursor-pointer z-100"
               >
                 <div>
                   <nuxt-img :src="work.imageUrl" format="webp" class="object-cover h-[300px] w-full" />

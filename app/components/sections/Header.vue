@@ -14,6 +14,7 @@ const scrolled = computed(() => scrollY.value > 10)
 
       <NavBar />
       <div class="flex items-center gap-4">
+        <ButtonLang />
         <ButtonTheme class="hidden lg:block" />
         <SheetNav />
       </div>
