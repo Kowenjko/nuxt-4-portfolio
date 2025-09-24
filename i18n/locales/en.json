@@ -3,7 +3,8 @@
     "resume": "Resume",
     "send_message": "Send Message",
     "send_telegram": "Send message in Telegram",
-    "close": "Close"
+    "close": "Close",
+    "all": "All"
   },
   "form": { "label": { "name": "Name", "message": "Message", "email": "Email" } },
   "title": { "responsibilities": "Responsibilities" },
@@ -84,7 +85,7 @@
     },
     "pm_tehko": {
       "title": "Automatic processing of price lists",
-      "category": "Online service",
+      "category": "Online Service",
       "description": "PM-Tehko is a service for automatic price and stock updates. It combines supplier price lists, competitor data, and content databases into a single Master Price List. Through its API, the service integrates with accounting systems and online stores, simplifying price management and increasing product competitiveness."
     },
     "poor_club": {
@@ -104,7 +105,7 @@
     },
     "newPet": {
       "title": "NewPet",
-      "category": "Pet shelter service",
+      "category": "Online Service",
       "description": "Developed the frontend based on the design, connecting to the backend CRUD, JWT authorization."
     },
     "bitburger": {
