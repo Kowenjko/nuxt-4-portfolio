@@ -36,6 +36,8 @@ export const useConstants = () => {
     // @ts-ignore
     messages.value[locale.value]?.experiences?.[type]?.responsibilities?.map((item: any) => item?.loc?.source)
 
+  console.log(messages.value[locale.value]?.experiences?.['abvv']?.responsibilities)
+
   const experiences = computed(() => [
     {
       title: t('experiences.abvv.title'),
