@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
+import { dark, shadcn } from '@clerk/themes'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -17,6 +18,7 @@ export default defineNuxtConfig({
     'v-gsap-nuxt',
     '@nuxt/icon',
     '@nuxtjs/i18n',
+    '@clerk/nuxt',
   ],
   components: [
     {
@@ -50,6 +52,11 @@ export default defineNuxtConfig({
   shadcn: {
     prefix: '',
     componentDir: './app/components/ui',
+  },
+  clerk: {
+    appearance: {
+      baseTheme: shadcn,
+    },
   },
   i18n: {
     baseUrl: process.env.NUXT_CLIENT_URL,
@@ -97,6 +104,7 @@ export default defineNuxtConfig({
     size: '1.5rem',
   },
   runtimeConfig: {
+    clerkSecretKey: process.env.NUXT_CLERK_SECRET_KEY,
     mailtrapToken: process.env.NUXT_MAILTRAP_TOKEN,
     mailtrapEndpoint: process.env.NUXT_MAILTRAP_ENDPOINT,
     mailtrapTemplate: process.env.NUXT_MAILTRAP_TEMPLATE,
@@ -104,8 +112,14 @@ export default defineNuxtConfig({
     telegramUrl: process.env.NUXT_TELEGRAM_URL,
     resendApiKey: process.env.NUXT_RESEND_API_KEY,
     clientUrl: process.env.NUXT_CLIENT_URL,
+    clerkApiKey: process.env.CLERK_API_KEY,
     public: {
+      clerkPublishableKey: process.env.NUXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
       crispWebsiteId: process.env.NUXT_CRISP_WEBSITE_ID,
+      convexDeployment: process.env.CONVEX_DEPLOYMENT,
+      convexUrl: process.env.CONVEX_URL,
+      clerkAppDomain: process.env.NUXT_CLERK_APP_DOMAIN,
+      clerkFrontendApi: process.env.NUXT_PUBLIC_CLERK_FRONTEND_API,
     },
   },
 })

@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@clerk/nuxt": "^1.9.0",
+    "@clerk/themes": "^2.4.21",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "2.0.0",
     "@nuxt/image": "1.11.0",

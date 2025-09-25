@@ -15,6 +15,16 @@ const { scrollToId } = useScrollNav()
         <SheetTitle class="flex gap-2">
           <ButtonLang is-mobile />
           <ButtonTheme />
+          <ClientOnly>
+            <SignedOut>
+              <Button variant="outline">
+                <SignInButton mode="modal" />
+              </Button>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </ClientOnly>
         </SheetTitle>
         <SheetDescription> </SheetDescription>
       </SheetHeader>

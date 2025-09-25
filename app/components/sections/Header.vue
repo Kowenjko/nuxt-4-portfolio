@@ -17,6 +17,18 @@ const scrolled = computed(() => scrollY.value > 10)
         <ButtonLang />
         <ButtonTheme class="hidden lg:block" />
         <SheetNav />
+        <div class="hidden lg:flex">
+          <ClientOnly>
+            <SignedOut>
+              <Button variant="outline">
+                <SignInButton mode="modal" />
+              </Button>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </ClientOnly>
+        </div>
       </div>
     </div>
   </header>
