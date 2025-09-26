@@ -38,7 +38,7 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/png',
-          href: '/images/kv-logo-black.png',
+          href: '/images/logo-dark.png',
           sizes: '32x32',
         },
       ],
