@@ -11,13 +11,14 @@ export default defineSchema({
   }).index('by_tokenIdentifier', ['tokenIdentifier']),
 
   reviews: defineTable({
-    user: v.id('users'),
+    user_id: v.id('users'),
     rating: v.number(),
     text: v.string(),
     createdAt: v.number(),
-  }).index('by_user', ['user']),
+  }).index('by_user_id', ['user_id']),
 
   views: defineTable({
+    user_id: v.union(v.id('users'), v.literal('anonymous')),
     count: v.number(),
-  }).index('by_count', ['count']),
+  }).index('by_user_id', ['user_id']),
 })

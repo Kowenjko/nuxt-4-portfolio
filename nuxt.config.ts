@@ -119,6 +119,7 @@ export default defineNuxtConfig({
 
     public: {
       clerkPublishableKey: process.env.NUXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
+      clerkAppDomain: process.env.CLERK_APP_DOMAIN,
       crispWebsiteId: process.env.NUXT_CRISP_WEBSITE_ID,
     },
   },
