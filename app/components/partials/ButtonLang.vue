@@ -11,7 +11,7 @@ const selectLanguage = (code: any) => {
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger :class="[isMobile ? 'block lg:hidden' : 'hidden lg:block']" as-child>
-      <Button variant="outline" class="w-10 p-0">{{ locale.toLocaleUpperCase() }}</Button>
+      <Button variant="outline" size="icon">{{ locale.toLocaleUpperCase() }}</Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="z-100">
       <DropdownMenuItem v-for="lang in locales" :key="lang.code" @click="selectLanguage(lang.code)">

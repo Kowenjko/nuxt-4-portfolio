@@ -84,6 +84,7 @@ watch(endValueY, (value) => {
         </div>
       </div>
     </div>
+    <ButtonLook />
   </section>
 </template>
 
