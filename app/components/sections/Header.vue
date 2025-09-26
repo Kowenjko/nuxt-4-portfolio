@@ -2,6 +2,8 @@
 const { y: scrollY } = useWindowScroll()
 const { scrollToId } = useScrollNav()
 
+import { LogIn } from 'lucide-vue-next'
+
 const isDark = useDark()
 const scrolled = computed(() => scrollY.value > 10)
 </script>
@@ -15,23 +17,10 @@ const scrolled = computed(() => scrollY.value > 10)
       </a>
 
       <NavBar />
-      <div class="flex items-center gap-4">
-        <ButtonLang />
-        <ButtonTheme class="hidden lg:block" />
-        <SheetNav />
-        <div class="hidden lg:flex">
-          <ClientOnly>
-            <SignedOut>
-              <Button variant="outline">
-                <SignInButton mode="modal" />
-              </Button>
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </ClientOnly>
-        </div>
+      <div class="hidden lg:flex items-center gap-2">
+        <ButtonGroups />
       </div>
+      <SheetNav class="block lg:hidden" />
     </div>
   </header>
 </template>
