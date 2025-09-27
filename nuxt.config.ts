@@ -103,7 +103,7 @@ export default defineNuxtConfig({
   },
   icon: {
     provider: 'iconify',
-    customCollections: [{ prefix: 'my-icon', dir: 'assets/icons' }],
+    customCollections: [{ prefix: 'my-icon', dir: './app/assets/icons' }],
     mode: 'svg',
     size: '1.5rem',
   },

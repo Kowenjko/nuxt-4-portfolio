@@ -53,16 +53,20 @@ watch(endValueY, (value) => {
 </script>
 
 <template>
-  <section id="hero" class="relative z-10 xl:mt-20 md:h-dvh h-[80vh] flex xl:items-center items-center justify-center">
+  <section
+    id="hero"
+    class="relative z-10 mt-26 xl:mt-20 md:h-dvh h-[80vh] flex xl:items-center items-center justify-center"
+  >
     <div class="grid-2-cols container px-10">
       <div class="content-center hero-text">
-        <h1
-          class="md:text-5xl text-3xl font-semibold relative z-10 pointer-events-none space-x-24 flex justify-between items-center"
-        >
-          <span>Vasya <span class="text-ring">Kovenko</span> </span>
+        <div class="relative">
+          <h1 class="md:text-5xl relative text-3xl font-semibold z-10 space-x-24 flex justify-between items-center">
+            <span>Vasya <span class="text-ring">Kovenko</span> </span>
 
-          <TechnologiesHero />
-        </h1>
+            <TechnologiesHero />
+          </h1>
+          <TooltipInfo :info="$t('tooltip.technology')" />
+        </div>
         <p class="pt-10">
           <span class="text-zinc-900 dark:text-zinc-500 m-0 font-bold">Frontend Developer</span>
           {{ $t('hero.info', { years, months }) }}

@@ -33,7 +33,7 @@
     "nuxt-typed-router": "4.0.2",
     "pinia": "^3.0.3",
     "prettier": "^2.5.x || 3.x",
-    "reka-ui": "^2.5.0",
+    "reka-ui": "^2.5.1",
     "resend": "^6.1.0",
     "shadcn-nuxt": "2.2.0",
     "svix": "^1.76.1",

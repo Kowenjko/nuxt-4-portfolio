@@ -24,8 +24,8 @@ watch(scrollY, (value) => {
 </script>
 
 <template>
-  <div ref="contRef" class="fixed top-36 -right-96 transition-all duration-1000">
-    <Button variant="outline" class="gap-4 justify-between">
+  <div ref="contRef" class="fixed top-28 -right-96 transition-all duration-1000 hidden lg:block animate-pulse">
+    <Button variant="ghost" class="gap-4 justify-between">
       <div>👀</div>
       <div>{{ count }}</div>
     </Button>

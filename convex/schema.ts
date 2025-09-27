@@ -12,7 +12,7 @@ export default defineSchema({
 
   reviews: defineTable({
     user_id: v.id('users'),
-    rating: v.number(),
+    rating: v.union(v.number(), v.null()),
     text: v.string(),
     createdAt: v.number(),
   }).index('by_user_id', ['user_id']),

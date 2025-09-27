@@ -7,7 +7,7 @@ const marqueeRight = useTemplateRef('marqueeRight')
 const animations: any = []
 
 const setupMarquee = (el: any, direction = 'left', duration = 10) => {
-  el.innerHTML += el.innerHTML
+  // el.innerHTML += el.innerHTML
   const distance = el.scrollWidth / 2
 
   let fromX = direction === 'left' ? 0 : -distance
@@ -39,8 +39,8 @@ const playAll = () => {
 }
 
 onMounted(() => {
-  setupMarquee(marqueeLeft.value, 'left', 20)
-  setupMarquee(marqueeRight.value, 'right', 25)
+  setupMarquee(marqueeLeft.value, 'left', 50)
+  setupMarquee(marqueeRight.value, 'right', 50)
 })
 </script>
 

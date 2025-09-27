@@ -8,6 +8,7 @@
   },
   "form": { "label": { "name": "Name", "message": "Message", "email": "Email" } },
   "title": { "responsibilities": "Responsibilities" },
+  "tooltip": { "technology": "Technologies used in the project!" },
   "nav": {
     "category": {
       "services": "Services",

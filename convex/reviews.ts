@@ -19,7 +19,7 @@ export const addReview = mutation({
     const reviewId = await ctx.db.insert('reviews', {
       user: args.author,
       text: args.text,
-      rating: args.rating ?? null,
+      rating: args.rating ?? 0,
       createdAt: Date.now(),
     })
     return reviewId

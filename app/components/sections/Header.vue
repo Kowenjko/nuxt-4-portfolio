@@ -2,8 +2,6 @@
 const { y: scrollY } = useWindowScroll()
 const { scrollToId } = useScrollNav()
 
-import { LogIn } from 'lucide-vue-next'
-
 const isDark = useDark()
 const scrolled = computed(() => scrollY.value > 10)
 </script>
