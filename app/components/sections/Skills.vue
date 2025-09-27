@@ -45,7 +45,7 @@ onMounted(() => {
   <section class="container mx-auto p-10 pt-24" id="skills">
     <TitleCategory :title="$t('nav.title.skills')" :category="$t('nav.category.skills')" />
     <div class="grid-2-cols gap-20">
-      <AccordionSkills class="skills-left" :skills="progressFrontend" :default-value="progressFrontend.value" />
+      <AccordionSkills class="skills-left" :skills="progressFrontend" :default-value="progressFrontend.title" />
       <AccordionSkills class="skills-right" :skills="progressBackends" />
     </div>
   </section>

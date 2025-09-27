@@ -24,7 +24,7 @@ const form = useForm({
 
 const loading = ref(false)
 
-const sendMessage = async (values: SendMessage, type: 'email' | 'telegram') => {
+const sendMessage = async (values: SendMessageI, type: 'email' | 'telegram') => {
   loading.value = true
   try {
     await $fetch(`/api/${type}`, {

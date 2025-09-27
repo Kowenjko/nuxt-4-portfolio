@@ -1,11 +1,11 @@
-export const projectTechnologies = [
+export const projectTechnologies: TechnologyI[] = [
   { title: 'Nuxt 4', icon: 'cib:nuxt-js' },
   { title: 'Vue 3', icon: 'cib:vue-js' },
   { title: 'TypeScript', icon: 'cib:typescript' },
   { title: 'Pinia', icon: 'simple-icons:pinia' },
   { title: 'I18n', icon: 'my-icon:i18n' },
   { title: 'Convex', icon: 'gis:convex-hull' },
-  { title: 'Webhooks', icon: 'material-symbols:webhook' },
+  { title: 'WebSocket', icon: 'material-symbols:webhook' },
   { title: 'Clerk', icon: 'simple-icons:clerk' },
   { title: 'Crisp', icon: 'arcticons:crispy-icon-pack' },
   { title: 'Mailtrap', icon: 'simple-icons:mailtrap' },
@@ -19,7 +19,7 @@ export const projectTechnologies = [
   { title: 'HTML5', icon: 'cib:html5' },
 ]
 
-export const technologies = [
+export const technologies: TechnologyI[] = [
   { title: 'Nuxt 4', icon: 'cib:nuxt-js' },
   { title: 'Vue 3', icon: 'cib:vue-js' },
   { title: 'Pinia', icon: 'simple-icons:pinia' },
@@ -42,7 +42,7 @@ export const technologies = [
   { title: 'Firebase', icon: 'mdi:firebase' },
   { title: 'Postgresql', icon: 'devicon-plain:postgresql' },
   { title: 'MongoDB', icon: 'simple-icons:mongodb' },
-  { title: 'Webhooks', icon: 'material-symbols:webhook' },
+  { title: 'WebSocket', icon: 'material-symbols:webhook' },
   { title: 'Clerk', icon: 'simple-icons:clerk' },
   { title: 'Crisp', icon: 'arcticons:crispy-icon-pack' },
   { title: 'Stripe', icon: 'simple-icons:stripe' },
@@ -55,13 +55,14 @@ export const technologies = [
   { title: 'Shadcn', icon: 'vscode-icons:file-type-shadcn' },
   { title: 'OpenAI', icon: 'mingcute:openai-fill' },
   { title: 'Stream-IO', icon: 'material-symbols:stream' },
-  { title: 'Zegocloud', icon: 'zegocloud' },
+  { title: 'Zegocloud', icon: null },
   { title: 'Sass', icon: 'cib:sass' },
   { title: 'HTML5', icon: 'cib:html5' },
   { title: 'CSS3', icon: 'cib:css3' },
   { title: 'Bootstrap', icon: 'mdi:bootstrap' },
   { title: 'MaterialUi', icon: 'devicon-plain:materialui' },
   { title: 'Vuetify', icon: 'mdi:vuetify' },
+  { title: 'Vuexy', icon: 'mdi:vuetify' },
   { title: 'Emoji', icon: 'mdi:emoji' },
   { title: 'Shopify', icon: 'ic:baseline-shopify' },
   { title: 'Shopware', icon: 'simple-icons:shopware' },
@@ -78,13 +79,13 @@ export const technologies = [
   { title: 'Windows', icon: 'mingcute:windows-fill' },
 ]
 
-export const socialLinks = [
+export const socialLinks: SocialLinkI[] = [
   { icon: 'uil:linkedin-alt', url: 'https://www.linkedin.com/in/kovenko' },
   { icon: 'uil:github-alt', url: 'https://github.com/kowenjko' },
 ]
 
-export const progressFrontend = {
-  value: 'Frontend developer',
+export const progressFrontend: ProgressI = {
+  title: 'Frontend developer',
   icon: 'fluent:position-to-front-24-filled',
   developers: [
     { title: 'HTML', progress: 90 },
@@ -95,8 +96,8 @@ export const progressFrontend = {
   ],
 }
 
-export const progressBackends = {
-  value: 'Backend developer',
+export const progressBackends: ProgressI = {
+  title: 'Backend developer',
   icon: 'carbon:data-backup',
   developers: [
     { title: 'Python', progress: 60 },

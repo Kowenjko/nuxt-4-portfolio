@@ -7,7 +7,7 @@ const marqueeRight = useTemplateRef('marqueeRight')
 const animations: any = []
 
 const setupMarquee = (el: any, direction = 'left', duration = 10) => {
-  // el.innerHTML += el.innerHTML
+  el.innerHTML += el.innerHTML
   const distance = el.scrollWidth / 2
 
   let fromX = direction === 'left' ? 0 : -distance
@@ -39,8 +39,8 @@ const playAll = () => {
 }
 
 onMounted(() => {
-  setupMarquee(marqueeLeft.value, 'left', 50)
-  setupMarquee(marqueeRight.value, 'right', 50)
+  setupMarquee(marqueeLeft.value, 'left', 150)
+  setupMarquee(marqueeRight.value, 'right', 150)
 })
 </script>
 
@@ -52,7 +52,9 @@ onMounted(() => {
         :key="'top-' + technology.title"
         class="flex items-center justify-center gap-4"
       >
-        <Icon :name="technology.icon" class="w-10 h-10" /><span class="whitespace-nowrap"> {{ technology.title }}</span>
+        <Icon v-if="technology.icon" :name="technology.icon" class="w-10 h-10" /><span class="whitespace-nowrap">
+          {{ technology.title }}</span
+        >
       </div>
     </div>
 
@@ -62,7 +64,9 @@ onMounted(() => {
         :key="'bottom-' + technology.title"
         class="flex items-center justify-center gap-4"
       >
-        <Icon :name="technology.icon" class="w-10 h-10" /><span class="whitespace-nowrap"> {{ technology.title }}</span>
+        <Icon v-if="technology.icon" :name="technology.icon" class="w-10 h-10" /><span class="whitespace-nowrap">
+          {{ technology.title }}</span
+        >
       </div>
     </div>
   </div>

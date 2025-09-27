@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Autoplay } from 'swiper/modules'
 
-const { projects = [], delay } = defineProps<{ projects: any[]; delay?: number }>()
+const { projects = [], delay } = defineProps<{ projects: ProjectI[]; delay?: number }>()
 
 const searchByName = ref('')
 const selectCategory = ref('All')
@@ -79,7 +79,12 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
                   class="w-full sm:w-sm md:w-lg hover:scale-105 transition-all duration-300 h-[460px] pt-0 overflow-hidden cursor-pointer z-100"
                 >
                   <div>
-                    <nuxt-img :src="project.imageUrl" format="webp" class="object-cover h-[300px] w-full" />
+                    <nuxt-img
+                      v-if="project.imageUrl"
+                      :src="project.imageUrl"
+                      format="webp"
+                      class="object-cover h-[300px] w-full"
+                    />
                   </div>
                   <CardContent class="">
                     <div class="text-left grid gap-2 h-[100px]">
@@ -96,7 +101,13 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
               </DialogTrigger>
               <DialogContent class="p-0 overflow-hidden sm:max-w-[820px] z-[999]">
                 <div>
-                  <nuxt-img :src="project.imageUrl" format="webp" class="object-cover h-hull" width="920px" />
+                  <nuxt-img
+                    v-if="project.imageUrl"
+                    :src="project.imageUrl"
+                    format="webp"
+                    class="object-cover h-hull"
+                    width="920px"
+                  />
                 </div>
 
                 <div class="text-left grid gap-2 p-4">
