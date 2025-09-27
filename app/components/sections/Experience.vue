@@ -81,7 +81,7 @@ onMounted(() => {
             <div class="md:size-20 size-10 rounded-full flex justify-center items-center border bg-ring">
               <img :src="experience.icon" alt="logo" class="rounded p-2" />
             </div>
-            <div class="gradient-line absolute -z-[1] w-1 h-[140%]" />
+            <div class="gradient-line absolute -z-[1] w-1 h-[145%]" />
           </div>
           <div class="w-full xl:w-[45%]">
             <div class="flex items-start">
