@@ -1,7 +1,7 @@
 // import { SendMessage } from '~~/shared/types'
 import { mailtrapClient, sender } from './config'
 
-export const sendWelcomeEmail = async ({ email, name, message }: SendMessage) => {
+export const sendWelcomeEmail = async ({ email, name, message }: SendMessageI) => {
   const { mailtrapTemplate, mailtrapRecipient } = useRuntimeConfig()
 
   try {
