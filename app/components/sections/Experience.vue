@@ -65,7 +65,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="container mx-auto p-10 pt-24" id="experience">
+  <section class="container mx-auto m-10 pt-24 overflow-hidden" id="experience">
     <TitleCategory :title="$t('nav.title.experience')" :category="$t('nav.category.experience')" />
     <div class="mt-32 relative">
       <div class="relative z-50 xl:space-y-32 space-y-10">
@@ -77,16 +77,17 @@ onMounted(() => {
           <div class="w-3/4 xl:w-[45%]">
             <GlowCard :card="{ description: experience.description, title: experience.name }" class="timeline-card" />
           </div>
-          <div class="w-[10%] relative hidden xl:flex justify-center">
-            <div class="absolute z-10 md:size-20 size-10 rounded-full flex justify-center items-center border bg-ring">
+          <div class="w-[10%] hidden xl:flex justify-center relative">
+            <div class="md:size-20 size-10 rounded-full flex justify-center items-center border bg-ring">
               <img :src="experience.icon" alt="logo" class="rounded p-2" />
             </div>
+            <div class="gradient-line absolute -z-[1] w-1 h-[140%]" />
           </div>
           <div class="w-full xl:w-[45%]">
-            <div class="flex items-star">
+            <div class="flex items-start">
               <div class="absolute top-0 left-5 md:left-10 xl:left-1/2 xl:-translate-x-1/2 h-full">
                 <div class="timeline" />
-                <div class="gradient-line w-1 h-full" />
+                <div class="gradient-line w-1 h-full xl:hidden" />
               </div>
               <div class="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                 <div class="md:size-20 size-10 rounded-full flex xl:hidden justify-center items-center border bg-ring">
