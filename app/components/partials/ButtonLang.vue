@@ -9,7 +9,7 @@ const selectLanguage = (code: any) => {
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="outline" size="icon">{{ locale.toLocaleUpperCase() }}</Button>
+      <Button variant="outline" size="icon" class="flex-center">{{ locale.toLocaleUpperCase() }}</Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="z-100">
       <DropdownMenuItem v-for="lang in locales" :key="lang.code" @click="selectLanguage(lang.code)">
