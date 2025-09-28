@@ -9,7 +9,7 @@ const { skills, defaultValue = '' } = defineProps<{
   <Accordion type="single" collapsible :default-value="defaultValue">
     <AccordionItem :value="skills.title">
       <AccordionTrigger>
-        <div class="flex items-center gap-4 text-3xl font-bold">
+        <div class="flex items-center gap-4 text-lg lg:text-3xl font-bold">
           <Icon :name="skills.icon" class="w-7 h-7" />
           <span> {{ skills.title }} </span>
         </div>

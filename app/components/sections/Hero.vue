@@ -55,12 +55,14 @@ watch(endValueY, (value) => {
 <template>
   <section
     id="hero"
-    class="relative z-10 mt-26 xl:mt-20 md:h-dvh h-[80vh] flex xl:items-center items-center justify-center"
+    class="relative z-10 mt-32 sm:mt-26 xl:mt-20 md:h-dvh h-[80vh] flex xl:items-center items-center justify-center"
   >
     <div class="grid-2-cols container px-10">
       <div class="content-center hero-text">
         <div class="relative">
-          <h1 class="md:text-5xl relative text-3xl font-semibold z-10 space-x-24 flex justify-between items-center">
+          <h1
+            class="text-lg sm:text-3xl md:text-5xl relative font-semibold z-10 space-x-24 flex justify-between items-center"
+          >
             <span>Vasya <span class="text-ring">Kovenko</span> </span>
 
             <TechnologiesHero />
@@ -71,7 +73,7 @@ watch(endValueY, (value) => {
           <span class="text-zinc-900 dark:text-zinc-500 m-0 font-bold">Frontend Developer</span>
           {{ $t('hero.info', { years, months }) }}
         </p>
-        <div class="flex items-center justify-between mt-16">
+        <div class="flex items-center justify-between mt-8 md:mt-16">
           <SocialLinks class="social-links" />
           <ButtonResume class="button-resume" />
         </div>

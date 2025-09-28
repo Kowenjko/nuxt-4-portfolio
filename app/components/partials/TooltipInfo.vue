@@ -5,7 +5,7 @@ const { info } = defineProps<{ info: string }>()
 <template>
   <TooltipProvider>
     <Tooltip>
-      <TooltipTrigger class="absolute -top-3 -right-3">
+      <TooltipTrigger class="absolute -top-3 -right-3 hidden md:block">
         <Icon name="mdi:information" class="w-4 h-4 animate-bounce" />
       </TooltipTrigger>
       <TooltipContent>

@@ -65,9 +65,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="container mx-auto m-10 pt-24 overflow-hidden" id="experience">
+  <section class="container mx-auto m-10 lg:pt-24 overflow-hidden px-10" id="experience">
     <TitleCategory :title="$t('nav.title.experience')" :category="$t('nav.category.experience')" />
-    <div class="mt-32 relative">
+    <div class="mt-14 lg:mt-32 relative">
       <div class="relative z-50 xl:space-y-32 space-y-10">
         <div
           class="flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between"
@@ -89,12 +89,14 @@ onMounted(() => {
                 <div class="timeline" />
                 <div class="gradient-line w-1 h-full xl:hidden" />
               </div>
-              <div class="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
-                <div class="md:size-20 size-10 rounded-full flex xl:hidden justify-center items-center border bg-ring">
-                  <img :src="experience.icon" alt="logo" class="rounded p-2" />
+              <div class="expText flex grow xl:gap-20 md:gap-10 gap-5 relative z-20">
+                <div
+                  class="size-20 !h-10 sm:!h-20 rounded-full flex xl:hidden justify-center shrink items-center border bg-ring"
+                >
+                  <img :src="experience.icon" alt="logo" class="rounded p-1 sm:p-2" />
                 </div>
                 <div>
-                  <h1 class="font-semibold text-3xl">{{ experience.title }}</h1>
+                  <h1 class="font-semibold text-xl sm:text-3xl">{{ experience.title }}</h1>
                   <p class="my-5 flex gap-4"><Icon name="mdi:calendar-month-outline" /> {{ experience.date }}</p>
                   <p class="text-ring italic">{{ $t('title.responsibilities') }}</p>
                   <ul class="list-disc ms-5 mt-5 flex flex-col gap-4">

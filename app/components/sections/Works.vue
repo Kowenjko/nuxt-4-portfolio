@@ -3,7 +3,7 @@ const { workProjects, testProjects } = useConstants()
 </script>
 
 <template>
-  <section class="py-16" id="portfolios">
+  <section class="py-2 lg:py-16" id="portfolios">
     <div class="container mx-auto p-10">
       <TitleCategory
         :title="$t('nav.category.portfolios')"

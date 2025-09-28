@@ -25,7 +25,7 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
       <FilterWorks v-model:search="searchByName" v-model:category="selectCategory" :categories />
 
       <div class="relative" v-if="filterProjects.length > 0">
-        <div class="absolute w-full top-0 right-17 flex justify-end gap-2 px-4 z-10">
+        <div class="absolute w-full top-0 right-0 xl:right-17 flex justify-end gap-2 px-4 z-10">
           <Button class="swiper-button-prev-custom cursor-pointer" variant="outline"
             ><Icon name="mdi:chevron-left"
           /></Button>
@@ -36,7 +36,7 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
         <swiper-container
           v-if="filterProjects.length > 0"
           :modules="{ Autoplay }"
-          class="py-16"
+          class="pt-16 lg:py-16"
           :speed="800"
           :autoplay="{
             delay,
@@ -51,12 +51,12 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
               spaceBetween: 50,
             },
             980: {
-              slidesPerView: 2,
-              spaceBetween: 50,
+              slidesPerView: 1.9,
+              spaceBetween: 30,
             },
             1280: {
               slidesPerView: 2.7,
-              spaceBetween: 50,
+              spaceBetween: 30,
             },
             1500: {
               slidesPerView: 3,
@@ -76,7 +76,7 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
             <Dialog>
               <DialogTrigger>
                 <Card
-                  class="w-full sm:w-sm md:w-lg hover:scale-105 transition-all duration-300 h-[460px] pt-0 overflow-hidden cursor-pointer z-100"
+                  class="w-sm md:w-lg hover:scale-105 transition-all duration-300 h-[460px] pt-0 overflow-hidden cursor-pointer z-100"
                 >
                   <div>
                     <nuxt-img
@@ -84,6 +84,7 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
                       :src="project.imageUrl"
                       format="webp"
                       class="object-cover h-[300px] w-full"
+                      width="920px"
                     />
                   </div>
                   <CardContent class="">
