@@ -24,7 +24,7 @@ const form = useForm({
 
 const loading = ref(false)
 
-const sendMessage = async (values: SendMessage, type: 'email' | 'telegram') => {
+const sendMessage = async (values: SendMessageI, type: 'email' | 'telegram') => {
   loading.value = true
   try {
     await $fetch(`/api/${type}`, {
@@ -74,13 +74,13 @@ const onSubmitTelegram = form.handleSubmit(async (values) => await sendMessage(v
         <FormMessage />
       </FormItem>
     </FormField>
-    <div class="flex gap-4 justify-end">
-      <Button :disabled="loading" @click="onSubmitEmail">
+    <div class="flex flex-col lg:flex-row gap-4 lg:justify-end">
+      <Button :disabled="loading" @click="onSubmitEmail" class="w-full lg:w-auto">
         <Loader2 v-if="loading" class="w-4 h-4 mr-2 animate-spin" />
         <MailIcon v-else class="w-4 h-4 mr-2" />
         {{ $t('button.send_message') }}
       </Button>
-      <Button :disabled="loading" @click="onSubmitTelegram">
+      <Button :disabled="loading" @click="onSubmitTelegram" class="w-full lg:w-auto">
         <Loader2 v-if="loading" class="w-4 h-4 mr-2 animate-spin" />
         <Icon v-else class="w-5 h-5 mr-2" name="mdi:telegram" />
         {{ $t('button.send_telegram') }}

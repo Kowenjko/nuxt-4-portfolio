@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import '@clerk/themes/shadcn.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -83,7 +84,7 @@
   }
 
   .timeline {
-    @apply absolute z-20 h-[105%] -top-10 -left-5 md:-left-[45px]  w-14 md:w-28 bg-background;
+    @apply absolute z-20 h-[105%] -top-10 -left-5 md:-left-[50px]  w-14 md:w-28 bg-background;
   }
 
   .timeline-logo {

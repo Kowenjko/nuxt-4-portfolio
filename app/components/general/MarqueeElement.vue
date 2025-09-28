@@ -39,20 +39,24 @@ const playAll = () => {
 }
 
 onMounted(() => {
-  setupMarquee(marqueeLeft.value, 'left', 20)
-  setupMarquee(marqueeRight.value, 'right', 25)
+  setupMarquee(marqueeLeft.value, 'left', 150)
+  setupMarquee(marqueeRight.value, 'right', 150)
 })
 </script>
 
 <template>
-  <div class="marquee text-5xl text-ring" @mouseenter="pauseAll" @mouseleave="playAll">
+  <div class="marquee text-2xl lg:text-5xl text-ring" @mouseenter="pauseAll" @mouseleave="playAll">
     <div class="marquee__inner" ref="marqueeLeft">
       <div
         v-for="technology in technologies"
         :key="'top-' + technology.title"
         class="flex items-center justify-center gap-4"
       >
-        <Icon :name="technology.icon" class="w-10 h-10" /><span class="whitespace-nowrap"> {{ technology.title }}</span>
+        <Icon v-if="technology.icon" :name="technology.icon" class="size-5 lg:size-10" /><span
+          class="whitespace-nowrap"
+        >
+          {{ technology.title }}</span
+        >
       </div>
     </div>
 
@@ -62,7 +66,11 @@ onMounted(() => {
         :key="'bottom-' + technology.title"
         class="flex items-center justify-center gap-4"
       >
-        <Icon :name="technology.icon" class="w-10 h-10" /><span class="whitespace-nowrap"> {{ technology.title }}</span>
+        <Icon v-if="technology.icon" :name="technology.icon" class="size-5 lg:size-10" /><span
+          class="whitespace-nowrap"
+        >
+          {{ technology.title }}</span
+        >
       </div>
     </div>
   </div>

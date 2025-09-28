@@ -1,25 +1,91 @@
-export const technologies = [
+export const projectTechnologies: TechnologyI[] = [
   { title: 'Nuxt 4', icon: 'cib:nuxt-js' },
   { title: 'Vue 3', icon: 'cib:vue-js' },
+  { title: 'TypeScript', icon: 'cib:typescript' },
+  { title: 'Pinia', icon: 'simple-icons:pinia' },
+  { title: 'I18n', icon: 'my-icon:i18n' },
+  { title: 'Convex', icon: 'gis:convex-hull' },
+  { title: 'WebSocket', icon: 'material-symbols:webhook' },
+  { title: 'Clerk', icon: 'simple-icons:clerk' },
+  { title: 'Crisp', icon: 'arcticons:crispy-icon-pack' },
+  { title: 'Mailtrap', icon: 'simple-icons:mailtrap' },
+  { title: 'Telegram Bot', icon: 'mdi:telegram' },
+  { title: 'Zod', icon: 'simple-icons:zod' },
+  { title: 'Gsap', icon: 'simple-icons:gsap' },
+  { title: 'Shadcn', icon: 'vscode-icons:file-type-shadcn' },
+  { title: 'CSS3', icon: 'cib:css3' },
+  { title: 'Sass', icon: 'cib:sass' },
+  { title: 'Tailwind', icon: 'mdi:tailwind' },
+  { title: 'HTML5', icon: 'cib:html5' },
+]
+
+export const technologies: TechnologyI[] = [
+  { title: 'Nuxt 4', icon: 'cib:nuxt-js' },
+  { title: 'Vue 3', icon: 'cib:vue-js' },
+  { title: 'Pinia', icon: 'simple-icons:pinia' },
   { title: 'React', icon: 'cib:react' },
+  { title: 'Redux', icon: 'akar-icons:redux-fill' },
   { title: 'Next', icon: 'cib:next-js' },
+  { title: 'Fresh', icon: 'simple-icons:fresh' },
   { title: 'Python', icon: 'cib:python' },
   { title: 'Django', icon: 'cib:django' },
+  { title: 'Deno', icon: 'lineicons:deno' },
   { title: 'JavaScript', icon: 'cib:javascript' },
   { title: 'TypeScript', icon: 'cib:typescript' },
   { title: 'Tailwind', icon: 'mdi:tailwind' },
+  { title: 'I18n', icon: 'my-icon:i18n' },
+  { title: 'Drizzle', icon: 'lineicons:drizzle' },
+  { title: 'Vuedraggable', icon: 'ri:draggable' },
+  { title: 'Convex', icon: 'gis:convex-hull' },
+  { title: 'Appwrite', icon: 'simple-icons:appwrite' },
+  { title: 'Neon', icon: 'file-icons:neon' },
+  { title: 'Firebase', icon: 'mdi:firebase' },
+  { title: 'Postgresql', icon: 'devicon-plain:postgresql' },
+  { title: 'MongoDB', icon: 'simple-icons:mongodb' },
+  { title: 'WebSocket', icon: 'material-symbols:webhook' },
+  { title: 'Clerk', icon: 'simple-icons:clerk' },
+  { title: 'Crisp', icon: 'arcticons:crispy-icon-pack' },
+  { title: 'Stripe', icon: 'simple-icons:stripe' },
+  { title: 'Mailtrap', icon: 'simple-icons:mailtrap' },
+  { title: 'Resend', icon: 'mdi:email-resend' },
+  { title: 'Telegram Bot', icon: 'mdi:telegram' },
+  { title: 'Zod', icon: 'simple-icons:zod' },
+  { title: 'Gsap', icon: 'simple-icons:gsap' },
+  { title: 'Motion', icon: 'mdi:motion' },
+  { title: 'Shadcn', icon: 'vscode-icons:file-type-shadcn' },
+  { title: 'OpenAI', icon: 'mingcute:openai-fill' },
+  { title: 'Stream-IO', icon: 'material-symbols:stream' },
+  { title: 'Zegocloud', icon: null },
   { title: 'Sass', icon: 'cib:sass' },
   { title: 'HTML5', icon: 'cib:html5' },
   { title: 'CSS3', icon: 'cib:css3' },
+  { title: 'Bootstrap', icon: 'mdi:bootstrap' },
+  { title: 'MaterialUi', icon: 'devicon-plain:materialui' },
+  { title: 'Vuetify', icon: 'mdi:vuetify' },
+  { title: 'Vuexy', icon: 'mdi:vuetify' },
+  { title: 'Emoji', icon: 'mdi:emoji' },
+  { title: 'Shopify', icon: 'ic:baseline-shopify' },
+  { title: 'Shopware', icon: 'simple-icons:shopware' },
+  { title: 'VueStoreFront', icon: 'devicon-plain:vuestorefront' },
+  { title: 'Git', icon: 'mdi:github' },
+  { title: 'Yarn', icon: 'tabler:brand-yarn' },
+  { title: 'Figma', icon: 'solar:figma-bold' },
+  { title: 'Photoshop', icon: 'mage:photoshop' },
+  { title: 'VS Code', icon: 'mingcute:vscode-fill' },
+  { title: 'Docker', icon: 'mdi:docker' },
+  { title: 'Slack', icon: 'mdi:slack' },
+  { title: 'Jira', icon: 'mdi:jira' },
+  { title: 'Ubuntu', icon: 'mdi:ubuntu' },
+  { title: 'Windows', icon: 'mingcute:windows-fill' },
 ]
 
-export const socialLinks = [
+export const socialLinks: SocialLinkI[] = [
   { icon: 'uil:linkedin-alt', url: 'https://www.linkedin.com/in/kovenko' },
   { icon: 'uil:github-alt', url: 'https://github.com/kowenjko' },
 ]
 
-export const progressFrontend = {
-  value: 'Frontend developer',
+export const progressFrontend: ProgressI = {
+  title: 'Frontend developer',
   icon: 'fluent:position-to-front-24-filled',
   developers: [
     { title: 'HTML', progress: 90 },
@@ -30,8 +96,8 @@ export const progressFrontend = {
   ],
 }
 
-export const progressBackends = {
-  value: 'Backend developer',
+export const progressBackends: ProgressI = {
+  title: 'Backend developer',
   icon: 'carbon:data-backup',
   developers: [
     { title: 'Python', progress: 60 },

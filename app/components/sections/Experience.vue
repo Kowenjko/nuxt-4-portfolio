@@ -65,9 +65,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="container mx-auto p-10 pt-24" id="experience">
+  <section class="container mx-auto m-10 lg:pt-24 overflow-hidden px-10" id="experience">
     <TitleCategory :title="$t('nav.title.experience')" :category="$t('nav.category.experience')" />
-    <div class="mt-32 relative">
+    <div class="mt-14 lg:mt-32 relative">
       <div class="relative z-50 xl:space-y-32 space-y-10">
         <div
           class="flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between"
@@ -77,23 +77,26 @@ onMounted(() => {
           <div class="w-3/4 xl:w-[45%]">
             <GlowCard :card="{ description: experience.description, title: experience.name }" class="timeline-card" />
           </div>
-          <div class="w-[10%] relative hidden xl:flex justify-center">
-            <div class="absolute z-10 md:size-20 size-10 rounded-full flex justify-center items-center border bg-ring">
+          <div class="w-[10%] hidden xl:flex justify-center relative">
+            <div class="md:size-20 size-10 rounded-full flex justify-center items-center border bg-ring">
               <img :src="experience.icon" alt="logo" class="rounded p-2" />
             </div>
+            <div class="gradient-line absolute -z-[1] w-1 h-[145%]" />
           </div>
           <div class="w-full xl:w-[45%]">
-            <div class="flex items-star">
+            <div class="flex items-start">
               <div class="absolute top-0 left-5 md:left-10 xl:left-1/2 xl:-translate-x-1/2 h-full">
                 <div class="timeline" />
-                <div class="gradient-line w-1 h-full" />
+                <div class="gradient-line w-1 h-full xl:hidden" />
               </div>
-              <div class="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
-                <div class="md:size-20 size-10 rounded-full flex xl:hidden justify-center items-center border bg-ring">
-                  <img :src="experience.icon" alt="logo" class="rounded p-2" />
+              <div class="expText flex grow xl:gap-20 md:gap-10 gap-5 relative z-20">
+                <div
+                  class="size-20 !h-10 sm:!h-20 rounded-full flex xl:hidden justify-center shrink items-center border bg-ring"
+                >
+                  <img :src="experience.icon" alt="logo" class="rounded p-1 sm:p-2" />
                 </div>
                 <div>
-                  <h1 class="font-semibold text-3xl">{{ experience.title }}</h1>
+                  <h1 class="font-semibold text-xl sm:text-3xl">{{ experience.title }}</h1>
                   <p class="my-5 flex gap-4"><Icon name="mdi:calendar-month-outline" /> {{ experience.date }}</p>
                   <p class="text-ring italic">{{ $t('title.responsibilities') }}</p>
                   <ul class="list-disc ms-5 mt-5 flex flex-col gap-4">

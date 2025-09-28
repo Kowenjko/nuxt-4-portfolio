@@ -1,7 +1,7 @@
 export const useConstants = () => {
   const { t, messages, locale } = useI18n()
 
-  const navLinks = computed(() => [
+  const navLinks = computed<NavLinkI[]>(() => [
     { title: t('nav.category.services'), url: 'services' },
     { title: t('nav.category.skills'), url: 'skills' },
     { title: t('nav.category.experience'), url: 'experience' },
@@ -9,7 +9,7 @@ export const useConstants = () => {
     { title: t('nav.category.contact'), url: 'contact' },
   ])
 
-  const services = computed(() => [
+  const services = computed<ServiceI[]>(() => [
     {
       title: t('services.title.frontend'),
       icon: 'uil-layer-group',
@@ -34,10 +34,10 @@ export const useConstants = () => {
 
   const parseResponsibilities = (type: string) =>
     // @ts-ignore
-    // messages.value[locale.value]?.experiences?.[type]?.responsibilities?.map((item: any) => item?.loc?.source)
-    messages.value[locale.value]?.experiences?.[type]?.responsibilities
+    messages.value[locale.value]?.experiences?.[type]?.responsibilities?.map((item: any) => item?.loc?.source)
+  // messages.value[locale.value]?.experiences?.[type]?.responsibilities
 
-  const experiences = computed(() => [
+  const experiences = computed<ExperienceI[]>(() => [
     {
       title: t('experiences.abvv.title'),
       name: 'ABVV.Group',
@@ -64,7 +64,7 @@ export const useConstants = () => {
     },
   ])
 
-  const workProjects = computed(() => [
+  const workProjects = computed<ProjectI[]>(() => [
     {
       title: t('works.storeInUa.title'),
       urlGit: null,
@@ -80,7 +80,7 @@ export const useConstants = () => {
       category: t('works.pm_tehko.category'),
       urlGit: null,
       url: null,
-      keywords: ['Vue', 'Vuetify', 'I18n', 'Pinia', 'Axios'],
+      keywords: ['Vue', 'Vuetify', 'Vuexy', 'I18n', 'Pinia', 'Axios'],
       imageUrl: '/webp/pm-tehko.webp',
     },
     {
@@ -157,7 +157,7 @@ export const useConstants = () => {
     },
   ])
 
-  const testProjects = computed(() => [
+  const testProjects = computed<ProjectI[]>(() => [
     {
       title: t('test_works.nuxt_4_calendar.title'),
       description: t('test_works.nuxt_4_calendar.description'),
@@ -367,7 +367,7 @@ export const useConstants = () => {
     },
   ])
 
-  const contacts = [
+  const contacts = computed<ContactI[]>(() => [
     { title: t('contacts.address.title'), info: t('contacts.address.info'), icon: 'uil:location-point' },
     {
       title: t('contacts.telegram.title'),
@@ -375,7 +375,7 @@ export const useConstants = () => {
       icon: 'uil:telegram-alt',
     },
     { title: t('contacts.email.title'), info: 'ortoswt@gmail.com', icon: 'uil:envelope-alt' },
-  ]
+  ])
 
   return { navLinks, services, experiences, workProjects, testProjects, contacts }
 }
