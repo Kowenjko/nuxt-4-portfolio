@@ -93,13 +93,13 @@ export default defineNuxtConfig({
         file: 'ru.json',
       },
     ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      alwaysRedirect: false,
-      fallbackLocale: 'en',
-    },
+    // detectBrowserLanguage: {
+    //   useCookie: true,
+    //   cookieKey: 'i18n_redirected',
+    //   redirectOn: 'root',
+    //   alwaysRedirect: false,
+    //   fallbackLocale: 'en',
+    // },
   },
   icon: {
     provider: 'iconify',

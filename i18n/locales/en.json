@@ -9,6 +9,10 @@
   "form": { "label": { "name": "Name", "message": "Message", "email": "Email" } },
   "title": { "responsibilities": "Responsibilities" },
   "tooltip": { "technology": "Technologies used in the project!" },
+  "seo": {
+    "title": "Frontend Developer — Portfolio Kovenko",
+    "description": "Frontend Developer portfolio. Frontend development, e-commerce, UI/UX implementation, support, and collaboration on projects."
+  },
   "nav": {
     "category": {
       "services": "Services",
