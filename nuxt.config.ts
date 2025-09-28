@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@clerk/nuxt',
     'convex-nuxt',
+    'nuxt-jsonld',
   ],
   components: [
     {
@@ -34,17 +35,11 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: { lang: 'en' },
       charset: 'utf-8',
       viewport:
         'width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0',
-      link: [
-        {
-          rel: 'icon',
-          type: 'image/png',
-          href: '/images/logo-dark.png',
-          sizes: '32x32',
-        },
-      ],
+      link: [{ rel: 'icon', type: 'image/png', href: '/images/logo-dark.png', sizes: '32x32' }],
     },
   },
   vite: {
@@ -121,6 +116,7 @@ export default defineNuxtConfig({
       clerkPublishableKey: process.env.NUXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
       clerkAppDomain: process.env.CLERK_APP_DOMAIN,
       crispWebsiteId: process.env.NUXT_CRISP_WEBSITE_ID,
+      clientUrl: process.env.NUXT_CLIENT_URL,
     },
   },
 })

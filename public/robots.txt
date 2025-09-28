@@ -1,2 +1,5 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Allow: /
+
+Sitemap: https://nuxt-4-portfolio.vercel.app/api/sitemap
+Host: https://nuxt-4-portfolio.vercel.app

@@ -16,5 +16,5 @@ defineProps<Props>()
       {{ category }} <AnimatedCounter v-if="counter" :counter :type />
     </div>
   </div>
-  <h3 v-if="title" class="text-center text-2xl md:text-4xl font-bold py-3">{{ title }}</h3>
+  <h2 v-if="title" class="text-center text-2xl md:text-4xl font-bold py-3">{{ title }}</h2>
 </template>

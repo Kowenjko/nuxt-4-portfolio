@@ -16,8 +16,8 @@
   "title": { "responsibilities": "Обязанности" },
   "tooltip": { "technology": "Технологии, которые использовались в проекте!" },
   "seo": {
-    "title": "Frontend Developer — Портфолио Kovenko",
-    "description": "Портфолио Frontend Developer. Разработка Frontend, E-commerce, реализация UI/UX, поддержка и сотрудничество над проектами."
+    "title": "Vasyl Kovenko — Frontend Developer | Kovenko Vasya",
+    "description": "Frontend-разработчик с 3+ годами опыта (Vue 3, Nuxt 3/4). Разработка e-commerce, API интеграции, UI/UX. Портфолио: nuxt-4-portfolio.vercel.app"
   },
   "nav": {
     "category": {
