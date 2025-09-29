@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     '@clerk/nuxt',
     'convex-nuxt',
     'nuxt-jsonld',
+    'nuxt-rating',
   ],
   components: [
     {
@@ -117,6 +118,7 @@ export default defineNuxtConfig({
       clerkAppDomain: process.env.CLERK_APP_DOMAIN,
       crispWebsiteId: process.env.NUXT_CRISP_WEBSITE_ID,
       clientUrl: process.env.NUXT_CLIENT_URL,
+      adminUserId: process.env.NUXT_ADMIN_USER_ID,
     },
   },
 })

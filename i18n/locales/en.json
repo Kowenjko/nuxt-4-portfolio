@@ -1,6 +1,7 @@
 {
   "button": {
     "resume": "Resume",
+    "add_review": "Add review",
     "send_message": "Send Message",
     "send_telegram": "Send message in Telegram",
     "close": "Close",
@@ -19,6 +20,7 @@
       "skills": "Skills",
       "experience": "Experience",
       "portfolios": "Portfolios",
+      "reviews": "Reviews",
       "contact": "Contact me"
     },
     "title": {
@@ -26,7 +28,7 @@
       "skills": "My technical level",
       "experience": "My Career Overview",
       "portfolios": "My Works",
-      "portfolios_test": "My Test Works",
+      "reviews": "Reviews",
       "contact": "Get in Touch"
     }
   },

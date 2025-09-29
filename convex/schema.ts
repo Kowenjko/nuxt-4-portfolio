@@ -5,15 +5,19 @@ export default defineSchema({
   users: defineTable({
     name: v.optional(v.string()),
     email: v.string(),
-    image: v.string(),
+    avatar: v.string(),
     tokenIdentifier: v.string(),
     isOnline: v.boolean(),
   }).index('by_tokenIdentifier', ['tokenIdentifier']),
 
   reviews: defineTable({
     user_id: v.id('users'),
-    rating: v.union(v.number(), v.null()),
     text: v.string(),
+    name: v.string(),
+    role: v.string(),
+    avatar: v.string(),
+    rating: v.number(),
+    approved: v.boolean(),
     createdAt: v.number(),
   }).index('by_user_id', ['user_id']),
 

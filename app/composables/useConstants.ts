@@ -6,6 +6,7 @@ export const useConstants = () => {
     { title: t('nav.category.skills'), url: 'skills' },
     { title: t('nav.category.experience'), url: 'experience' },
     { title: t('nav.category.portfolios'), url: 'portfolios' },
+    { title: t('nav.category.reviews'), url: 'reviews' },
     { title: t('nav.category.contact'), url: 'contact' },
   ])
 

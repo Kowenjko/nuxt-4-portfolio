@@ -30,6 +30,7 @@
     "mailtrap": "^4.2.0",
     "nuxt": "^4.1.2",
     "nuxt-jsonld": "^2.2.1",
+    "nuxt-rating": "^0.1.6",
     "nuxt-swiper": "2.0.1",
     "nuxt-typed-router": "4.0.2",
     "pinia": "^3.0.3",

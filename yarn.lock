@@ -1148,7 +1148,7 @@
     unimport "^5.2.0"
     untyped "^2.0.0"
 
-"@nuxt/kit@^3.14.1592", "@nuxt/kit@^3.15.4", "@nuxt/kit@^3.17.2", "@nuxt/kit@^3.17.3", "@nuxt/kit@^3.17.7", "@nuxt/kit@^3.18.0", "@nuxt/kit@^3.18.1", "@nuxt/kit@^3.9.0":
+"@nuxt/kit@^3.12.2", "@nuxt/kit@^3.14.1592", "@nuxt/kit@^3.15.4", "@nuxt/kit@^3.17.2", "@nuxt/kit@^3.17.3", "@nuxt/kit@^3.17.7", "@nuxt/kit@^3.18.0", "@nuxt/kit@^3.18.1", "@nuxt/kit@^3.9.0":
   version "3.19.2"
   resolved "https://registry.npmjs.org/@nuxt/kit/-/kit-3.19.2.tgz"
   integrity sha512-+QiqO0WcIxsKLUqXdVn3m4rzTRm2fO9MZgd330utCAaagGmHsgiMJp67kE14boJEPutnikfz3qOmrzBnDIHUUg==
@@ -5096,6 +5096,14 @@ nuxt-jsonld@^2.2.1:
     pathe "^1.1.2"
     schema-dts "^1.1.2"
 
+nuxt-rating@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/nuxt-rating/-/nuxt-rating-0.1.6.tgz#6c341786586162c7b4a7a813e5c1abe5a4a9c20f"
+  integrity sha512-EPbfPH2wfIp2FEKIrCXMmviwJfxECi70R+yUscYmg94ypDgG397GnuSvPQtCIqZbN3yTta9arwhMQbnP0coZow==
+  dependencies:
+    "@nuxt/kit" "^3.12.2"
+    typescript "^5.5.4"
+
 nuxt-swiper@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/nuxt-swiper/-/nuxt-swiper-2.0.1.tgz#6e05bea474bab8d7e866eaf40554943ce3348177"
@@ -6787,7 +6795,7 @@ type-level-regexp@~0.1.17:
   resolved "https://registry.npmjs.org/type-level-regexp/-/type-level-regexp-0.1.17.tgz"
   integrity sha512-wTk4DH3cxwk196uGLK/E9pE45aLfeKJacKmcEgEOA/q5dnPGNxXt0cfYdFxb57L+sEpf1oJH4Dnx/pnRcku9jg==
 
-typescript@^5.9.2:
+typescript@^5.5.4, typescript@^5.9.2:
   version "5.9.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.2.tgz#d93450cddec5154a2d5cabe3b8102b83316fb2a6"
   integrity sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==

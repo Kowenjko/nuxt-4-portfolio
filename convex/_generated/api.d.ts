@@ -13,9 +13,11 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as actions from "../actions.js";
 import type * as clerk from "../clerk.js";
 import type * as http from "../http.js";
 import type * as reviews from "../reviews.js";
+import type * as telegram from "../telegram.js";
 import type * as users from "../users.js";
 import type * as views from "../views.js";
 
@@ -28,9 +30,11 @@ import type * as views from "../views.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  actions: typeof actions;
   clerk: typeof clerk;
   http: typeof http;
   reviews: typeof reviews;
+  telegram: typeof telegram;
   users: typeof users;
   views: typeof views;
 }>;

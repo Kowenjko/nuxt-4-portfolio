@@ -1,6 +1,7 @@
 {
   "button": {
     "resume": "Резюме",
+    "add_review": "Оставить отзыв",
     "send_message": "Отправить сообщение",
     "send_telegram": "Отправить сообщение в Telegram",
     "close": "Закрыть",
@@ -25,6 +26,7 @@
       "skills": "Навыки",
       "experience": "Опыт",
       "portfolios": "Портфолио",
+      "reviews": "Reviews",
       "contact": "Связаться со мной"
     },
     "title": {
@@ -33,6 +35,7 @@
       "experience": "Обзор карьеры",
       "portfolios": "Мои работы",
       "portfolios_test": "Мои тестовые работы",
+      "reviews": "Reviews",
       "contact": "Связаться"
     }
   },
