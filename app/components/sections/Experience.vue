@@ -65,7 +65,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="container mx-auto m-10 lg:pt-24 overflow-hidden px-10" id="experience">
+  <section class="container mx-auto m-10 lg:pt-24 overflow-hidden p-5 md:px-10" id="experience">
     <TitleCategory :title="$t('nav.title.experience')" :category="$t('nav.category.experience')" />
     <div class="mt-14 lg:mt-32 relative">
       <div class="relative z-50 xl:space-y-32 space-y-10">
@@ -116,14 +116,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .gradient-line {
   width: 2px;
-  // background: linear-gradient(
-  //   0deg,
-  //   rgba(69, 222, 196, 0) 0%,
-  //   #62e0ff 25%,
-  //   #52aeff 37.51%,
-  //   #fd5c79 62.83%,
-  //   #6d45ce 92.91%
-  // );
+
   background: var(--ring);
 }
 </style>

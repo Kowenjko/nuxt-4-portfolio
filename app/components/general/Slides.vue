@@ -76,7 +76,7 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
             <Dialog>
               <DialogTrigger>
                 <Card
-                  class="w-sm md:w-lg hover:scale-105 transition-all duration-300 h-[460px] pt-0 overflow-hidden cursor-pointer z-100"
+                  class="max-w-sm md:max-w-lg hover:scale-105 transition-all duration-300 h-[460px] pt-0 overflow-hidden cursor-pointer z-100"
                 >
                   <div>
                     <nuxt-img

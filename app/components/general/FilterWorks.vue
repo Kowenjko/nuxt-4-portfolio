@@ -8,7 +8,7 @@ const category = defineModel('category', { default: 'All' })
 </script>
 
 <template>
-  <div class="container mx-auto px-10 flex gap-4 flex-col lg:flex-row justify-between items-start pb-2">
+  <div class="container mx-auto p-5 md:px-10 flex gap-4 flex-col lg:flex-row justify-between items-start pb-2">
     <ul class="flex flex-wrap gap-2">
       <li>
         <Button class="cursor-pointer" :variant="category === 'All' ? 'default' : 'outline'" @click="category = 'All'">

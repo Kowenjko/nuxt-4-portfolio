@@ -6,7 +6,7 @@ import { projectTechnologies } from '@/constants'
 <template>
   <ClientOnly>
     <swiper-container
-      class="inline h-10 w-30 sm:w-44"
+      class="hidden sm:inline h-10 w-30 sm:w-44"
       :direction="'vertical'"
       :autoplay="{
         delay: 1500,

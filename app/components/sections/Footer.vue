@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { api } from '../../../convex/_generated/api'
+
+const { data: count } = useConvexQuery(api.views.getViews, {})
+
 const currentYear = new Date().getFullYear()
 const nextYear = new Date().getFullYear() + 1
 
@@ -11,6 +15,12 @@ const isDark = useDark()
     <p class="flex-center text-sm mt-4">
       &copy; {{ currentYear }} - {{ nextYear }}
       <NuxtImg :src="isDark ? '/my-logo-light.png' : '/my-logo-dark.png'" width="50px" class="w-14" alt="logo" />
+      <ClientOnly>
+        <div class="flex-center gap-4">
+          <div>👀</div>
+          <div>{{ count }}</div>
+        </div>
+      </ClientOnly>
     </p>
   </footer>
 </template>
