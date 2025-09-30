@@ -3,15 +3,15 @@ import { api } from '../../../convex/_generated/api'
 import admin from '~/middleware/admin'
 
 const { data: reviews } = useConvexQuery(api.reviews.getAllReviews)
-const { mutate: approve } = useConvexMutation(api.reviews.approveReview)
-const { mutate: remove } = useConvexMutation(api.reviews.deleteReview)
+const { mutate: approve } = useConvexMutation(api.reviews.changeApproveReview)
+const { mutate: deleteReview } = useConvexMutation(api.reviews.deleteReview)
 
-async function approveReview(id: any) {
-  await approve({ id })
+async function approveReview(id: any, approved: boolean) {
+  await approve({ id, approved })
 }
 
 async function removeReview(id: any) {
-  await remove({ id })
+  await deleteReview({ id })
 }
 
 definePageMeta({
@@ -40,10 +40,12 @@ definePageMeta({
           </div>
           <p class="italic py-4">"{{ review.text }}"</p>
           <div class="absolute left-2 -top-3">
-            <p v-if="review.approved" class="text-green-600 text-xs mt-1 font-bold bg-green-900/50 px-1 rounded">
+            <p v-if="review.approved" class="text-green-600 text-xs mt-1 font-bold cbg-green-900/50 px-1 rounded">
               ✔️ Схвалено
             </p>
-            <p v-else class="text-yellow-600 text-xs mt-1 font-bold bg-yellow-900/50 px-1 rounded">⏳ На модерації</p>
+            <p v-else class="text-yellow-600 text-xs mt-1 font-bold dark:bg-yellow-900/50 px-1 rounded">
+              ⏳ На модерації
+            </p>
           </div>
           <div class="flex items-center gap-4 pt-4">
             <NuxtRating :rating-value="review.rating" :border-width="0" :rating-size="10" />
@@ -53,7 +55,7 @@ definePageMeta({
         <div class="flex gap-2">
           <Button
             v-if="!review.approved"
-            @click="approveReview(review._id)"
+            @click="approveReview(review._id, true)"
             size="icon"
             class="px-4 py-2 bg-emerald-700 text-white hover:bg-emerald-800 transition-all"
           >
@@ -61,15 +63,30 @@ definePageMeta({
           </Button>
           <Button
             v-else
-            @click="approveReview(review._id)"
+            @click="approveReview(review._id, false)"
             class="px-4 py-2 bg-amber-700 text-white hover:bg-amber-800 transition-all"
             size="icon"
           >
             <Icon name="mdi:cancel" />
           </Button>
-          <Button @click="removeReview(review._id)" variant="destructive" size="icon">
-            <Icon name="mdi:trash-can-outline" />
-          </Button>
+
+          <AlertDialog>
+            <AlertDialogTrigger as-child>
+              <Button variant="destructive" size="icon">
+                <Icon name="mdi:trash-can-outline" />
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Ви абсолютно впевнені?</AlertDialogTitle>
+                <AlertDialogDescription> Це остаточно видалить відгук вашого портфоліо! </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Відмінити</AlertDialogCancel>
+                <AlertDialogAction @click="removeReview(review._id)">Видалити</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </div>
     </div>

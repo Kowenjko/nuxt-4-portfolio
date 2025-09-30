@@ -27,10 +27,10 @@ export const getAllReviews = query({
   },
 })
 
-export const approveReview = mutation({
-  args: { id: v.id('reviews') },
+export const changeApproveReview = mutation({
+  args: { id: v.id('reviews'), approved: v.boolean() },
   handler: async (ctx, args) => {
-    await ctx.db.patch(args.id, { approved: true })
+    await ctx.db.patch(args.id, { approved: args.approved })
   },
 })
 
