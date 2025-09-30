@@ -3,6 +3,7 @@ import { Menu } from 'lucide-vue-next'
 
 const { navLinks } = useConstants()
 const { scrollToId } = useScrollNav()
+const { isAdmin } = useAdmin()
 </script>
 
 <template>
@@ -24,6 +25,9 @@ const { scrollToId } = useScrollNav()
               <span>{{ title }}</span>
               <span class="underline" />
             </a>
+          </li>
+          <li class="group" v-if="isAdmin">
+            <nuxt-link to="/admin">Admin <span class="underline" /></nuxt-link>
           </li>
         </ul>
       </nav>

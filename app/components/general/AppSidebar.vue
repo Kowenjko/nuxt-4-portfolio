@@ -1,18 +1,15 @@
 <script setup lang="ts">
 import { ViewIcon, Home, Star, UserIcon } from 'lucide-vue-next'
 
+const isDark = useDark()
 // Menu items.
 const items = [
   {
     title: 'Home',
-    url: '/',
+    url: '/admin',
     icon: Home,
   },
-  {
-    title: 'Views',
-    url: '/admin',
-    icon: ViewIcon,
-  },
+
   {
     title: 'Users',
     url: '/admin/users',
@@ -30,8 +27,14 @@ const items = [
   <Sidebar>
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>Application</SidebarGroupLabel>
-        <SidebarGroupContent>
+        <SidebarGroupLabel>
+          <nuxt-link to="/" class="flex items-center gap-2">
+            <NuxtImg :src="isDark ? '/my-logo-light.png' : '/my-logo-dark.png'" width="30px" class="w-7" alt="logo" />
+            Kovenko
+          </nuxt-link>
+        </SidebarGroupLabel>
+        <Separator />
+        <SidebarGroupContent class="pt-5">
           <SidebarMenu>
             <SidebarMenuItem v-for="item in items" :key="item.title">
               <SidebarMenuButton asChild>

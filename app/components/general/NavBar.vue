@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const { scrollToId } = useScrollNav()
 const { navLinks } = useConstants()
+const { isAdmin } = useAdmin()
 </script>
 
 <template>
@@ -12,8 +13,8 @@ const { navLinks } = useConstants()
           <span class="underline" />
         </a>
       </li>
-      <li class="group">
-        <nuxt-link to="/admin">admin <span class="underline" /></nuxt-link>
+      <li class="group" v-if="isAdmin">
+        <nuxt-link to="/admin">Admin <span class="underline" /></nuxt-link>
       </li>
     </ul>
   </nav>
