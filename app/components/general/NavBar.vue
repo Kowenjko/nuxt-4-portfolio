@@ -12,6 +12,9 @@ const { navLinks } = useConstants()
           <span class="underline" />
         </a>
       </li>
+      <li class="group">
+        <nuxt-link to="/admin">admin <span class="underline" /></nuxt-link>
+      </li>
     </ul>
   </nav>
 </template>
