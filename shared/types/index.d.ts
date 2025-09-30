@@ -53,3 +53,15 @@ export interface ProgressI {
   icon: string
   developers: DeveloperI[]
 }
+
+export interface ReviewI {
+  user_id: string
+  _id: string
+  text: string
+  name: string
+  avatar: string
+  role: string
+  rating: number
+  approved: boolean
+  createdAt?: number
+}

@@ -1,13 +1,5 @@
 <script lang="ts" setup>
-defineProps<{
-  card: {
-    id?: number
-    text: string
-    name?: string
-    avatar?: string
-    rating?: number
-  }
-}>()
+defineProps<{ card: ReviewI }>()
 
 const cardRef = useTemplateRef('cardRef')
 
@@ -30,18 +22,21 @@ const handleMouseMove = (event: MouseEvent) => {
   <Card class="card-wrapper" ref="cardRef" @mousemove="handleMouseMove">
     <div class="glow"></div>
     <CardHeader v-if="card.name">
-      <CardTitle class="flex flex-col justify-center items-center text-lg gap-4">
+      <CardTitle class="flex justify-center items-center text-lg gap-4">
         <Avatar v-if="card.avatar">
           <AvatarImage :src="card.avatar" alt="avatar" />
         </Avatar>
-
         <span v-if="card?.name">{{ card.name }}</span>
       </CardTitle>
-      <CardDescription>
-        <NuxtRating :rating-value="card.rating" />
-      </CardDescription>
+      <CardDescription>{{ card.role }} </CardDescription>
     </CardHeader>
-    <CardContent>{{ card?.text }} </CardContent>
+    <CardContent class="text-start font-light mb-4">{{ card?.text }} </CardContent>
+    <CardFooter class="flex justify-end text-ring italic text-xs absolute bottom-3 right-0 w-full">
+      <div class="flex justify-between w-full">
+        <NuxtRating :rating-value="card.rating" />
+        <NuxtTime :datetime="card.createdAt!" />
+      </div>
+    </CardFooter>
   </Card>
 </template>
 <style lang="scss" scoped>
@@ -50,8 +45,8 @@ const handleMouseMove = (event: MouseEvent) => {
   position: relative;
   z-index: 40;
   overflow: hidden;
-
   transition: border-color 1s ease-in-out;
+  height: 100%;
 
   &::before {
     position: absolute;

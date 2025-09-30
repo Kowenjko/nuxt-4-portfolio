@@ -52,7 +52,7 @@ const onSubmitReview = form.handleSubmit(async (values) => {
     <DialogContent class="sm:max-w-[425px]">
       <DialogHeader>
         <DialogTitle>Add Review</DialogTitle>
-        <DialogDescription>Add Review</DialogDescription>
+        <DialogDescription></DialogDescription>
       </DialogHeader>
       <form class="space-y-4">
         <NuxtRating

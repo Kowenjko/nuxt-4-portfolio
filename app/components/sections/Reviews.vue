@@ -1,35 +1,29 @@
 <script lang="ts" setup>
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+import type { ReviewI } from '~~/shared/types'
+import { api } from '../../../convex/_generated/api'
+import { Autoplay } from 'swiper/modules'
 
-const reviews = [
-  {
-    text: 'Очень приятно было работать! Всё сделал быстро и качественно.',
-    name: 'Иван Петров',
-    rating: 5,
-    role: 'CEO Startup',
-    avatar: 'https://i.pravatar.cc/100?img=3',
-  },
-  {
-    text: 'Классный разработчик, помог с проектом на Nuxt.',
-    name: 'Анна Смирнова',
-    rating: 4,
-    role: 'Frontend Dev',
-    avatar: 'https://i.pravatar.cc/100?img=5',
-  },
-  {
-    text: 'Всегда на связи и даёт полезные советы по проекту!',
-    name: 'John Doe',
-    rating: 3,
-    role: 'Product Manager',
-    avatar: 'https://i.pravatar.cc/100?img=8',
-  },
-]
+const reviews = ref<ReviewI[]>([])
+
+const { data } = useConvexQuery(api.reviews.getReviews, {})
+
+watch(data, (value) => {
+  // @ts-ignore
+  reviews.value = value
+
+  setTimeout(equalizeSlides, 500)
+})
 </script>
 
 <template>
-  <section class="py-16" id="reviews">
+  <section id="reviews">
     <div class="container mx-auto px-5 md:px-10 text-center">
-      <TitleCategory :title="$t('nav.title.reviews')" :category="$t('nav.category.reviews')" />
+      <TitleCategory
+        :title="'Залиште відгук'"
+        :category="$t('nav.category.reviews')"
+        :counter="reviews.length"
+        type="reviews"
+      />
       <div class="flex justify-end">
         <SignedIn>
           <AddReviewModal>
@@ -43,20 +37,48 @@ const reviews = [
         </SignedOut>
       </div>
 
-      <swiper-container
-        :modules="[Navigation, Pagination, Autoplay]"
-        :slides-per-view="2"
-        :space-between="20"
-        :loop="true"
-        :autoplay="{ delay: 5000 }"
-        pagination
-        navigation
-        class="pt-16 lg:py-16"
-      >
-        <swiper-slide v-for="(review, index) in reviews" :key="index">
-          <GardReviews :card="review" />
-        </swiper-slide>
-      </swiper-container>
+      <ClientOnly>
+        <div class="relative mt-10">
+          <div class="absolute w-full top-0 right-0 xl:right-0 flex justify-end gap-2 z-10">
+            <Button class="swiper-button-prev-custom cursor-pointer" variant="outline"
+              ><Icon name="mdi:chevron-left"
+            /></Button>
+            <Button class="swiper-button-next-custom cursor-pointer" variant="outline"
+              ><Icon name="mdi:chevron-right"
+            /></Button>
+          </div>
+          <swiper-container
+            class="pt-16 lg:py-16"
+            :modules="[Autoplay]"
+            :slides-per-view="1"
+            :space-between="20"
+            :loop="true"
+            :autoplay="{ delay: 3000 }"
+            :breakpoints="{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              980: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }"
+            :navigation="{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }"
+          >
+            <swiper-slide class="review-slide px-2" v-for="(review, index) in reviews" :key="review._id">
+              <GardReviews :card="review" />
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </ClientOnly>
     </div>
   </section>
 </template>
