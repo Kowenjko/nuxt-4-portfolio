@@ -21,32 +21,59 @@ definePageMeta({
 </script>
 
 <template>
-  <section class="bg-background">
-    <h1 class="text-2xl font-bold mb-6">Модерация отзывов</h1>
+  <section class="container mx-auto px-4 pb-10">
+    <h1 class="text-2xl font-bold mb-6 text-center">Модерація відгуків</h1>
 
-    <div v-if="reviews?.length" class="space-y-4">
-      <div v-for="review in reviews" :key="review._id" class="p-4 shadow rounded-lg flex justify-between items-center">
+    <div v-if="reviews?.length" class="space-y-5">
+      <div
+        v-for="review in reviews"
+        :key="review._id"
+        class="px-4 py-5 shadow rounded-lg flex justify-between items-center border relative"
+        :class="{ 'bg-emerald-900/10': review.approved }"
+      >
         <div>
-          <p class="italic">"{{ review.text }}"</p>
-          <p class="text-sm text-gray-600 mt-1">{{ review.name }} ({{ review.role }})</p>
-          <p v-if="review.approved" class="text-green-600 text-xs mt-1 font-bold">✔️ Одобрен</p>
-          <p v-else class="text-yellow-600 text-xs mt-1 font-bold">⏳ На модерации</p>
+          <div class="text-sm text-gray-600 mt-1 flex items-center gap-2">
+            <Avatar v-if="review.avatar">
+              <AvatarImage :src="review.avatar" alt="avatar" />
+            </Avatar>
+            {{ review.name }} ({{ review.role }})
+          </div>
+          <p class="italic py-4">"{{ review.text }}"</p>
+          <div class="absolute left-2 -top-3">
+            <p v-if="review.approved" class="text-green-600 text-xs mt-1 font-bold bg-green-900/50 px-1 rounded">
+              ✔️ Схвалено
+            </p>
+            <p v-else class="text-yellow-600 text-xs mt-1 font-bold bg-yellow-900/50 px-1 rounded">⏳ На модерації</p>
+          </div>
+          <div class="flex items-center gap-4 pt-4">
+            <NuxtRating :rating-value="review.rating" :border-width="0" :rating-size="10" />
+            <NuxtTime :datetime="review.createdAt!" class="text-xs text-ring italic" />
+          </div>
         </div>
-        <div class="space-x-2">
-          <button
+        <div class="flex gap-2">
+          <Button
             v-if="!review.approved"
             @click="approveReview(review._id)"
-            class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+            size="icon"
+            class="px-4 py-2 bg-emerald-700 text-white hover:bg-emerald-800 transition-all"
           >
-            Одобрить
-          </button>
-          <button @click="removeReview(review._id)" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
-            Удалить
-          </button>
+            <Icon name="mdi:check-all" />
+          </Button>
+          <Button
+            v-else
+            @click="approveReview(review._id)"
+            class="px-4 py-2 bg-amber-700 text-white hover:bg-amber-800 transition-all"
+            size="icon"
+          >
+            <Icon name="mdi:cancel" />
+          </Button>
+          <Button @click="removeReview(review._id)" variant="destructive" size="icon">
+            <Icon name="mdi:trash-can-outline" />
+          </Button>
         </div>
       </div>
     </div>
 
-    <p v-else class="text-gray-500">Отзывов пока нет.</p>
+    <p v-else class="text-center">Відгуків поки немає.</p>
   </section>
 </template>

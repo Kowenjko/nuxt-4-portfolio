@@ -5,7 +5,7 @@ const isDark = useDark()
 <template>
   <SidebarProvider>
     <AppSidebar />
-    <main>
+    <main class="w-full">
       <SidebarTrigger />
       <slot />
     </main>
