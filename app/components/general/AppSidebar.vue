@@ -35,10 +35,10 @@ const items = [
           <SidebarMenu>
             <SidebarMenuItem v-for="item in items" :key="item.title">
               <SidebarMenuButton asChild>
-                <a :href="item.url">
+                <nuxt-link :to="item.url">
                   <component :is="item.icon" />
                   <span>{{ item.title }}</span>
-                </a>
+                </nuxt-link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
