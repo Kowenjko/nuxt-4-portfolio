@@ -16,10 +16,20 @@
       "position": "Должность",
       "review": "Ваш отзыв"
     },
-    "placeholder": { "position": "Кем вы являетесь (например, Клиент, Разработчик)", "review": "Ваш отзыв..." }
+    "placeholder": { "position": "Кем вы являетесь (например, Клиент, Разработчик)", "review": "Ваш отзыв..." },
+    "errors": {
+      "min": "Поле должно содержать не менее {min} символов.",
+      "email": "Неверный адрес электронной почты"
+    }
   },
   "title": { "responsibilities": "Обязанности" },
   "tooltip": { "technology": "Технологии, которые использовались в проекте!" },
+  "toast": {
+    "send_review": "Отзыв отправлен успешно!",
+    "send_section": "Секция создана успешно!",
+    "send_message": "Сообщение отправлено успешно!",
+    "send_error": "Что-то пошло не так. Повторите попытку позже."
+  },
   "seo": {
     "title": "Vasyl Kovenko — Frontend Developer | Kovenko Vasya",
     "description": "Frontend-разработчик с 3+ годами опыта (Vue 3, Nuxt 3/4). Разработка e-commerce, API интеграции, UI/UX. Портфолио: nuxt-4-portfolio.vercel.app"
@@ -30,7 +40,7 @@
       "skills": "Навыки",
       "experience": "Опыт",
       "portfolios": "Портфолио",
-      "reviews": "Reviews",
+      "reviews": "Отзывы",
       "contact": "Связаться со мной"
     },
     "title": {

@@ -16,10 +16,20 @@
       "position": "Position",
       "review": "Your review"
     },
-    "placeholder": { "position": "Who are you (e.g., Customer, Developer)", "review": "Your review..." }
+    "placeholder": { "position": "Who are you (e.g., Customer, Developer)", "review": "Your review..." },
+    "errors": {
+      "min": "The field must contain at least {min} characters.",
+      "email": "Invalid email address"
+    }
   },
   "title": { "responsibilities": "Responsibilities" },
   "tooltip": { "technology": "Technologies used in the project!" },
+  "toast": {
+    "send_review": "Review sent successfully!",
+    "send_section": "Section created successfully!",
+    "send_message": "Message sent successfully!",
+    "send_error": "Something went wrong. Please try again later."
+  },
   "seo": {
     "title": "Vasyl Kovenko — Frontend Developer | Kovenko Vasya",
     "description": "Frontend developer with 3+ years experience (Vue 3, Nuxt). E-commerce, API integrations, UI/UX.. Portfolio: nuxt-4-portfolio.vercel.app"

@@ -5,11 +5,13 @@ import { z } from 'zod'
 import { toast } from 'vue-sonner'
 import { MailIcon, Loader2 } from 'lucide-vue-next'
 
+const { t } = useI18n()
+
 const formSchema = z.object({
   name: z.string().min(1, 'Required'),
-  email: z.email(),
+  email: z.email({ message: t('form.errors.email') }),
   message: z.string().min(10, {
-    message: 'Bio must be at least 10 characters.',
+    message: t('form.errors.min', { min: 10 }),
   }),
 })
 
@@ -32,10 +34,10 @@ const sendMessage = async (values: SendMessageI, type: 'email' | 'telegram') => 
       body: values,
     })
 
-    toast.success('Message sent successfully!')
+    toast.success(t('toast.send_message'))
     form.resetForm()
   } catch (error) {
-    toast.error('Something went wrong. Please try again later.')
+    toast.error(t('toast.send_error'))
   } finally {
     loading.value = false
   }

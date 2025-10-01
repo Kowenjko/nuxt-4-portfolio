@@ -6,10 +6,12 @@ import { toast } from 'vue-sonner'
 import { api } from '../../../convex/_generated/api'
 import { Loader2 } from 'lucide-vue-next'
 
+const { t } = useI18n()
+
 const formSchema = z.object({
   role: z.string(),
   text: z.string().min(10, {
-    message: 'Bio must be at least 10 characters.',
+    message: t('form.errors.min', { min: 10 }),
   }),
 })
 
@@ -33,11 +35,11 @@ const onSubmitReview = form.handleSubmit(async (values) => {
   try {
     await addReview({ ...values, rating: rating.value, tokenIdentifier })
     open.value = false
-    toast.success('Review sent successfully!')
+    toast.success(t('toast.send_review'))
     form.resetForm()
   } catch (error) {
     console.log(error)
-    toast.error('Something went wrong. Please try again later.')
+    toast.error(t('toast.send_error'))
   } finally {
     loading.value = false
   }

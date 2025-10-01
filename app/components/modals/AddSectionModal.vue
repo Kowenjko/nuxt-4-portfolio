@@ -23,17 +23,18 @@ const open = ref(false)
 const loading = ref(false)
 
 const { mutate: addSections } = useConvexMutation(api.sections.addSections)
+const { t } = useI18n()
 
 const onSubmitSections = form.handleSubmit(async (values) => {
   loading.value = true
   try {
     await addSections(values)
     open.value = false
-    toast.success('Section sent successfully!')
+    toast.success(t('toast.send_section'))
     form.resetForm()
   } catch (error) {
     console.log(error)
-    toast.error('Something went wrong. Please try again later.')
+    toast.error(t('toast.send_error'))
   } finally {
     loading.value = false
   }
