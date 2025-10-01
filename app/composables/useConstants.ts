@@ -1,6 +1,7 @@
 export const useConstants = () => {
   const { t, messages, locale } = useI18n()
   const sectionsStore = useSectionsStore()
+  const url = useRequestURL()
 
   const navLinks = computed<NavLinkI[]>(() => [
     { title: t('nav.category.services'), url: 'services', isShow: sectionsStore.showServices! },
@@ -37,9 +38,11 @@ export const useConstants = () => {
   ])
 
   const parseResponsibilities = (type: string) =>
-    // @ts-ignore
-    // messages.value[locale.value]?.experiences?.[type]?.responsibilities?.map((item: any) => item?.loc?.source)
-    messages.value[locale.value]?.experiences?.[type]?.responsibilities
+    url.hostname === 'localhost'
+      ? // @ts-ignore
+        messages.value[locale.value]?.experiences?.[type]?.responsibilities?.map((item: any) => item?.loc?.source)
+      : // @ts-ignore
+        messages.value[locale.value]?.experiences?.[type]?.responsibilities
 
   const experiences = computed<ExperienceI[]>(() => [
     {
