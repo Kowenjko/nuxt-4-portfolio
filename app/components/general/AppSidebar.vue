@@ -29,8 +29,8 @@ const items = [
     <SidebarContent>
       <SidebarGroup>
         <SidebarGroupLabel>
-          <nuxt-link to="/" class="flex items-center gap-2">
-            <NuxtImg :src="isDark ? '/my-logo-light.png' : '/my-logo-dark.png'" width="30px" class="w-7" alt="logo" />
+          <nuxt-link to="/" class="flex items-center text-xl gap-2 pb-2 hover:scale-105 transition-all">
+            <NuxtImg :src="isDark ? '/my-logo-light.png' : '/my-logo-dark.png'" width="30px" class="w-8" alt="logo" />
             Kovenko
           </nuxt-link>
         </SidebarGroupLabel>

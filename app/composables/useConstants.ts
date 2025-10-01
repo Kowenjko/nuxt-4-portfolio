@@ -4,12 +4,12 @@ export const useConstants = () => {
   const url = useRequestURL()
 
   const navLinks = computed<NavLinkI[]>(() => [
-    { title: t('nav.category.services'), url: 'services', isShow: sectionsStore.showServices! },
-    { title: t('nav.category.skills'), url: 'skills', isShow: sectionsStore.showSkills! },
-    { title: t('nav.category.experience'), url: 'experience', isShow: sectionsStore.showExperience! },
-    { title: t('nav.category.portfolios'), url: 'portfolios', isShow: sectionsStore.showPortfolios! },
+    { title: t('nav.category.services'), url: 'services', isShow: true },
+    { title: t('nav.category.skills'), url: 'skills', isShow: true },
+    { title: t('nav.category.experience'), url: 'experience', isShow: true },
+    { title: t('nav.category.portfolios'), url: 'portfolios', isShow: true },
     { title: t('nav.category.reviews'), url: 'reviews', isShow: sectionsStore.showReviews! },
-    { title: t('nav.category.contact'), url: 'contact', isShow: sectionsStore.showContact! },
+    { title: t('nav.category.contact'), url: 'contact', isShow: true },
   ])
 
   const filteredNavLink = computed(() => navLinks.value.filter((nav) => !!nav.isShow))

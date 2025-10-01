@@ -11,12 +11,12 @@ const sectionsStore = useSectionsStore()
 
 <template>
   <main>
-    <Hero v-if="sectionsStore.showHero" />
-    <LazyServices v-if="sectionsStore.showServices" :hydrate-on-visible="{ rootMargin: '100px' }" />
-    <LazySkills v-if="sectionsStore.showSkills" :hydrate-on-visible="{ rootMargin: '100px' }" />
-    <LazyExperience v-if="sectionsStore.showExperience" :hydrate-on-visible="{ rootMargin: '100px' }" />
-    <LazyWorks v-if="sectionsStore.showPortfolios" :hydrate-on-visible="{ rootMargin: '100px' }" />
+    <Hero />
+    <LazyServices :hydrate-on-visible="{ rootMargin: '100px' }" />
+    <LazySkills :hydrate-on-visible="{ rootMargin: '100px' }" />
+    <LazyExperience :hydrate-on-visible="{ rootMargin: '100px' }" />
+    <LazyWorks :hydrate-on-visible="{ rootMargin: '100px' }" />
     <LazyReviews v-if="sectionsStore.showReviews" :hydrate-on-visible="{ rootMargin: '100px' }" />
-    <LazyContacts v-if="sectionsStore.showContact" :hydrate-on-visible="{ rootMargin: '100px' }" />
+    <LazyContacts :hydrate-on-visible="{ rootMargin: '100px' }" />
   </main>
 </template>
