@@ -2,6 +2,7 @@
   "button": {
     "resume": "Резюме",
     "add_review": "Оставить отзыв",
+    "sign_review": "Войти, чтобы оставить отзыв",
     "send_message": "Отправить сообщение",
     "send_telegram": "Отправить сообщение в Telegram",
     "close": "Закрыть",
@@ -11,8 +12,11 @@
     "label": {
       "name": "Имя",
       "message": "Сообщение",
-      "email": "Email"
-    }
+      "email": "Email",
+      "position": "Должность",
+      "review": "Ваш отзыв"
+    },
+    "placeholder": { "position": "Кем вы являетесь (например, Клиент, Разработчик)", "review": "Ваш отзыв..." }
   },
   "title": { "responsibilities": "Обязанности" },
   "tooltip": { "technology": "Технологии, которые использовались в проекте!" },
@@ -35,7 +39,7 @@
       "experience": "Обзор карьеры",
       "portfolios": "Мои работы",
       "portfolios_test": "Мои тестовые работы",
-      "reviews": "Reviews",
+      "reviews": "Оставьте отзыв",
       "contact": "Связаться"
     }
   },

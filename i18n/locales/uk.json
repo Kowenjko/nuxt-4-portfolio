@@ -2,6 +2,7 @@
   "button": {
     "resume": "Резюме",
     "add_review": "Залишити відгук",
+    "sign_review": "Увійти, щоб залишити відгук",
     "send_message": "Надіслати повідомлення",
     "send_telegram": "Надіслати повідомлення в Telegram",
     "close": "Закрити",
@@ -11,8 +12,11 @@
     "label": {
       "name": "Ім'я",
       "message": "Повідомлення",
-      "email": "Email"
-    }
+      "email": "Email",
+      "position": "Посада",
+      "review": "Ваш відгук"
+    },
+    "placeholder": { "position": "Хто ви є (наприклад, Клієнт, Розробник)", "review": "Ваш відгук..." }
   },
   "title": { "responsibilities": "Обов'язки" },
   "tooltip": { "technology": "Технології які використовувались в проекті!" },
@@ -35,7 +39,7 @@
       "experience": "Огляд кар'єри",
       "portfolios": "Мої роботи",
       "portfolios_test": "Мої тестові роботи",
-      "reviews": "Reviews",
+      "reviews": "Залиште відгук",
       "contact": "Зв'язатися"
     }
   },

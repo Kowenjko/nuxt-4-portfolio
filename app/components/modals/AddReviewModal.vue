@@ -51,7 +51,7 @@ const onSubmitReview = form.handleSubmit(async (values) => {
     </DialogTrigger>
     <DialogContent class="sm:max-w-[425px]">
       <DialogHeader>
-        <DialogTitle>Add Review</DialogTitle>
+        <DialogTitle>{{ $t('button.add_review') }}</DialogTitle>
         <DialogDescription></DialogDescription>
       </DialogHeader>
       <form class="space-y-4">
@@ -67,18 +67,18 @@ const onSubmitReview = form.handleSubmit(async (values) => {
 
         <FormField v-slot="{ componentField }" name="role">
           <FormItem>
-            <FormLabel>Должность</FormLabel>
+            <FormLabel>{{ $t('form.label.position') }}</FormLabel>
             <FormControl>
-              <Input v-bind="componentField" placeholder="Кем вы являетесь (например, Клиент, Разработчик)" />
+              <Input v-bind="componentField" :placeholder="$t('form.placeholder.position')" />
             </FormControl>
             <FormMessage />
           </FormItem>
         </FormField>
         <FormField v-slot="{ componentField }" name="text">
           <FormItem>
-            <FormLabel>Ваш отзыв</FormLabel>
+            <FormLabel>{{ $t('form.label.review') }}</FormLabel>
             <FormControl>
-              <Textarea v-bind="componentField" class="min-h-40" placeholder="Ваш отзыв..." />
+              <Textarea v-bind="componentField" class="min-h-40" :placeholder="$t('form.placeholder.review')" />
             </FormControl>
             <FormMessage />
           </FormItem>

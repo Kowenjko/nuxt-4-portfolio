@@ -19,7 +19,7 @@ watch(data, (value) => {
   <section id="reviews">
     <div class="container mx-auto px-5 md:px-10 text-center">
       <TitleCategory
-        :title="'Залиште відгук'"
+        :title="$t('nav.title.reviews')"
         :category="$t('nav.category.reviews')"
         :counter="reviews.length"
         type="reviews"
@@ -32,7 +32,7 @@ watch(data, (value) => {
         </SignedIn>
         <SignedOut>
           <SignInButton mode="modal">
-            <Button variant="outline"> Войти, чтобы оставить отзыв </Button>
+            <Button variant="outline"> {{ $t('button.sign_review') }}</Button>
           </SignInButton>
         </SignedOut>
       </div>

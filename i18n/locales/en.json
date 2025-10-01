@@ -2,12 +2,22 @@
   "button": {
     "resume": "Resume",
     "add_review": "Add review",
+    "sign_review": "Sign in to leave a review",
     "send_message": "Send Message",
     "send_telegram": "Send message in Telegram",
     "close": "Close",
     "all": "All"
   },
-  "form": { "label": { "name": "Name", "message": "Message", "email": "Email" } },
+  "form": {
+    "label": {
+      "name": "Name",
+      "message": "Message",
+      "email": "Email",
+      "position": "Position",
+      "review": "Your review"
+    },
+    "placeholder": { "position": "Who are you (e.g., Customer, Developer)", "review": "Your review..." }
+  },
   "title": { "responsibilities": "Responsibilities" },
   "tooltip": { "technology": "Technologies used in the project!" },
   "seo": {
@@ -29,7 +39,7 @@
       "experience": "My Career Overview",
       "portfolios": "My Works",
       "portfolios_test": "My Test Work",
-      "reviews": "Reviews",
+      "reviews": "Leave a review",
       "contact": "Get in Touch"
     }
   },
