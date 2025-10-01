@@ -12,6 +12,7 @@ export interface ContactI {
 export interface NavLinkI {
   title: string
   url: string
+  isShow?: boolean
 }
 export interface SocialLinkI {
   icon: string

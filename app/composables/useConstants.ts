@@ -1,13 +1,14 @@
 export const useConstants = () => {
   const { t, messages, locale } = useI18n()
+  const sectionsStore = useSectionsStore()
 
   const navLinks = computed<NavLinkI[]>(() => [
-    { title: t('nav.category.services'), url: 'services' },
-    { title: t('nav.category.skills'), url: 'skills' },
-    { title: t('nav.category.experience'), url: 'experience' },
-    { title: t('nav.category.portfolios'), url: 'portfolios' },
-    { title: t('nav.category.reviews'), url: 'reviews' },
-    { title: t('nav.category.contact'), url: 'contact' },
+    { title: t('nav.category.services'), url: 'services', isShow: sectionsStore.showServices! },
+    { title: t('nav.category.skills'), url: 'skills', isShow: sectionsStore.showSkills! },
+    { title: t('nav.category.experience'), url: 'experience', isShow: sectionsStore.showExperience! },
+    { title: t('nav.category.portfolios'), url: 'portfolios', isShow: sectionsStore.showPortfolios! },
+    { title: t('nav.category.reviews'), url: 'reviews', isShow: sectionsStore.showReviews! },
+    { title: t('nav.category.contact'), url: 'contact', isShow: sectionsStore.showContact! },
   ])
 
   const services = computed<ServiceI[]>(() => [

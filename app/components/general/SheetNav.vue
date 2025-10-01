@@ -20,8 +20,8 @@ const { isAdmin } = useAdmin()
       </SheetHeader>
       <nav class="p-4">
         <ul class="flex flex-col gap-6">
-          <li class="group" v-for="{ url, title } in navLinks" :key="title">
-            <a @click="scrollToId(url)" class="cursor-pointer">
+          <li class="group" v-for="{ url, title, isShow } in navLinks" :key="title">
+            <a @click="scrollToId(url)" class="cursor-pointer" v-if="isShow">
               <span>{{ title }}</span>
               <span class="underline" />
             </a>
