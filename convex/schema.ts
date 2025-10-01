@@ -25,4 +25,10 @@ export default defineSchema({
     user_id: v.union(v.id('users'), v.literal('anonymous')),
     count: v.number(),
   }).index('by_user_id', ['user_id']),
+
+  sections: defineTable({
+    title: v.string(),
+    slug: v.string(),
+    show: v.boolean(),
+  }).index('by_slug', ['slug']),
 })

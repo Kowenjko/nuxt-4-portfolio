@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ViewIcon, Home, Star, UserIcon } from 'lucide-vue-next'
+import { LayoutTemplateIcon, Home, Star } from 'lucide-vue-next'
 
 const isDark = useDark()
-// Menu items.
+const route = useRoute()
+
 const items = [
   {
     title: 'Home',
@@ -11,9 +12,9 @@ const items = [
   },
 
   {
-    title: 'Users',
-    url: '/admin/users',
-    icon: UserIcon,
+    title: 'Sections',
+    url: '/admin/sections',
+    icon: LayoutTemplateIcon,
   },
   {
     title: 'Reviews',
@@ -38,7 +39,7 @@ const items = [
           <SidebarMenu>
             <SidebarMenuItem v-for="item in items" :key="item.title">
               <SidebarMenuButton asChild>
-                <nuxt-link :to="item.url">
+                <nuxt-link :to="item.url" :class="{ 'bg-sidebar-ring/20': route.path === item.url }">
                   <component :is="item.icon" />
                   <span>{{ item.title }}</span>
                 </nuxt-link>
