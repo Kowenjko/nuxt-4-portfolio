@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 const { scrollToId } = useScrollNav()
-const { navLinks } = useConstants()
+const { filteredNavLink } = useConstants()
 const { isAdmin } = useAdmin()
 </script>
 
 <template>
   <nav class="desktop">
     <ul>
-      <li class="group" v-for="{ url, title, isShow } in navLinks" :key="title">
-        <a @click="scrollToId(url)" class="cursor-pointer" v-if="isShow">
+      <li class="group" v-for="{ url, title, isShow } in filteredNavLink" :key="title">
+        <a @click="scrollToId(url)" class="cursor-pointer">
           <span>{{ title }}</span>
           <span class="underline" />
         </a>

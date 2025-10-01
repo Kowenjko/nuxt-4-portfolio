@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Menu } from 'lucide-vue-next'
 
-const { navLinks } = useConstants()
+const { filteredNavLink } = useConstants()
 const { scrollToId } = useScrollNav()
 const { isAdmin } = useAdmin()
 </script>
@@ -20,8 +20,8 @@ const { isAdmin } = useAdmin()
       </SheetHeader>
       <nav class="p-4">
         <ul class="flex flex-col gap-6">
-          <li class="group" v-for="{ url, title, isShow } in navLinks" :key="title">
-            <a @click="scrollToId(url)" class="cursor-pointer" v-if="isShow">
+          <li class="group" v-for="{ url, title, isShow } in filteredNavLink" :key="title">
+            <a @click="scrollToId(url)" class="cursor-pointer">
               <span>{{ title }}</span>
               <span class="underline" />
             </a>

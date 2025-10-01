@@ -11,6 +11,8 @@ export const useConstants = () => {
     { title: t('nav.category.contact'), url: 'contact', isShow: sectionsStore.showContact! },
   ])
 
+  const filteredNavLink = computed(() => navLinks.value.filter((nav) => !!nav.isShow))
+
   const services = computed<ServiceI[]>(() => [
     {
       title: t('services.title.frontend'),
@@ -379,5 +381,5 @@ export const useConstants = () => {
     { title: t('contacts.email.title'), info: 'ortoswt@gmail.com', icon: 'uil:envelope-alt' },
   ])
 
-  return { navLinks, services, experiences, workProjects, testProjects, contacts }
+  return { navLinks, services, experiences, workProjects, testProjects, contacts, filteredNavLink }
 }
