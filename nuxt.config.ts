@@ -30,7 +30,12 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
-  nitro: { minify: true, compressPublicAssets: { brotli: true } },
+  nitro: {
+    compressPublicAssets: true,
+    routeRules: {
+      '/**': { swr: 60 * 60 * 24 },
+    },
+  },
   experimental: {
     defaults: {
       nuxtLink: {
@@ -39,6 +44,7 @@ export default defineNuxtConfig({
     },
     payloadExtraction: true,
     renderJsonPayloads: true,
+    asyncEntry: true, // Асинхронний entrypoint → швидше FCP
   },
   imports: { dirs: ['composables/**'] },
   pinia: { storesDirs: ['./app/store/**'] },
@@ -54,6 +60,7 @@ export default defineNuxtConfig({
   image: { format: ['webp'] },
 
   app: {
+    baseURL: '/',
     head: {
       htmlAttrs: { lang: 'en' },
       charset: 'utf-8',
@@ -67,6 +74,9 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+  },
+  build: {
+    transpile: ['@clerk/nuxt'], // щоб Clerk нормально працював у SSR
   },
   shadcn: {
     prefix: '',
