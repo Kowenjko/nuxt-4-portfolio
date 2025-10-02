@@ -35,7 +35,7 @@ onMounted(() => {
               <Icon class="" :name="contact.icon" />
             </div>
             <div class="">
-              <h4 class="name">{{ contact.title }}</h4>
+              <h3 class="name">{{ contact.title }}</h3>
               <p class="text-ring">
                 {{ contact.info }}
               </p>

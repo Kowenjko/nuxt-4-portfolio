@@ -96,7 +96,7 @@ onMounted(() => {
                   <img :src="experience.icon" alt="logo" class="rounded p-1 sm:p-2" />
                 </div>
                 <div>
-                  <h1 class="font-semibold text-xl sm:text-3xl">{{ experience.title }}</h1>
+                  <h3 class="font-semibold text-xl sm:text-3xl">{{ experience.title }}</h3>
                   <p class="my-5 flex gap-4"><Icon name="mdi:calendar-month-outline" /> {{ experience.date }}</p>
                   <p class="text-ring italic">{{ $t('title.responsibilities') }}</p>
                   <ul class="list-disc ms-5 mt-5 flex flex-col gap-4">

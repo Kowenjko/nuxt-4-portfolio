@@ -10,9 +10,9 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="flex items-center gap-2 text-ring" v-if="category">
-    <Icon name="mdi:minus" class="fill-gray-3 h-5 w-4" />
-    <div class="tracking-[7.5px] uppercase text-xs relative">
+  <div class="flex items-center gap-2" v-if="category">
+    <Icon name="mdi:minus" class="h-5 w-4 text-neutral-900 dark:text-zinc-400" />
+    <div class="tracking-[7.5px] uppercase text-xs relative text-neutral-900 dark:text-zinc-400">
       {{ category }} <AnimatedCounter v-if="counter" :counter :type />
     </div>
   </div>

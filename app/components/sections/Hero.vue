@@ -66,7 +66,7 @@ watch(endValueY, (value) => {
           <h1
             class="text-xl sm:text-3xl md:text-5xl relative font-semibold z-10 space-x-24 flex justify-between items-center"
           >
-            <span>Vasya <span class="text-ring">Kovenko</span> </span>
+            <span>Vasya <span class="text-zinc-500">Kovenko</span> </span>
 
             <TechnologiesHero />
           </h1>
