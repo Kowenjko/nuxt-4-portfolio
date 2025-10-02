@@ -45,7 +45,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="marquee text-2xl lg:text-5xl text-ring" @mouseenter="pauseAll" @mouseleave="playAll">
+  <div class="marquee text-2xl lg:text-5xl text-neutral-500" @mouseenter="pauseAll" @mouseleave="playAll">
     <div class="marquee__inner" ref="marqueeLeft">
       <div
         v-for="technology in technologies"
