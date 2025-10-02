@@ -50,8 +50,8 @@ export default defineNuxtConfig({
   pinia: { storesDirs: ['./app/store/**'] },
   colorMode: {
     classSuffix: '',
-    preference: 'dark',
-    fallback: 'dark',
+    preference: 'light',
+    fallback: 'light',
     storageKey: 'nuxt-color-mode',
   },
   fonts: {
