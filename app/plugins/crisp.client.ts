@@ -1,15 +1,26 @@
 export default defineNuxtPlugin(() => {
   const { crispWebsiteId } = useRuntimeConfig().public
 
-  if (process.client) {
-    window.$crisp = window.$crisp || []
-    window.CRISP_WEBSITE_ID = crispWebsiteId
-
-    const d = document
-    const s = d.createElement('script')
+  const loadCrisp = () => {
+    if (window.$crisp) return
+    window.$crisp = []
+    window.CRISP_WEBSITE_ID = crispWebsiteId!
+    const s = document.createElement('script')
     s.src = 'https://client.crisp.chat/l.js'
     s.async = true
     s.defer = true
-    d.getElementsByTagName('head')[0].appendChild(s)
+    document.head.appendChild(s)
   }
+
+  // Завантажити після першої взаємодії
+  const start = () => {
+    window.removeEventListener('scroll', start)
+    window.removeEventListener('click', start)
+    loadCrisp()
+  }
+
+  window.addEventListener('scroll', start, { once: true })
+  window.addEventListener('click', start, { once: true })
+
+  return { provide: { loadCrisp } }
 })
