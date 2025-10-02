@@ -13,14 +13,14 @@ export const createUser = internalMutation({
       tokenIdentifier: args.tokenIdentifier,
       email: args.email,
       name: args.name,
-      image: args.image,
+      avatar: args.image,
       isOnline: true,
     })
   },
 })
 
 export const updateUser = internalMutation({
-  args: { tokenIdentifier: v.string(), image: v.string() },
+  args: { tokenIdentifier: v.string(), avatar: v.string() },
   async handler(ctx, args) {
     const user = await ctx.db
       .query('users')
@@ -32,7 +32,7 @@ export const updateUser = internalMutation({
     }
 
     https: await ctx.db.patch(user._id, {
-      image: args.image,
+      avatar: args.avatar,
     })
   },
 })

@@ -4,6 +4,9 @@ const LazySkills = defineLazyHydrationComponent('visible', () => import('@/compo
 const LazyExperience = defineLazyHydrationComponent('visible', () => import('@/components/sections/Experience.vue'))
 const LazyWorks = defineLazyHydrationComponent('visible', () => import('@/components/sections/Works.vue'))
 const LazyContacts = defineLazyHydrationComponent('visible', () => import('@/components/sections/Contacts.vue'))
+const LazyReviews = defineLazyHydrationComponent('visible', () => import('@/components/sections/Reviews.vue'))
+
+const sectionsStore = useSectionsStore()
 </script>
 
 <template>
@@ -13,6 +16,7 @@ const LazyContacts = defineLazyHydrationComponent('visible', () => import('@/com
     <LazySkills :hydrate-on-visible="{ rootMargin: '100px' }" />
     <LazyExperience :hydrate-on-visible="{ rootMargin: '100px' }" />
     <LazyWorks :hydrate-on-visible="{ rootMargin: '100px' }" />
+    <LazyReviews v-if="sectionsStore.showReviews" :hydrate-on-visible="{ rootMargin: '100px' }" />
     <LazyContacts :hydrate-on-visible="{ rootMargin: '100px' }" />
   </main>
 </template>

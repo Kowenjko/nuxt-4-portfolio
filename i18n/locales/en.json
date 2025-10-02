@@ -1,14 +1,35 @@
 {
   "button": {
     "resume": "Resume",
+    "add_review": "Add review",
+    "sign_review": "Sign in to leave a review",
     "send_message": "Send Message",
     "send_telegram": "Send message in Telegram",
     "close": "Close",
     "all": "All"
   },
-  "form": { "label": { "name": "Name", "message": "Message", "email": "Email" } },
+  "form": {
+    "label": {
+      "name": "Name",
+      "message": "Message",
+      "email": "Email",
+      "position": "Position",
+      "review": "Your review"
+    },
+    "placeholder": { "position": "Who are you (e.g., Customer, Developer)", "review": "Your review..." },
+    "errors": {
+      "min": "The field must contain at least {min} characters.",
+      "email": "Invalid email address"
+    }
+  },
   "title": { "responsibilities": "Responsibilities" },
   "tooltip": { "technology": "Technologies used in the project!" },
+  "toast": {
+    "send_review": "Review sent successfully!",
+    "send_section": "Section created successfully!",
+    "send_message": "Message sent successfully!",
+    "send_error": "Something went wrong. Please try again later."
+  },
   "seo": {
     "title": "Vasyl Kovenko — Frontend Developer | Kovenko Vasya",
     "description": "Frontend developer with 3+ years experience (Vue 3, Nuxt). E-commerce, API integrations, UI/UX.. Portfolio: nuxt-4-portfolio.vercel.app"
@@ -19,6 +40,7 @@
       "skills": "Skills",
       "experience": "Experience",
       "portfolios": "Portfolios",
+      "reviews": "Reviews",
       "contact": "Contact me"
     },
     "title": {
@@ -26,7 +48,8 @@
       "skills": "My technical level",
       "experience": "My Career Overview",
       "portfolios": "My Works",
-      "portfolios_test": "My Test Works",
+      "portfolios_test": "My Test Work",
+      "reviews": "Leave a review",
       "contact": "Get in Touch"
     }
   },

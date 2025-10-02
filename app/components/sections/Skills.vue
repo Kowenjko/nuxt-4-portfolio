@@ -46,7 +46,7 @@ onMounted(() => {
     <TitleCategory :title="$t('nav.title.skills')" :category="$t('nav.category.skills')" />
     <div class="grid-2-cols gap-5 lg:gap-20">
       <AccordionSkills class="skills-left" :skills="progressFrontend" :default-value="progressFrontend.title" />
-      <AccordionSkills class="skills-right" :skills="progressBackends" />
+      <AccordionSkills class="skills-right" :skills="progressBackends" :default-value="progressBackends.title" />
     </div>
   </section>
 </template>

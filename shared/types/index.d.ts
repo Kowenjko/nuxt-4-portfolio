@@ -12,6 +12,7 @@ export interface ContactI {
 export interface NavLinkI {
   title: string
   url: string
+  isShow?: boolean
 }
 export interface SocialLinkI {
   icon: string
@@ -52,4 +53,16 @@ export interface ProgressI {
   title: string
   icon: string
   developers: DeveloperI[]
+}
+
+export interface ReviewI {
+  user_id: string
+  _id: string
+  text: string
+  name: string
+  avatar: string
+  role: string
+  rating: number
+  approved: boolean
+  createdAt?: number
 }

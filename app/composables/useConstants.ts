@@ -1,13 +1,18 @@
 export const useConstants = () => {
   const { t, messages, locale } = useI18n()
+  const sectionsStore = useSectionsStore()
+  const url = useRequestURL()
 
   const navLinks = computed<NavLinkI[]>(() => [
-    { title: t('nav.category.services'), url: 'services' },
-    { title: t('nav.category.skills'), url: 'skills' },
-    { title: t('nav.category.experience'), url: 'experience' },
-    { title: t('nav.category.portfolios'), url: 'portfolios' },
-    { title: t('nav.category.contact'), url: 'contact' },
+    { title: t('nav.category.services'), url: 'services', isShow: true },
+    { title: t('nav.category.skills'), url: 'skills', isShow: true },
+    { title: t('nav.category.experience'), url: 'experience', isShow: true },
+    { title: t('nav.category.portfolios'), url: 'portfolios', isShow: true },
+    { title: t('nav.category.reviews'), url: 'reviews', isShow: sectionsStore.showReviews! },
+    { title: t('nav.category.contact'), url: 'contact', isShow: true },
   ])
+
+  const filteredNavLink = computed(() => navLinks.value.filter((nav) => !!nav.isShow))
 
   const services = computed<ServiceI[]>(() => [
     {
@@ -33,9 +38,11 @@ export const useConstants = () => {
   ])
 
   const parseResponsibilities = (type: string) =>
-    // @ts-ignore
-    // messages.value[locale.value]?.experiences?.[type]?.responsibilities?.map((item: any) => item?.loc?.source)
-    messages.value[locale.value]?.experiences?.[type]?.responsibilities
+    url.hostname === 'localhost'
+      ? // @ts-ignore
+        messages.value[locale.value]?.experiences?.[type]?.responsibilities?.map((item: any) => item?.loc?.source)
+      : // @ts-ignore
+        messages.value[locale.value]?.experiences?.[type]?.responsibilities
 
   const experiences = computed<ExperienceI[]>(() => [
     {
@@ -377,5 +384,5 @@ export const useConstants = () => {
     { title: t('contacts.email.title'), info: 'ortoswt@gmail.com', icon: 'uil:envelope-alt' },
   ])
 
-  return { navLinks, services, experiences, workProjects, testProjects, contacts }
+  return { navLinks, services, experiences, workProjects, testProjects, contacts, filteredNavLink }
 }

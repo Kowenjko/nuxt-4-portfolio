@@ -2,8 +2,11 @@
 const { months, years } = getYearsAtWork()
 
 const endValueY = computed(() => (isMobile.value ? 50 : 180))
+const isLoaded = ref(false)
 
 onMounted(() => {
+  isLoaded.value = true
+
   gsapFromTo(
     'h1, p',
     {
@@ -37,7 +40,7 @@ onMounted(() => {
       end: 'bottom top',
       scrub: true,
     },
-  }).fromTo('.avatar', { y: 0 }, { y: endValueY.value, ease: 'power2.inOut' })
+  }).fromTo('.hero-avatar', { y: 0 }, { y: endValueY.value, ease: 'power2.inOut' })
 })
 
 watch(endValueY, (value) => {
@@ -48,7 +51,7 @@ watch(endValueY, (value) => {
       end: 'bottom top',
       scrub: true,
     },
-  }).fromTo('.avatar', { y: 0 }, { y: value, ease: 'power2.inOut' })
+  }).fromTo('.hero-avatar', { y: 0 }, { y: value, ease: 'power2.inOut' })
 })
 </script>
 
@@ -79,14 +82,18 @@ watch(endValueY, (value) => {
         </div>
       </div>
       <div class="wrapper-avatar justify-items-center h-full">
-        <div class="avatar rounded-3xl w-60 sm:w-72 md:w-80 lg:w-96">
-          <NuxtImg
-            src="/images/hero.png"
-            format="webp"
-            alt="hero"
-            width="384px"
-            class="rounded-3xl aspect-retro object-cover w-96"
-          />
+        <div class="hero-avatar">
+          <div class="rounded-3xl w-60 sm:w-72 md:w-80 lg:w-96" :class="{ avatar: isLoaded }">
+            <NuxtImg
+              src="/images/hero.png"
+              format="webp"
+              alt="hero"
+              width="384px"
+              height="512px"
+              lazy
+              class="rounded-3xl aspect-retro object-cover w-96"
+            />
+          </div>
         </div>
       </div>
     </div>

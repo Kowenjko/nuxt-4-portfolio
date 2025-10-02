@@ -21,6 +21,8 @@ export default defineNuxtConfig({
     '@clerk/nuxt',
     'convex-nuxt',
     'nuxt-jsonld',
+    'nuxt-rating',
+    '@nuxtjs/color-mode',
   ],
   components: [
     {
@@ -28,11 +30,19 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+
   imports: { dirs: ['composables/**'] },
   pinia: { storesDirs: ['./app/store/**'] },
+  colorMode: {
+    classSuffix: '',
+    preference: 'dark',
+    fallback: 'dark',
+    storageKey: 'nuxt-color-mode',
+  },
   fonts: {
     families: [{ name: 'Inter', provider: 'google' }],
   },
+
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
@@ -88,13 +98,6 @@ export default defineNuxtConfig({
         file: 'ru.json',
       },
     ],
-    // detectBrowserLanguage: {
-    //   useCookie: true,
-    //   cookieKey: 'i18n_redirected',
-    //   redirectOn: 'root',
-    //   alwaysRedirect: false,
-    //   fallbackLocale: 'en',
-    // },
   },
   icon: {
     provider: 'iconify',
@@ -117,6 +120,7 @@ export default defineNuxtConfig({
       clerkAppDomain: process.env.CLERK_APP_DOMAIN,
       crispWebsiteId: process.env.NUXT_CRISP_WEBSITE_ID,
       clientUrl: process.env.NUXT_CLIENT_URL,
+      adminUserId: process.env.NUXT_ADMIN_USER_ID,
     },
   },
 })
