@@ -9,6 +9,7 @@ export default defineNuxtPlugin(() => {
     const s = d.createElement('script')
     s.src = 'https://client.crisp.chat/l.js'
     s.async = true
+    s.defer = true
     d.getElementsByTagName('head')[0].appendChild(s)
   }
 })

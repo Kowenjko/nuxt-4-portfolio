@@ -30,7 +30,16 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
-
+  nitro: { minify: true, compressPublicAssets: { brotli: true } },
+  experimental: {
+    defaults: {
+      nuxtLink: {
+        trailingSlash: 'append', // can be 'append' or 'remove'
+      },
+    },
+    payloadExtraction: true,
+    renderJsonPayloads: true,
+  },
   imports: { dirs: ['composables/**'] },
   pinia: { storesDirs: ['./app/store/**'] },
   colorMode: {
@@ -42,14 +51,17 @@ export default defineNuxtConfig({
   fonts: {
     families: [{ name: 'Inter', provider: 'google' }],
   },
-
+  image: { format: ['webp'] },
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
       charset: 'utf-8',
       viewport:
         'width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0',
-      link: [{ rel: 'icon', type: 'image/png', href: '/images/logo-dark.png', sizes: '32x32' }],
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/images/logo-dark.png', sizes: '32x32' },
+        { rel: 'canonical', href: process.env.NUXT_CLIENT_URL },
+      ],
     },
   },
   vite: {
