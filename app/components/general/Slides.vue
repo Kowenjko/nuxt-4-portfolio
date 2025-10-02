@@ -92,7 +92,7 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
                   <CardContent class="">
                     <div class="text-left grid gap-2 h-[100px]">
                       <h4 class="text-2xl">{{ project.title }}</h4>
-                      <p class="text-sm font-light italic text-ring p-0">{{ project.category }}</p>
+                      <p class="text-sm font-light italic text-neutral-500 p-0">{{ project.category }}</p>
                       <ul class="flex gap-2">
                         <li v-for="keyword in project.keywords" :key="keyword" class="py-0">
                           <Badge variant="secondary">{{ keyword }}</Badge>
@@ -127,7 +127,7 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
                       </Button>
                     </div>
                   </div>
-                  <p class="text-sm font-light italic text-ring p-0">{{ project.category }}</p>
+                  <p class="text-sm font-light italic text-neutral-500 p-0">{{ project.category }}</p>
                   <ul class="flex gap-2">
                     <li v-for="keyword in project.keywords" :key="keyword" class="py-0">
                       <Badge variant="secondary">{{ keyword }}</Badge>

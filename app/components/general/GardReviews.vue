@@ -31,7 +31,7 @@ const handleMouseMove = (event: MouseEvent) => {
       <CardDescription>{{ card.role }} </CardDescription>
     </CardHeader>
     <CardContent class="text-start font-light mb-4">{{ card?.text }} </CardContent>
-    <CardFooter class="flex justify-end text-ring italic text-xs absolute bottom-3 right-0 w-full">
+    <CardFooter class="flex justify-end text-neutral-500 italic text-xs absolute bottom-3 right-0 w-full">
       <div class="flex justify-between w-full">
         <NuxtRating :rating-value="card.rating" />
         <NuxtTime :datetime="card.createdAt!" />
