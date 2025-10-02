@@ -85,19 +85,6 @@ watch(endValueY, (value) => {
         <div class="hero-avatar">
           <div class="rounded-3xl w-60 sm:w-72 md:w-80 lg:w-96" :class="{ avatar: isLoaded }">
             <NuxtImg
-              v-if="isMobile"
-              src="/images/hero.png"
-              format="webp"
-              alt="hero"
-              width="240"
-              height="320"
-              sizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 384px"
-              loading="lazy"
-              quality="70"
-              class="rounded-3xl aspect-retro object-cover w-60"
-            />
-            <NuxtImg
-              v-else
               src="/images/hero.png"
               format="webp"
               alt="hero"
