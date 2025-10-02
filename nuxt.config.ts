@@ -68,6 +68,15 @@ export default defineNuxtConfig({
       xl: 1280,
       '2xl': 1536,
     },
+    presets: {
+      hero: {
+        modifiers: {
+          fit: 'cover',
+          width: 384,
+          height: 512,
+        },
+      },
+    },
   },
 
   app: {
