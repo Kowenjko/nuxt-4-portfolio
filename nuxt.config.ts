@@ -52,8 +52,8 @@ export default defineNuxtConfig({
     families: [{ name: 'Inter', provider: 'google' }],
   },
   image: { format: ['webp'] },
+
   app: {
-    baseURL: '/',
     head: {
       htmlAttrs: { lang: 'en' },
       charset: 'utf-8',

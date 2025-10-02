@@ -3,6 +3,6 @@ export default defineNuxtRouteMiddleware(() => {
   const { adminUserId } = useRuntimeConfig().public
 
   if (!isSignedIn.value && userId.value !== adminUserId) {
-    return navigateTo('/')
+    // return navigateTo('/')
   }
 })
