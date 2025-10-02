@@ -8,7 +8,7 @@ const scrolled = computed(() => scrollY.value > 10)
 <template>
   <header class="navbar" :class="[scrolled ? 'scrolled' : 'not-scrolled']">
     <div class="inner">
-      <a @click="scrollToId('hero')" class="logo cursor-pointer flex-center">
+      <div @click="scrollToId('hero')" class="logo cursor-pointer flex-center">
         <NuxtImg
           :src="$colorMode.preference === 'dark' ? '/my-logo-light.png' : '/my-logo-dark.png'"
           format="webp"
@@ -18,7 +18,7 @@ const scrolled = computed(() => scrollY.value > 10)
           loading="lazy"
         />
         Kovenko
-      </a>
+      </div>
 
       <NavBar />
       <div class="hidden lg:flex items-center gap-2">
