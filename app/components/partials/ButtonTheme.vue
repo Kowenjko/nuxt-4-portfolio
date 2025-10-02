@@ -8,7 +8,13 @@ const toggleColor = () => {
 </script>
 
 <template>
-  <Button class="flex px-2 py-1 rounded-md" @click="toggleColor" variant="outline" size="icon">
+  <Button
+    class="flex px-2 py-1 rounded-md"
+    @click="toggleColor"
+    variant="outline"
+    size="icon"
+    aria-label="change-theme"
+  >
     <Sun v-if="$colorMode.preference === 'dark'" class="w-4 h-4" />
     <Moon v-else class="w-4 h-4" />
   </Button>

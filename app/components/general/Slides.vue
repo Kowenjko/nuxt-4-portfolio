@@ -26,12 +26,12 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
 
       <div class="relative" v-if="filterProjects.length > 0">
         <div class="absolute w-full top-0 right-0 xl:right-17 flex justify-end gap-2 px-4 z-10">
-          <Button class="swiper-button-prev-custom cursor-pointer" variant="outline"
-            ><Icon name="mdi:chevron-left"
-          /></Button>
-          <Button class="swiper-button-next-custom cursor-pointer" variant="outline"
-            ><Icon name="mdi:chevron-right"
-          /></Button>
+          <Button class="swiper-button-prev-custom cursor-pointer" variant="outline" aria-label="prev">
+            <Icon name="mdi:chevron-left" />
+          </Button>
+          <Button class="swiper-button-next-custom cursor-pointer" variant="outline" aria-label="next">
+            <Icon name="mdi:chevron-right" />
+          </Button>
         </div>
         <swiper-container
           v-if="filterProjects.length > 0"
@@ -83,6 +83,8 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
                       v-if="project.imageUrl"
                       :src="project.imageUrl"
                       format="webp"
+                      loading="lazy"
+                      quality="70"
                       class="object-cover h-[300px] w-full"
                       width="920px"
                     />
@@ -115,10 +117,10 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
                   <div class="flex justify-between">
                     <h4 class="text-2xl">{{ project.title }}</h4>
                     <div class="flex gap-2">
-                      <Button variant="outline" v-if="project.url">
+                      <Button variant="outline" v-if="project.url" aria-label="site">
                         <a :href="project.url" target="_blank"> <Icon name="mdi:web" /></a>
                       </Button>
-                      <Button variant="outline" v-if="project.urlGit">
+                      <Button variant="outline" v-if="project.urlGit" aria-label="git-hub">
                         <a :href="project.urlGit" target="_blank" class="flex items-center gap-2"
                           ><Icon name="mdi:github" />
                         </a>

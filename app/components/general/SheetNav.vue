@@ -9,7 +9,7 @@ const { isAdmin } = useAdmin()
 <template>
   <Sheet>
     <SheetTrigger as-child class="block lg:hidden">
-      <Button variant="outline" class=""><Menu class="w-4 h-4" /> </Button>
+      <Button variant="outline" class="" aria-label="menu"><Menu class="w-4 h-4" /> </Button>
     </SheetTrigger>
     <SheetContent class="z-100">
       <SheetHeader>

@@ -1,5 +1,5 @@
 <template>
-  <Button as-child size="lg" class="cursor-pointer">
+  <Button as-child size="lg" class="cursor-pointer" aria-label="upload-resume">
     <a href="/files/resume.pdf" target="_blank">
       {{ $t('button.resume') }}
       <Icon name="uil:file-download" class="w-5 h-5" />

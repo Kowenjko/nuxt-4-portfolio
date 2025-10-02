@@ -40,12 +40,12 @@ watch(data, (value) => {
       <ClientOnly>
         <div class="relative mt-10" v-if="reviews && reviews.length > 0">
           <div class="absolute w-full top-0 right-0 xl:right-0 flex justify-end gap-2 z-10">
-            <Button class="swiper-button-prev-custom cursor-pointer" variant="outline"
-              ><Icon name="mdi:chevron-left"
-            /></Button>
-            <Button class="swiper-button-next-custom cursor-pointer" variant="outline"
-              ><Icon name="mdi:chevron-right"
-            /></Button>
+            <Button class="swiper-button-prev-custom cursor-pointer" variant="outline" aria-label="prev">
+              <Icon name="mdi:chevron-left" />
+            </Button>
+            <Button class="swiper-button-next-custom cursor-pointer" variant="outline" aria-label="next">
+              <Icon name="mdi:chevron-right" />
+            </Button>
           </div>
           <swiper-container
             class="pt-16 lg:py-16"

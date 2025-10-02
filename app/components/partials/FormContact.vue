@@ -77,12 +77,12 @@ const onSubmitTelegram = form.handleSubmit(async (values) => await sendMessage(v
       </FormItem>
     </FormField>
     <div class="flex flex-col lg:flex-row gap-4 lg:justify-end">
-      <Button :disabled="loading" @click="onSubmitEmail" class="w-full lg:w-auto">
+      <Button :disabled="loading" @click="onSubmitEmail" class="w-full lg:w-auto" aria-label="send">
         <Loader2 v-if="loading" class="w-4 h-4 mr-2 animate-spin" />
         <MailIcon v-else class="w-4 h-4 mr-2" />
         {{ $t('button.send_message') }}
       </Button>
-      <Button :disabled="loading" @click="onSubmitTelegram" class="w-full lg:w-auto">
+      <Button :disabled="loading" @click="onSubmitTelegram" class="w-full lg:w-auto" aria-label="send">
         <Loader2 v-if="loading" class="w-4 h-4 mr-2 animate-spin" />
         <Icon v-else class="w-5 h-5 mr-2" name="mdi:telegram" />
         {{ $t('button.send_telegram') }}
