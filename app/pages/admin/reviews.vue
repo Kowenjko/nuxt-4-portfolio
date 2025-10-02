@@ -1,28 +1,60 @@
 <script lang="ts" setup>
 import { api } from '../../../convex/_generated/api'
 import admin from '~/middleware/admin'
+import { toast } from 'vue-sonner'
 
 const { data: reviews } = useConvexQuery(api.reviews.getAllReviews)
 const { mutate: approve } = useConvexMutation(api.reviews.changeApproveReview)
 const { mutate: deleteReview } = useConvexMutation(api.reviews.deleteReview)
+const { t } = useI18n()
+
+const countReviews = computed(() => reviews.value?.length || 0)
+const countApproved = computed(() => reviews.value?.filter((review) => !!review.approved).length || 0)
+const countCanceled = computed(() => countReviews.value - countApproved.value)
 
 async function approveReview(id: any, approved: boolean) {
-  await approve({ id, approved })
+  try {
+    await approve({ id, approved })
+    toast.success(approved ? 'Відгук затверджено' : 'Відгук відмінено')
+  } catch (error) {
+    toast.error(t('toast.send_error'))
+  }
 }
 
 async function removeReview(id: any) {
-  await deleteReview({ id })
+  try {
+    await deleteReview({ id })
+    toast.success('Відгук видалено')
+  } catch (error) {
+    toast.error(t('toast.send_error'))
+  }
 }
 
 definePageMeta({
   middleware: admin,
   layout: 'admin',
+  colorMode: 'dark',
 })
 </script>
 
 <template>
   <section class="container mx-auto px-4 pb-10">
     <h1 class="text-2xl font-bold mb-6 text-center">Модерація відгуків</h1>
+
+    <ul class="flex p-4 mb-5 border rounded-lg gap-2">
+      <li class="flex items-center gap-2">
+        <div class="flex items-center"><Icon class="text-yellow-500" name="mdi:star" /> Всі:</div>
+        <span>{{ reviews?.length }}</span>
+      </li>
+      <li><Separator orientation="vertical" /></li>
+      <li>
+        ✔️ Схвалено: <span>{{ countApproved }}</span>
+      </li>
+      <li><Separator orientation="vertical" /></li>
+      <li>
+        ⏳ На модерації: <span>{{ countCanceled }}</span>
+      </li>
+    </ul>
 
     <div v-if="reviews?.length" class="space-y-5">
       <div

@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     'convex-nuxt',
     'nuxt-jsonld',
     'nuxt-rating',
+    '@nuxtjs/color-mode',
   ],
   components: [
     {
@@ -29,11 +30,19 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+
   imports: { dirs: ['composables/**'] },
   pinia: { storesDirs: ['./app/store/**'] },
+  colorMode: {
+    classSuffix: '',
+    preference: 'dark',
+    fallback: 'dark',
+    storageKey: 'nuxt-color-mode',
+  },
   fonts: {
     families: [{ name: 'Inter', provider: 'google' }],
   },
+
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
@@ -89,13 +98,6 @@ export default defineNuxtConfig({
         file: 'ru.json',
       },
     ],
-    // detectBrowserLanguage: {
-    //   useCookie: true,
-    //   cookieKey: 'i18n_redirected',
-    //   redirectOn: 'root',
-    //   alwaysRedirect: false,
-    //   fallbackLocale: 'en',
-    // },
   },
   icon: {
     provider: 'iconify',

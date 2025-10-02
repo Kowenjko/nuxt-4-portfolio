@@ -5,8 +5,6 @@ const { data: count } = useConvexQuery(api.views.getViews, {})
 
 const currentYear = new Date().getFullYear()
 const nextYear = new Date().getFullYear() + 1
-
-const isDark = useDark()
 </script>
 
 <template>
@@ -14,7 +12,12 @@ const isDark = useDark()
     <SocialLinks />
     <p class="flex-center text-sm mt-4">
       &copy; {{ currentYear }} - {{ nextYear }}
-      <NuxtImg :src="isDark ? '/my-logo-light.png' : '/my-logo-dark.png'" width="50px" class="w-14" alt="logo" />
+      <NuxtImg
+        :src="$colorMode.preference === 'dark' ? '/my-logo-light.png' : '/my-logo-dark.png'"
+        width="50px"
+        class="w-14"
+        alt="logo"
+      />
       <ClientOnly>
         <div class="flex-center gap-4">
           <div>👀</div>

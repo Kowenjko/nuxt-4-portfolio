@@ -19,6 +19,7 @@ const handleChange = async (show: boolean, id: any) => {
 definePageMeta({
   middleware: admin,
   layout: 'admin',
+  colorMode: 'dark',
 })
 </script>
 
