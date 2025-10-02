@@ -57,7 +57,18 @@ export default defineNuxtConfig({
   fonts: {
     families: [{ name: 'Inter', provider: 'google' }],
   },
-  image: { format: ['webp'] },
+  image: {
+    format: ['webp', 'avif'],
+    quality: 70,
+    provider: 'vercel',
+    screens: {
+      sm: 320,
+      md: 640,
+      lg: 1024,
+      xl: 1280,
+      '2xl': 1536,
+    },
+  },
 
   app: {
     baseURL: '/',
