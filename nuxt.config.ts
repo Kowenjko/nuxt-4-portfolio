@@ -56,17 +56,22 @@ export default defineNuxtConfig({
   },
   fonts: {
     families: [{ name: 'Inter', provider: 'google' }],
+
+    defaults: {
+      weights: [400, 600, 700],
+      subsets: ['latin', 'cyrillic'],
+    },
   },
   image: {
     format: ['webp', 'avif'],
     quality: 70,
-    // provider: 'vercel',
+    provider: 'vercel',
     screens: {
-      sm: 320,
-      md: 640,
-      lg: 1024,
-      xl: 1280,
-      '2xl': 1536,
+      sm: 240,
+      md: 320,
+      lg: 384,
+      xl: 512,
+      '2xl': 768,
     },
     presets: {
       hero: {
@@ -96,6 +101,7 @@ export default defineNuxtConfig({
   },
   build: {
     transpile: ['@clerk/nuxt'], // щоб Clerk нормально працював у SSR
+    extractCSS: true,
   },
   shadcn: {
     prefix: '',
