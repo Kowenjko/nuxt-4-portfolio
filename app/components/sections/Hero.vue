@@ -89,24 +89,24 @@ watch(endValueY, (value) => {
               src="/images/hero.png"
               format="webp"
               alt="hero"
-              width="384"
-              height="512"
-              sizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 384px"
-              loading="lazy"
-              quality="70"
-              class="rounded-3xl aspect-retro object-cover w-96"
-            />
-            <NuxtImg
-              v-else
-              src="/images/hero.png"
-              format="webp"
-              alt="hero"
               width="240"
               height="320"
               sizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 384px"
               loading="lazy"
               quality="70"
               class="rounded-3xl aspect-retro object-cover w-60"
+            />
+            <NuxtImg
+              v-else
+              src="/images/hero.png"
+              format="webp"
+              alt="hero"
+              width="384"
+              height="512"
+              sizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 384px"
+              loading="lazy"
+              quality="70"
+              class="rounded-3xl aspect-retro object-cover w-96"
             />
           </div>
         </div>
