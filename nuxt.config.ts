@@ -92,7 +92,7 @@ export default defineNuxtConfig({
       },
       {
         code: 'ru',
-        name: 'Русская',
+        name: 'Русский',
         iso: 'ru-RU',
         language: 'ru-RU',
         file: 'ru.json',
