@@ -36,7 +36,7 @@ onMounted(() => {
             </div>
             <div class="">
               <h3 class="name">{{ contact.title }}</h3>
-              <p class="text-ring">
+              <p class="text-neutral-500">
                 {{ contact.info }}
               </p>
             </div>
