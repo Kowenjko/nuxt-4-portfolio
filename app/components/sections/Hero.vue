@@ -90,7 +90,7 @@ watch(endValueY, (value) => {
               alt="hero"
               width="384px"
               height="512px"
-              lazy
+              loading="lazy"
               class="rounded-3xl aspect-retro object-cover w-96"
             />
           </div>

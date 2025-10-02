@@ -53,6 +53,7 @@ export default defineNuxtConfig({
   },
   image: { format: ['webp'] },
   app: {
+    baseURL: '/',
     head: {
       htmlAttrs: { lang: 'en' },
       charset: 'utf-8',

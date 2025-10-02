@@ -14,9 +14,11 @@ const nextYear = new Date().getFullYear() + 1
       &copy; {{ currentYear }} - {{ nextYear }}
       <NuxtImg
         :src="$colorMode.preference === 'dark' ? '/my-logo-light.png' : '/my-logo-dark.png'"
+        format="webp"
         width="50px"
         class="w-14"
         alt="logo"
+        loading="lazy"
       />
       <ClientOnly>
         <div class="flex-center gap-4">

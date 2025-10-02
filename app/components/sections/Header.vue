@@ -11,9 +11,11 @@ const scrolled = computed(() => scrollY.value > 10)
       <a @click="scrollToId('hero')" class="logo cursor-pointer flex-center">
         <NuxtImg
           :src="$colorMode.preference === 'dark' ? '/my-logo-light.png' : '/my-logo-dark.png'"
+          format="webp"
           width="50px"
           class="w-9"
           alt="logo"
+          loading="lazy"
         />
         Kovenko
       </a>
