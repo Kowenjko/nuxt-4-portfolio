@@ -60,7 +60,7 @@ export default defineNuxtConfig({
   image: {
     format: ['webp', 'avif'],
     quality: 70,
-    provider: 'vercel',
+    // provider: 'vercel',
     screens: {
       sm: 320,
       md: 640,
@@ -84,8 +84,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: { lang: 'en' },
       charset: 'utf-8',
-      viewport:
-        'width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0',
+      viewport: 'width=device-width, height=device-height, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=5.0',
       link: [
         { rel: 'icon', type: 'image/png', href: '/images/logo-dark.png', sizes: '32x32' },
         { rel: 'canonical', href: process.env.NUXT_CLIENT_URL },
