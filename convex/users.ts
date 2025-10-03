@@ -1,5 +1,6 @@
 import { ConvexError, v } from 'convex/values'
 import { internalMutation, query } from './_generated/server'
+import { internal } from './_generated/api'
 
 export const createUser = internalMutation({
   args: {
@@ -15,6 +16,11 @@ export const createUser = internalMutation({
       name: args.name,
       avatar: args.image,
       isOnline: true,
+    })
+
+    await ctx.scheduler.runAfter(0, internal.telegram.createAccountTelegram, {
+      email: args.email,
+      name: args.name,
     })
   },
 })
@@ -50,6 +56,12 @@ export const setUserOnline = internalMutation({
     }
 
     await ctx.db.patch(user._id, { isOnline: true })
+
+    await ctx.scheduler.runAfter(0, internal.telegram.sessionAccountTelegram, {
+      email: user.email,
+      name: user.name,
+      isOnline: !user.isOnline,
+    })
   },
 })
 
@@ -66,6 +78,12 @@ export const setUserOffline = internalMutation({
     }
 
     await ctx.db.patch(user._id, { isOnline: false })
+
+    await ctx.scheduler.runAfter(0, internal.telegram.sessionAccountTelegram, {
+      email: user.email,
+      name: user.name,
+      isOnline: !user.isOnline,
+    })
   },
 })
 

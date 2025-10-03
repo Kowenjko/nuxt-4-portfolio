@@ -62,3 +62,61 @@ export const reviewTelegram = internalAction({
     // }
   },
 })
+
+export const createAccountTelegram = internalAction({
+  args: { email: v.string(), name: v.optional(v.string()) },
+  handler: async (ctx, { email, name }) => {
+    const telegramApi = process.env.TELEGRAM_API!
+    const token = process.env.TELEGRAM_BOT_TOKEN!
+    const chatId = process.env.TELEGRAM_CHAT_ID!
+
+    const telegramUrl = `${telegramApi}${token}`
+
+    const text = `
+👥 *Новий користувач*
+
+📧 *${email}*
+
+👤 *${name}* 
+`
+
+    await fetch(`${telegramUrl}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+        parse_mode: 'Markdown',
+      }),
+    })
+  },
+})
+export const sessionAccountTelegram = internalAction({
+  args: { email: v.string(), name: v.optional(v.string()), isOnline: v.boolean() },
+  handler: async (ctx, { email, name, isOnline }) => {
+    const telegramApi = process.env.TELEGRAM_API!
+    const token = process.env.TELEGRAM_BOT_TOKEN!
+    const chatId = process.env.TELEGRAM_CHAT_ID!
+
+    const telegramUrl = `${telegramApi}${token}`
+
+    const text = `
+👥 *Активність користувача*
+
+👤 *${name}* 📴 *${isOnline ? 'online' : 'offline'}*
+
+📧 *${email}*
+
+`
+
+    await fetch(`${telegramUrl}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+        parse_mode: 'Markdown',
+      }),
+    })
+  },
+})
