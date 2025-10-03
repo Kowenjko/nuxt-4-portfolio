@@ -1,26 +1,64 @@
-import { httpAction } from './_generated/server'
+import { internalAction } from './_generated/server'
+import { v, ConvexError } from 'convex/values'
+import { internal } from './_generated/api'
 
-export const webhook = httpAction(async (ctx, req) => {
-  const body = await req.json()
+export const reviewTelegram = internalAction({
+  args: { id: v.id('reviews') },
+  handler: async (ctx, { id }) => {
+    const review = await ctx.runQuery(internal.reviews.getReviewsById, { id })
 
-  console.log(body)
+    if (!review) return
 
-  if (!body.callback_query) return new Response('ok')
+    const telegramApi = process.env.TELEGRAM_API!
+    const token = process.env.TELEGRAM_BOT_TOKEN!
+    const chatId = process.env.TELEGRAM_CHAT_ID!
+    const clientUrl = process.env.CLIENT_URL!
 
-  const data = body.callback_query.data
-  const id = data.split('_')[1] as any
+    const telegramUrl = `${telegramApi}${token}`
 
-  console.log('id', id)
+    const text = `
+📝 *Новий відгук*
 
-  // if (data.startsWith('approve_')) {
-  //   await ctx.db.patch(id, { approved: true })
-  //   return new Response('approved')
-  // }
+⭐ *${review.rating}*
 
-  // if (data.startsWith('remove_')) {
-  //   await ctx.db.delete(id)
-  //   return new Response('removed')
-  // }
+"${review.text}"
 
-  return new Response('ok')
+👤 *${review.name}* (${review.role})
+`
+
+    const buttons = {
+      inline_keyboard: [
+        [
+          { text: '✅ Ухвалити', callback_data: `approve_${id}` },
+          { text: '❌ Видалити', callback_data: `remove_${id}` },
+        ],
+        [{ text: '🔗 Відкрити амін', url: `${clientUrl}/admin/reviews` }],
+      ],
+    }
+
+    // if (review.avatar) {
+    //   await fetch(`${telegramUrl}/sendPhoto`, {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({
+    //       chat_id: chatId,
+    //       photo: review.avatar,
+    //       caption: text,
+    //       parse_mode: 'Markdown',
+    //       reply_markup: buttons,
+    //     }),
+    //   })
+    // } else {
+    await fetch(`${telegramUrl}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+        parse_mode: 'Markdown',
+        reply_markup: buttons,
+      }),
+    })
+    // }
+  },
 })

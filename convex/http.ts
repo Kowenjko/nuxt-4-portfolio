@@ -25,6 +25,7 @@ http.route({
         case 'user.created':
           await ctx.runMutation(internal.users.createUser, {
             tokenIdentifier: `${process.env.CLERK_APP_DOMAIN}|${result.data.id}`,
+            //@ts-ignore
             email: result.data.email_addresses[0]?.email_address,
             name: `${result.data.first_name ?? 'Guest'} ${result.data.last_name ?? ''}`,
             image: result.data.image_url,
@@ -33,6 +34,7 @@ http.route({
         case 'user.updated':
           await ctx.runMutation(internal.users.updateUser, {
             tokenIdentifier: `${process.env.CLERK_APP_DOMAIN}|${result.data.id}`,
+            //@ts-ignore
             image: result.data.image_url,
           })
           break

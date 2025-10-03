@@ -51,20 +51,27 @@ export const addReview = mutation({
       throw new ConvexError('User not found')
     }
 
-    const reviewId = await ctx.db.insert('reviews', {
+    const formData = {
       text: args.text,
       role: args.role,
       rating: args.rating,
       user_id: user._id,
       name: user.name || 'Anonymous',
       avatar: user.avatar,
+    }
+
+    const reviewId = await ctx.db.insert('reviews', {
+      ...formData,
       approved: false,
       createdAt: Date.now(),
     })
 
-    await ctx.scheduler.runAfter(0, internal.actions.notifyTelegram, { id: reviewId })
+    if (reviewId) {
+      await ctx.scheduler.runAfter(0, internal.telegram.reviewTelegram, { id: reviewId })
 
-    return reviewId
+      return reviewId
+    }
+    return { message: 'Error create review' }
   },
 })
 
