@@ -16,9 +16,9 @@ const sectionsStore = useSectionsStore()
     <LazySkills :hydrate-on-visible="{ rootMargin: '100px' }" />
     <LazyExperience :hydrate-on-visible="{ rootMargin: '100px' }" />
     <LazyWorks :hydrate-on-visible="{ rootMargin: '100px' }" />
-    <ClientOnly
-      ><LazyReviews v-if="sectionsStore.showReviews" :hydrate-on-visible="{ rootMargin: '100px' }"
-    /></ClientOnly>
+    <ClientOnly>
+      <LazyReviews v-if="sectionsStore.showReviews" :hydrate-on-visible="{ rootMargin: '100px' }" />
+    </ClientOnly>
     <LazyContacts :hydrate-on-visible="{ rootMargin: '100px' }" />
   </main>
 </template>
