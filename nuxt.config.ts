@@ -33,7 +33,9 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     routeRules: {
-      '/**': { swr: 60 * 60 * 24 },
+      // НЕ кешируем API-запросы, чтобы POST/PUT/DELETE работали
+      '/api/**': { swr: 0 },
+      '/': { swr: 60 * 60 * 24 }, // кешируем все остальные GET-страницы на 24 часа
     },
   },
   experimental: {
@@ -85,7 +87,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: '/',
+    // baseURL: '/',
     head: {
       htmlAttrs: { lang: 'en' },
       charset: 'utf-8',
@@ -101,7 +103,7 @@ export default defineNuxtConfig({
   },
   build: {
     transpile: ['@clerk/nuxt'], // щоб Clerk нормально працював у SSR
-    extractCSS: true,
+    // extractCSS: true,
   },
   shadcn: {
     prefix: '',
