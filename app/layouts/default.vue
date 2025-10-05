@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { api } from '../../convex/_generated/api'
-const { tokenIdentifier } = useGetTokenIdentifier()
+const { mutate: addView } = useConvexMutation(api.views.addView)
+const { tokenIdentifier } = await useGetTokenIdentifier()
 
 onMounted(async () => {
-  const { mutate: addView } = useConvexMutation(api.views.addView)
   try {
     await addView({ tokenIdentifier })
   } catch (error) {}

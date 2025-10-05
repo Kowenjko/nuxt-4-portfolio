@@ -1,6 +1,7 @@
-export const useGetTokenIdentifier = () => {
+export const useGetTokenIdentifier = async () => {
   const { clerkAppDomain } = useRuntimeConfig().public
-  const { userId } = useAuth()
 
-  return { tokenIdentifier: clerkAppDomain + '|' + userId.value }
+  const response = await $fetch<{ userId: string }>('/api/user')
+
+  return { tokenIdentifier: clerkAppDomain + '|' + response?.userId }
 }
