@@ -10,7 +10,6 @@ const { data: reviews } = useConvexQuery(api.reviews.getAllReviews)
 definePageMeta({
   middleware: admin,
   layout: 'admin',
-  colorMode: 'dark',
 })
 </script>
 

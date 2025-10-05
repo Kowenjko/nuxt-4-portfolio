@@ -33,7 +33,6 @@ async function removeReview(id: any) {
 definePageMeta({
   middleware: admin,
   layout: 'admin',
-  colorMode: 'dark',
 })
 </script>
 

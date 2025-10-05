@@ -28,11 +28,13 @@ const items = [
   <Sidebar>
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>
-          <nuxt-link to="/" class="flex items-center text-xl gap-2 pb-2 hover:scale-105 transition-all">
+        <SidebarGroupLabel class="flex items-center justify-between py-7">
+          <nuxt-link to="/" class="flex items-center text-xl gap-2 hover:scale-105 transition-all">
             <NuxtImg :src="isDark ? '/my-logo-light.png' : '/my-logo-dark.png'" width="30px" class="w-8" alt="logo" />
             Kovenko
           </nuxt-link>
+
+          <ClientOnly> <ButtonTheme /></ClientOnly>
         </SidebarGroupLabel>
         <Separator />
         <SidebarGroupContent class="pt-5">
