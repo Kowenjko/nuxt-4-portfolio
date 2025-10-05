@@ -28,9 +28,10 @@ const open = ref(false)
 const loading = ref(false)
 
 const { mutate: addReview } = useConvexMutation(api.reviews.addReview)
-const { tokenIdentifier } = useGetTokenIdentifier()
+const { tokenIdentifier } = await useGetTokenIdentifier()
 
 const onSubmitReview = form.handleSubmit(async (values) => {
+  if (!tokenIdentifier) return
   loading.value = true
   try {
     await addReview({ ...values, rating: rating.value, tokenIdentifier })
