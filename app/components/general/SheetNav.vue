@@ -4,24 +4,31 @@ import { Menu } from 'lucide-vue-next'
 const { filteredNavLink } = useConstants()
 const { scrollToId } = useScrollNav()
 const { isAdmin } = useAdmin()
+
+const open = ref(false)
+
+const goToNavigate = (id: string) => {
+  scrollToId(id)
+  open.value = false
+}
 </script>
 
 <template>
-  <Sheet>
+  <Sheet v-model:open="open">
     <SheetTrigger as-child class="block lg:hidden">
       <Button variant="outline" class="" aria-label="menu"><Menu class="w-4 h-4" /> </Button>
     </SheetTrigger>
     <SheetContent class="z-100">
       <SheetHeader>
         <SheetTitle class="flex gap-2">
-          <ButtonGroups />
+          <ButtonGroups v-model:open="open" />
         </SheetTitle>
         <SheetDescription> </SheetDescription>
       </SheetHeader>
       <nav class="p-4">
         <ul class="flex flex-col gap-6">
           <li class="group" v-for="{ url, title, isShow } in filteredNavLink" :key="title">
-            <div @click="scrollToId(url)" class="cursor-pointer">
+            <div @click.stop="goToNavigate(url)" class="cursor-pointer" v-if="isShow">
               <span>{{ title }}</span>
               <span class="underline" />
             </div>
