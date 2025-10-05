@@ -17,8 +17,7 @@ onMounted(async () => {
       toggleActions: 'play none none none',
     },
     onComplete: () => {
-      // @ts-ignore
-      counterNumberRef.value.textContent = `${counter} ${suffix}`
+      if (counterNumberRef.value) counterNumberRef.value.textContent = `${counter} ${suffix}`
     },
   })
 })

@@ -5,7 +5,7 @@ const { tokenIdentifier } = await useGetTokenIdentifier()
 onMounted(async () => {
   const { mutate: addView } = useConvexMutation(api.views.addView)
   try {
-    await addView({ tokenIdentifier })
+    if (tokenIdentifier) await addView({ tokenIdentifier })
   } catch (error) {}
 })
 </script>

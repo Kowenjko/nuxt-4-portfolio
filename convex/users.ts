@@ -60,7 +60,7 @@ export const setUserOnline = internalMutation({
     await ctx.scheduler.runAfter(0, internal.telegram.sessionAccountTelegram, {
       email: user.email,
       name: user.name,
-      isOnline: !user.isOnline,
+      isOnline: user.isOnline || true,
     })
   },
 })
@@ -82,7 +82,7 @@ export const setUserOffline = internalMutation({
     await ctx.scheduler.runAfter(0, internal.telegram.sessionAccountTelegram, {
       email: user.email,
       name: user.name,
-      isOnline: !user.isOnline,
+      isOnline: !user.isOnline || false,
     })
   },
 })
