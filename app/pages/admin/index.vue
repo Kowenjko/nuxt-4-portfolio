@@ -6,6 +6,8 @@ const { data: views } = useConvexQuery(api.views.getUsersViews)
 const { data: anonymousViews } = useConvexQuery(api.views.getViewsByUserId, { user_id: 'anonymous' })
 const { data: count } = useConvexQuery(api.views.getViews, {})
 const { data: reviews } = useConvexQuery(api.reviews.getAllReviews)
+// todo
+// const { mutate: deleteUser } = useConvexMutation(api.users.deletePublicUser)
 
 definePageMeta({
   middleware: admin,
@@ -54,13 +56,34 @@ definePageMeta({
         <p class="">
           <span class="text-primary">{{ view.email }}</span>
         </p>
-        <div class="flex items-center gap-2 pt-3">
-          <p class="flex gap-2">
-            👀 <span class="text-primary">{{ view.viewsCount }}</span>
-          </p>
-          <p class="flex items-center gap-2">
-            <Icon class="text-yellow-500" name="mdi:star" /> <span class="text-primary">{{ view.reviewsCount }}</span>
-          </p>
+        <div class="flex items-center justify-between gap-2 pt-3">
+          <div class="flex items-center gap-2">
+            <p class="flex gap-2">
+              👀 <span class="text-primary">{{ view.viewsCount }}</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <Icon class="text-yellow-500" name="mdi:star" /> <span class="text-primary">{{ view.reviewsCount }}</span>
+            </p>
+          </div>
+
+          <!-- todo -->
+          <!-- <AlertDialog>
+            <AlertDialogTrigger as-child>
+               <Button variant="outline" size="icon" >
+            <Icon name="mdi:trash-can" class="text-red-500" />
+          </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Ви абсолютно впевнені?</AlertDialogTitle>
+                <AlertDialogDescription> Що хочите видалити користувача! </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Відмінити</AlertDialogCancel>
+                <AlertDialogAction @click="deleteUser({ tokenIdentifier: view.tokenIdentifier })"">Видалити</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog> -->
         </div>
       </li>
     </ul>

@@ -31,6 +31,11 @@ http.route({
             image: result.data.image_url,
           })
           break
+        case 'user.deleted':
+          await ctx.runMutation(internal.users.deleteUser, {
+            tokenIdentifier: `${process.env.CLERK_APP_DOMAIN}|${result.data.id}`,
+          })
+          break
         case 'user.updated':
           await ctx.runMutation(internal.users.updateUser, {
             tokenIdentifier: `${process.env.CLERK_APP_DOMAIN}|${result.data.id}`,
@@ -39,6 +44,13 @@ http.route({
           })
           break
         case 'session.created':
+          await ctx.runMutation(internal.users.createUser, {
+            tokenIdentifier: `${process.env.CLERK_APP_DOMAIN}|${result.data.id}`,
+            //@ts-ignore
+            email: result.data.email_addresses[0]?.email_address,
+            name: `${result.data.first_name ?? 'Guest'} ${result.data.last_name ?? ''}`,
+            image: result.data.image_url,
+          })
           await ctx.runMutation(internal.users.setUserOnline, {
             tokenIdentifier: `${process.env.CLERK_APP_DOMAIN}|${result.data.user_id}`,
           })

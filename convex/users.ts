@@ -1,5 +1,5 @@
 import { ConvexError, v } from 'convex/values'
-import { internalMutation, query } from './_generated/server'
+import { internalMutation, mutation, query } from './_generated/server'
 import { internal } from './_generated/api'
 
 /**
@@ -22,6 +22,11 @@ export const createUser = internalMutation({
     image: v.string(),
   },
   handler: async (ctx, args) => {
+    const user = await ctx.db
+      .query('users')
+      .withIndex('by_tokenIdentifier', (q) => q.eq('tokenIdentifier', args.tokenIdentifier))
+      .unique()
+    if (user) return
     // Insert new user into the database
     await ctx.db.insert('users', {
       tokenIdentifier: args.tokenIdentifier,
@@ -68,6 +73,56 @@ export const updateUser = internalMutation({
     await ctx.db.patch(user._id, {
       avatar: args.avatar,
     })
+  },
+})
+
+/**
+ * Internal Mutation: delete user by tokenIdentifier .
+ *
+ */
+
+export const deleteUser = internalMutation({
+  args: { tokenIdentifier: v.string() },
+  handler: async (ctx, args) => {
+    // Find the user by tokenIdentifier
+    const user = await ctx.db
+      .query('users')
+      .withIndex('by_tokenIdentifier', (q) => q.eq('tokenIdentifier', args.tokenIdentifier))
+      .unique()
+
+    if (!user) {
+      throw new ConvexError('User not found')
+    }
+
+    const reviews = await ctx.db
+      .query('reviews')
+      .withIndex('by_user_id', (q) => q.eq('user_id', user._id))
+      .collect()
+
+    for (const review of reviews) {
+      await ctx.db.delete(review._id)
+    }
+
+    const views = await ctx.db
+      .query('views')
+      .withIndex('by_user_id', (q) => q.eq('user_id', user._id))
+      .collect()
+
+    for (const view of views) {
+      await ctx.db.delete(view._id)
+    }
+
+    await ctx.db.delete(user._id)
+
+    return { success: true }
+  },
+})
+
+export const deletePublicUser = mutation({
+  args: { tokenIdentifier: v.string() },
+  handler: async (ctx, args) => {
+    console.log(args.tokenIdentifier)
+    await ctx.runMutation(internal.users.deleteUser, { tokenIdentifier: args.tokenIdentifier })
   },
 })
 
