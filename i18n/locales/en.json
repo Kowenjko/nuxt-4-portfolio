@@ -32,7 +32,7 @@
   },
   "seo": {
     "title": "Vasyl Kovenko — Frontend Developer | Kovenko Vasya",
-    "description": "Frontend developer with 3+ years experience (Vue 3, Nuxt). E-commerce, API integrations, UI/UX.. Portfolio: nuxt-4-portfolio.vercel.app"
+    "description": "Frontend Developer with 4+ years of experience in Vue 3, Nuxt 3, and API integrations. Skilled in React, Next.js, and Python (FastAPI, Django). Portfolio: nuxt-4-portfolio.vercel.app"
   },
   "nav": {
     "category": {
@@ -54,7 +54,7 @@
     }
   },
   "hero": {
-    "info": "with { years } years { months } months of commercial experience. Specializing in Vue 3 / Nuxt 3, I build modern web applications with API integration and custom functionality. Experienced in working with both Ukrainian and international clients. Responsible, collaborative, and motivated to continuously improve skills and learn new technologies."
+    "info": "with { years } years { months } months of commercial experience. I specialize in Vue 3 / Nuxt 3, creating modern, fast, and scalable web applications with API integration and custom functionality. I have experience working with both Ukrainian and foreign clients. I also have some experience with React / Next.js, and on a non-commercial level, I have worked with Python (FastAPI, Django) — developing backend APIs, authorization, GRUD, and small internal services. I am responsible, a team player, and results-oriented. I am constantly improving my skills, following trends in frontend development, and I love working on real products that benefit users."
   },
   "services": {
     "title": {
