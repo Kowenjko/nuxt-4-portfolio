@@ -95,7 +95,7 @@ export const useConstants = () => {
       description: t('works.poor_club.description'),
       category: t('works.poor_club.category'),
       urlGit: null,
-      url: null,
+      url: 'https://new.tcb.com.ua',
       keywords: ['Nuxt-3', 'Sass', 'I18n', 'Pinia'],
       imageUrl: '/webp/bidnyagka.webp',
     },
