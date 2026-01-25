@@ -158,6 +158,11 @@
     }
   },
   "test_works": {
+    "fastapi_nuxt_4": {
+      "title": "FastAPI Shop",
+      "category": "Онлайн-магазин",
+      "description": "FastAPI Shop — сучасний full-stack e-commerce проект на FastAPI і Nuxt з JWT-аутентифікацією, OAuth через GitHub, PostgreSQL, Redis, WebSocket-повідомленнями і продакшен-архітектурою на Docker."
+    },
     "nuxt_4_calendar": {
       "title": "Nuxt 4 Календар",
       "category": "Календар",

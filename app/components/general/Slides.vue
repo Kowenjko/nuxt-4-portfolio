@@ -128,7 +128,7 @@ const categories = computed(() => [...new Set(searchProjects.value.map((project)
                     </div>
                   </div>
                   <p class="text-sm font-light italic text-neutral-500 p-0">{{ project.category }}</p>
-                  <ul class="flex gap-2">
+                  <ul class="flex gap-2 flex-wrap">
                     <li v-for="keyword in project.keywords" :key="keyword" class="py-0">
                       <Badge variant="secondary">{{ keyword }}</Badge>
                     </li>

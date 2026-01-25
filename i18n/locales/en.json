@@ -158,6 +158,11 @@
     }
   },
   "test_works": {
+    "fastapi_nuxt_4": {
+      "title": "FastAPI Shop",
+      "category": "Online-Shop",
+      "description": "FastAPI Shop is a modern full-stack e-commerce project built on FastAPI and Nuxt with JWT authentication, OAuth via GitHub, PostgreSQL, Redis, WebSocket notifications, and production architecture on Docker."
+    },
     "nuxt_4_calendar": {
       "title": "Nuxt 4 Calendar",
       "category": "Calendar",
