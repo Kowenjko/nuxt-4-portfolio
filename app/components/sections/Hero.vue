@@ -85,7 +85,7 @@ watch(endValueY, (value) => {
         <div class="hero-avatar">
           <div class="rounded-3xl w-60 sm:w-72 md:w-80 lg:w-96" :class="{ avatar: isLoaded }">
             <NuxtImg
-              src="/images/hero_2.png"
+              src="/images/hero_new.png"
               format="webp"
               alt="hero"
               width="384"
@@ -143,7 +143,7 @@ p {
     opacity: 0.5;
   }
   img {
-    filter: grayscale(80%) contrast(120%);
+    filter: sepia(100%) saturate(10%) hue-rotate(0deg);
   }
 }
 
