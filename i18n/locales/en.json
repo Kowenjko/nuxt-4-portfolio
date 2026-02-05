@@ -54,7 +54,8 @@
     }
   },
   "hero": {
-    "info": "with { years } years { months } months of commercial experience. I specialize in Vue 3 / Nuxt 3, creating modern, fast, and scalable web applications with API integration and custom functionality. I have experience working with both Ukrainian and foreign clients. I also have some experience with React / Next.js, and on a non-commercial level, I have worked with Python (FastAPI, Django) — developing backend APIs, authorization, GRUD, and small internal services. I am responsible, a team player, and results-oriented. I am constantly improving my skills, following trends in frontend development, and I love working on real products that benefit users."
+    "info": "with { years } years { months } months of commercial experience. I specialize in Vue 3 / Nuxt 3, creating modern, fast, and scalable web applications with API integration and custom functionality. I have experience working with both Ukrainian and foreign clients. I also have some experience with React / Next.js, and on a non-commercial level, I have worked with Python (FastAPI, Django) — developing backend APIs, authorization, GRUD, and small internal services. I am responsible, a team player, and results-oriented. I am constantly improving my skills, following trends in frontend development, and I love working on real products that benefit users.",
+    "open_work": "Available for work"
   },
   "services": {
     "title": {

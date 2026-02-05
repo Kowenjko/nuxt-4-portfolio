@@ -81,7 +81,7 @@ watch(endValueY, (value) => {
           <ButtonResume class="button-resume" />
         </div>
       </div>
-      <div class="wrapper-avatar justify-items-center h-full">
+      <div class="wrapper-avatar justify-items-center h-full relative">
         <div class="hero-avatar">
           <div class="rounded-3xl w-60 sm:w-72 md:w-80 lg:w-96" :class="{ avatar: isLoaded }">
             <NuxtImg
@@ -96,11 +96,15 @@ watch(endValueY, (value) => {
               class="rounded-3xl aspect-retro object-cover w-96"
             />
           </div>
+          <div class="absolute -bottom-4 -right-4 bg-primary px-4 py-3 animate-float rounded-xl">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span class="text-primary-foreground text-sm font-medium">{{ $t('hero.open_work') }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- todo -->
-    <!-- <ButtonLook /> -->
   </section>
 </template>
 
