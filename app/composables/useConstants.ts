@@ -175,6 +175,15 @@ export const useConstants = () => {
       imageUrl: '/webp/calendar.png',
     },
     {
+      title: t('test_works.next_dashboard.title'),
+      description: t('test_works.next_dashboard.description'),
+      category: t('test_works.next_dashboard.category'),
+      urlGit: 'https://github.com/Kowenjko/next-managment-website',
+      url: null,
+      keywords: ['Next', 'Prisma', 'Neon', 'Stack Auth', 'Tailwindcss', 'recharts'],
+      imageUrl: '/webp/next-dashboard.png',
+    },
+    {
       title: t('test_works.fastapi_nuxt_4.title'),
       description: t('test_works.fastapi_nuxt_4.description'),
       category: t('test_works.fastapi_nuxt_4.category'),

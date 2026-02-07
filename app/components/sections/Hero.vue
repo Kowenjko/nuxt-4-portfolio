@@ -85,7 +85,7 @@ watch(endValueY, (value) => {
         <div class="hero-avatar">
           <div class="rounded-3xl w-60 sm:w-72 md:w-80 lg:w-96" :class="{ avatar: isLoaded }">
             <NuxtImg
-              src="/images/hero_2.png"
+              src="/images/hero_dark.png"
               format="webp"
               alt="hero"
               width="384"
