@@ -74,7 +74,7 @@ watch(endValueY, (value) => {
         </div>
         <p class="pt-2 sm:pt-10">
           <span class="text-zinc-900 dark:text-zinc-500 m-0 font-bold">Frontend Developer</span>
-          {{ $t('hero.info', { years, months }) }}
+          {{ $t('hero.info') }}
         </p>
         <div class="flex items-center justify-between mt-8 md:mt-16">
           <SocialLinks class="social-links" />
