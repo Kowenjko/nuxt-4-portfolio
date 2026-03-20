@@ -83,10 +83,14 @@ watch(endValueY, (value) => {
       </div>
       <div class="wrapper-avatar justify-items-center h-full relative">
         <div class="hero-avatar">
-          <div class="rounded-3xl w-60 sm:w-72 md:w-80 lg:w-96" :class="{ avatar: isLoaded }">
+          <div class="rounded-3xl w-60 sm:w-72 md:w-80 lg:w-96 shadow-2xl relative" :class="{ avatar: isLoaded }">
+            <div
+              class="absolute inset-0 bg-gradient-to-tr dark:from-gray-400/20 from-gray-800/50 via-transparent dark:to-gray-300/20 to-gray-900/30 blur-2xl"
+            />
             <!-- hero -->
+            <div class="absolute inset-0 dark:bg-white/1 backdrop-blur-[1px] rounded-3xl" />
             <NuxtImg
-              src="/images/hero_dark.png"
+              src="/images/hero_5.png"
               format="webp"
               alt="hero"
               width="384"
@@ -94,7 +98,7 @@ watch(endValueY, (value) => {
               sizes="(max-width: 640px) 240px, (max-width: 1024px) 384px, 512px"
               loading="lazy"
               quality="70"
-              class="rounded-3xl aspect-retro object-cover w-96"
+              class="rounded-3xl aspect-retro object-cover w-96 [mask-image:radial-gradient(circle,black_60%,transparent_100%)]"
             />
           </div>
           <div class="absolute -bottom-4 -right-4 bg-primary px-4 py-3 animate-float rounded-xl">
@@ -125,7 +129,7 @@ p {
   }
 }
 
-.avatar {
+.avatar1 {
   aspect-ratio: 3/4;
   position: relative;
 
@@ -147,11 +151,13 @@ p {
     filter: blur(1rem);
     opacity: 0.5;
   }
-  // img {
-  //   filter: sepia(100%) saturate(10%) hue-rotate(0deg);
-  // }
+  img {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%) !important;
+  }
 }
-
+.test {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%) !important;
+}
 @keyframes autoRotate {
   to {
     --deg: 360deg;
